@@ -7,4 +7,5 @@ Integrantes:
 Florescu, Lorena-Ioana (LorelayWilson)
 Almiñana Marchirant,Ferran (Noppoc) 
 Villanueva Villalón, Iván (Ivavil)
-Felst Guinea, Denis
+Felst Guinea, Denis (DenisFelst)
+Tan Qianzi
