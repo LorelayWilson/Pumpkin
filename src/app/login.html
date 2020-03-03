@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+   
+    <link rel="stylesheet" href="css/style-login.css"/>
+    
+    <style>
+
+       
+    </style>
+</head>
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+<body>
+
+    <!-- Para móbiles-->
+
+    <!-- El nombre de la versión -->
+    <div id="mobil">
+
+    <!-- La foto de la empresa -->
+    <div id="foto">
+        <img src="../images/imagenes-login/logoGTI.png" alt="Logo de la empresa">
+    </div>  
+
+    <!-- La foto de Pumpkin -->
+    <img src="../images/imagenes-login/tecnologia-pumpkin.png" alt="Logo Pumpkin">
+
+    <!-- Para el usuario -->
+    <div id="formularioMobil">
+    <form action="app/index.html" method="post" onsubmit="enviar(event)" id="formUsuario"> <!-- Creamos el cuadro donde se escribirá el usuario -->
+        <input type="text" placeholder="Usuario" id="inputUsuario" name="Usuario" required>
+    </form>
+    
+    <script>
+        function enviar(evento) {
+            evento.preventDefault();
+    
+            fetch('api/v1.0/sesion', {
+                method : 'post',
+                body : new FormData(document.getElementById('formUsuario'))
+            }).then(function (respuesta) {
+                if (respuesta.status == 200){
+                    location.href = './app';
+                } else {
+    
+                }
+            });
+        }
+        
+    </script>
+
+    <!-- Para poner la contraseña -->
+    <form action="app/index.html" method="post" onsubmit="enviar(event)" id="formKey"></form> <!-- Creamos el cuadro donde se escribirá la contraseña -->
+        <input type="password" placeholder="Contraseña" id="inputKey" name="key" required> 
+    </form>
+    
+    <script>
+        function enviar(evento) {
+            evento.preventDefault();
+    
+            fetch('api/v1.0/sesion', {
+                method : 'post',
+                body : new FormData(document.getElementById('formKey'))
+            }).then(function (respuesta) {
+                if (respuesta.status == 200){
+                    location.href = './app';
+                } else {
+    
+                }
+            });
+        }
+    </script>
+
+    <!-- El botón de envio -->
+    <button id="botonMobil" type="submit"><p id="login">LOGIN</p></button>
+    
+    </div> <!-- Final formulario móviles -->
+
+    </div> <!-- Final versión móviles-->
+
+<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Para tablets y escritorio --> 
+
+    <!-- La cabecera -->
+    <header id="cabecera">
+        <img id="logoescritorio" src="../images/imagenes-login/logoGTI.png" alt="Logo de la empresa">
+        <div class="menu">
+            <a href="#" id="menusuperior">HOME</a>
+            <a href="#" id="menusuperior">QUIENES SOMOS</a>
+            <a href="#" id="menusuperior">PROYECTOS</a>
+            <a href="#" id="menusuperior">RESEÑAS</a>
+            <a href="#" id="menusuperior">CONTACTO</a>
+        </div>
+    </header>
+    <!-- Final de la cabecera -->
+
+    <!-- La versión de tablet/escritorio -->
+    <div id="escritorio">
+     
+    <!-- El texto -->
+    <div id="textoVigila">
+        <h1>VIGILA TUS CULTIVOS DESDE LA COMODIDAD DE TU CASA</h1> <!-- Texto de relleno -->
+    </div>
+    <!-- Final del texto -->
+
+    <!-- Formulario para el envio de datos -->
+    <div id="formularioEscritorio"> 
+        
+        <!-- Texto que aparece encima -->
+        <h2>INICIAR SESIÓN</h2>
+        <img id="pumpkin" src="../images/imagenes-login/Pumpkin.png" alt="Logo Pumpkin">
+        
+        <!-- Para poner el usuario -->
+        <form action="app/index.html" method="post" onsubmit="enviar(event)" id="formUsuario"> <!-- Creamos el cuadro donde se escribirá el usuario -->
+            <input type="text" class="usuario" placeholder="Usuario" id="inputUsuario" name="Usuario" required>
+        </form>
+        
+        <script>
+            function enviar(evento) {
+                evento.preventDefault();
+        
+                fetch('api/v1.0/sesion', {
+                    method : 'post',
+                    body : new FormData(document.getElementById('formUsuario'))
+                }).then(function (respuesta) {
+                    if (respuesta.status == 200){
+                        location.href = './app';
+                    } else {
+        
+                    }
+                });
+            }
+            
+        </script>
+
+        <!-- Para poner la contraseña -->
+        <form action="app/index.html" method="post" onsubmit="enviar(event)" id="formKey"></form> <!-- Creamos el cuadro donde se escribirá la contraseña -->
+            <input type="password" placeholder="Contraseña" id="inputKey" name="key" required> 
+        </form>
+        
+        <script>
+            function enviar(evento) {
+                evento.preventDefault();
+        
+                fetch('api/v1.0/sesion', {
+                    method : 'post',
+                    body : new FormData(document.getElementById('formKey'))
+                }).then(function (respuesta) {
+                    if (respuesta.status == 200){
+                        location.href = './app';
+                    } else {
+        
+                    }
+                });
+            }
+        </script>
+        <div id="centrarboton">
+            <button id="botonEscritorio" type="submit"> <p id="login">LOGIN</p></button>
+        </div>
+    </div> 
+    <!-- Final formulario escritorio -->
+
+    </div> 
+    <!-- Final escritorio-->
+
+    <!-- El pie de página -->
+    <footer id="piedepagina" role="contentinfo">
+
+        <!-- Texto para el copy -->
+        <p>&copy; 2020 GTI Grado en Tecnologías Interactivas. Todos los derechos reservados.</p>
+        
+        <!-- Los links del pie de página -->
+        <div id="links">
+        <a href="#">Mapa del sitio</a>
+        <a href="#">Español</a> <!-- En realidad, "español" no será un link, sino un menú para los idiomas, pero como aún no lo vamos ha hacer, de momento será un link para hacernos a la idea -->
+        </div>
+        <!-- Final de los links -->
+
+    </footer>
+    <!-- Final del pie de página -->
+
+</body>
+</html>
