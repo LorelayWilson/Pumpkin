@@ -35,40 +35,24 @@
     <!-- La foto de Pumpkin -->
     <img src="../images/imagenes-login/tecnologia-pumpkin.png" alt="Logo Pumpkin">
 
-    <!-- Para el usuario -->
+    <!-- Para los datos -->
     <div id="formularioMobil">
-    <form action="app/index.html" method="post" onsubmit="enviar(event)" id="formUsuario"> <!-- Creamos el cuadro donde se escribirá el usuario -->
-        <input type="text" placeholder="Usuario" id="inputUsuario" name="Usuario" required>
-    </form>
-    
-    <script>
-        function enviar(evento) {
-            evento.preventDefault();
-    
-            fetch('api/v1.0/sesion', {
-                method : 'post',
-                body : new FormData(document.getElementById('formUsuario'))
-            }).then(function (respuesta) {
-                if (respuesta.status == 200){
-                    location.href = './app';
-                } else {
-    
-                }
-            });
-        }
+    <form action="app/index.html" method="post" onsubmit="enviar(event)" id="formKey">
+        <label for="inputKey"></label>
+        <input type="text" id="inputUser" placeholder="Usuario" name="Usuario" required><br>y
+        <label for="inputKey"></label>
+        <input type="password" id="inputKey" placeholder="Contraseña" name="Contraseña" required>
         
-    </script>
-
-    <!-- Para poner la contraseña -->
-    <form action="app/index.html" method="post" onsubmit="enviar(event)" id="formKey"></form> <!-- Creamos el cuadro donde se escribirá la contraseña -->
-        <input type="password" placeholder="Contraseña" id="inputKey" name="key" required> 
-    </form>
+        <div id="centrarboton">
+            <button id="botonEscritorio" type="submit"> <p id="login">LOGIN</p></button>
+        </div>
     
+        <!-- Para enviar los datos -->
     <script>
         function enviar(evento) {
             evento.preventDefault();
     
-            fetch('api/v1.0/sesion', {
+            fetch('api/v1.0/modelos/sesion', {
                 method : 'post',
                 body : new FormData(document.getElementById('formKey'))
             }).then(function (respuesta) {
@@ -79,6 +63,7 @@
                 }
             });
         }
+        
     </script>
 
     <!-- El botón de envio -->
@@ -123,39 +108,25 @@
         <h2>INICIAR SESIÓN</h2>
         <img id="pumpkin" src="../images/imagenes-login/Pumpkin.png" alt="Logo Pumpkin">
         
-        <!-- Para poner el usuario -->
-        <form action="app/index.html" method="post" onsubmit="enviar(event)" id="formUsuario"> <!-- Creamos el cuadro donde se escribirá el usuario -->
-            <input type="text" class="usuario" placeholder="Usuario" id="inputUsuario" name="Usuario" required>
-        </form>
+        <!-- Para poner los datos -->
+        <form action="app/index.html" method="post" onsubmit="enviar(event)" id="formKey">
+            <label for="inputKey"></label>
+            <input type="text" id="inputUser" placeholder="Usuario" name="Usuario" required><br>y
+            <label for="inputKey"></label>
+            <input type="password" id="inputKey" placeholder="Contraseña" name="Contraseña" required>
         
-        <script>
-            function enviar(evento) {
-                evento.preventDefault();
-        
-                fetch('api/v1.0/sesion', {
-                    method : 'post',
-                    body : new FormData(document.getElementById('formUsuario'))
-                }).then(function (respuesta) {
-                    if (respuesta.status == 200){
-                        location.href = './app';
-                    } else {
-        
-                    }
-                });
-            }
+            <div id="centrarboton">
+                <button id="botonEscritorio" type="submit"> <p id="login">LOGIN</p></button>
+            </div>
             
-        </script>
-
-        <!-- Para poner la contraseña -->
-        <form action="app/index.html" method="post" onsubmit="enviar(event)" id="formKey"></form> <!-- Creamos el cuadro donde se escribirá la contraseña -->
-            <input type="password" placeholder="Contraseña" id="inputKey" name="key" required> 
         </form>
         
+        <!-- Para enviar los datos-->
         <script>
             function enviar(evento) {
                 evento.preventDefault();
         
-                fetch('api/v1.0/sesion', {
+                fetch('api/v1.0/modelos/sesion', {
                     method : 'post',
                     body : new FormData(document.getElementById('formKey'))
                 }).then(function (respuesta) {
