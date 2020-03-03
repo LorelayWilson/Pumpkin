@@ -1,0 +1,384 @@
+ /* Para que no haga márgenes con el buscador */
+ html, body{
+    margin: 0;
+}
+/* Para móbiles */
+
+/* Desactivamos todas las versiones */
+#escritorio {display: none;}
+#cabecera {display: none;}
+#piedepagina {display: none;}
+
+/* Activamos la versión para móviles */
+#mobil {
+    display: block;
+    background: #FDF4FD;
+    }
+
+/* Este es el logo de la empresa */
+#foto{
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Este es el logo de Pumpkin */
+img{
+    display:block;
+    margin:auto;
+}
+
+/* El formulario para introducir el usuario y la contraseña */
+#formularioMobil{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* El apartado para el usuario */
+#inputUsuario{
+    margin-bottom: 20px;
+    background: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: auto black;
+}
+
+/* El apartado para la contraseña */
+#inputKey{
+    width: 150px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    background: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: auto black;
+}
+
+/* El botón para enviar los datos */
+#botonMobil{
+    height: 40px;
+    margin-top: 10px;
+    background: #8400FF;
+    border-radius: 4px;
+}
+
+/* El texto que aparece en el botón anterior */
+#login{
+    color: white;
+}
+/* Aquí termina el diseño de la versión para móviles */
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Para tablets (es igual que para la versión de escritorio) */
+/* @media es una "condición" para que se active otra versión distinta a la actual (es decir, para que pase de móvil a tables o escritorio) */
+@media only screen and (min-width: 400px) {
+
+/* Activamos la versión de escritorio */
+#escritorio { 
+    /* Para el fondo */
+    background-image: url("campos.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* Para el contenido*/
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    }
+
+/* Desactivamos la versión móvil*/    
+#mobil {display: none;} 
+
+/* Esta será nuestra cabecera */
+#cabecera{
+    height: 75px;
+    background: #7A4186;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+/* Este es el logo de la empresa */
+#logoescritorio{ /* Pone escritorio porque estas modificaciones solo se verán para tablets o escritorios */
+    margin-left: 0px;
+    margin-right: 300px;
+    size: 50%;
+}
+
+/* El menú de la cabecera */
+.menu{
+    display: none;
+}
+/* -------------------------------------Aquí termina la cabecera--------------------------------------- */
+
+/* Un texto que aparece al lado del formulario */
+#textoVigila{
+    display: none;
+}
+
+/* La letra del texto anterior */
+h1{
+    color: #CFCCD2;
+    text-align: justify;
+}
+/* ------------------------------------Aquí termina el texto------------------------------------------- */
+
+/* El formulario para introducir el usuario y la contraseña */
+#formularioEscritorio{
+    background: #FDF4DF; 
+    width: 400px;
+    height: 400px;
+    margin: 20px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+/* Logo de Pumpkin en el formulario */
+#pumpkin{
+    max-width: 50%;
+    opacity: 0.1;
+}
+
+/* El texto para iniciar sesión */
+h2{
+    color: #7A4186;
+    text-align: center;
+    text-decoration: underline;
+}
+
+/* El apartado para el usuario */
+#inputUsuario{
+    margin-bottom: 10px;
+    background: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    margin-left: 30px;
+    border-bottom: auto black;
+}
+
+/* El apartado para la contraseña */
+#inputKey{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    margin-left: 30px;
+    border-bottom: auto black;
+}
+
+/* Esto es para centrar el botón */
+#centrarboton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* El botón para eviar los datos */
+#botonEscritorio{
+    width: 170px;
+    height: 60px;
+    margin-top: 10px;
+    background: #86518E;
+    border: 2px solid #FFFE14;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+/* El texto del botón anterior */
+#login{
+    color:  white;
+}
+
+/* Esto será el pie de página */
+#piedepagina{
+    width: auto;
+    height: 80px;
+    background: #FFFF80;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Estos són los enlaces para el pie de página */
+#links{
+    margin: 15px;
+    margin-left: 100px;
+}
+}
+/* Final del diseño para tablets */
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Para escritorio */
+@media only screen and (min-width: 768px) {
+
+/* Activamos la versión de escritorio */
+#escritorio { 
+    /* Para el fondo */
+    background-image: url("../../images/imagenes-login/campos.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* Para el contenido*/
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    }
+
+/* Desactivamos la versión móvil*/    
+#mobil {display: none;} 
+
+/* Esta será nuestra cabecera */
+#cabecera{
+    height: 75px;
+    background: #7A4186;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+/* Este es el logo de la empresa */
+#logoescritorio{ /* Pone escritorio porque estas modificaciones solo se verán para tablets o escritorios */
+    margin-left: 0px;
+    margin-right: 300px;
+    size: 50%;
+}
+
+/* El menú de la cabecera */
+.menu{
+    margin-top: 20px;;
+    width: 500px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+/* Para el color de los enlaces */
+#menusuperior{
+    color: white;
+    text-decoration: none;
+}
+
+/* -------------------------------------Aquí termina la cabecera--------------------------------------- */
+
+/* Un texto que aparece al lado del formulario */
+#textoVigila{
+    display: flex;
+    width: 500px;
+    margin-top: 100px;
+    margin-left: 200px;
+}
+
+/* La letra del texto anterior */
+h1{
+    color: #CFCCD2;
+    text-align: justify;
+}
+/* ------------------------------------Aquí termina el texto------------------------------------------- */
+
+/* El formulario para introducir el usuario y la contraseña */
+#formularioEscritorio{
+    background: #FDF4DF; 
+    width: 400px;
+    height: 400px;
+    margin: 20px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+/* Logo de Pumpkin en el formulario */
+#pumpkin{
+    max-width: 50%;
+    opacity: 0.1;
+}
+
+/* El texto para iniciar sesión */
+h2{
+    color: #7A4186;
+    text-align: center;
+    text-decoration: underline;
+}
+
+/* El apartado para el usuario */
+#inputUsuario{
+    margin-bottom: 10px;
+    background: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    margin-left: 30px;
+    border-bottom: auto black;
+}
+
+/* El apartado para la contraseña */
+#inputKey{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    margin-left: 30px;
+    border-bottom: auto black;
+}
+
+/* Esto es para centrar el botón */
+#centrarboton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* El botón para eviar los datos */
+#botonEscritorio{
+    width: 170px;
+    height: 60px;
+    margin-top: 10px;
+    background: #86518E;
+    border: 2px solid #FFFE14;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+/* El texto del botón anterior */
+#login{
+    color:  white;
+}
+
+/* Esto será el pie de página */
+#piedepagina{
+    width: auto;
+    height: 50px;
+    background: #FFFF80;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Estos són los enlaces para el pie de página */
+#links{
+    margin: 15px;
+    margin-left: 100px;
+}
+}
