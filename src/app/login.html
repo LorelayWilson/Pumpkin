@@ -29,23 +29,19 @@
 
     <!-- La foto de la empresa -->
     <div id="foto">
-        <img src="../images/imagenes-login/logoGTI.png" alt="Logo de la empresa">
+        <img src="../app/img/logoGTI.svg" alt="Logo de la empresa">
     </div>  
 
     <!-- La foto de Pumpkin -->
-    <img src="../images/imagenes-login/tecnologia-pumpkin.png" alt="Logo Pumpkin">
+    <img src="../app/img/imagenes-login/tecnologia-pumpkin.png" alt="Logo Pumpkin">
 
     <!-- Para los datos -->
     <div id="formularioMobil">
     <form action="app/index.html" method="post" onsubmit="enviar(event)" id="formKey">
         <label for="inputKey"></label>
-        <input type="text" id="inputUser" placeholder="Usuario" name="Usuario" required><br>y
+        <input type="text" id="inputUser" placeholder="Usuario" name="Usuario" required><br>
         <label for="inputKey"></label>
         <input type="password" id="inputKey" placeholder="Contraseña" name="Contraseña" required>
-        
-        <div id="centrarboton">
-            <button id="botonEscritorio" type="submit"> <p id="login">LOGIN</p></button>
-        </div>
     
         <!-- Para enviar los datos -->
     <script>
@@ -67,7 +63,9 @@
     </script>
 
     <!-- El botón de envio -->
-    <button id="botonMobil" type="submit"><p id="login">LOGIN</p></button>
+    <div id="centrarboton">
+        <button id="botonEscritorio" type="submit"> <p id="login">LOGIN</p></button>
+    </div>
     
     </div> <!-- Final formulario móviles -->
 
@@ -82,13 +80,15 @@
     <!-- La cabecera -->
     <header id="cabecera">
         <img id="logoescritorio" src="../images/imagenes-login/logoGTI.png" alt="Logo de la empresa">
-        <div class="menu">
-            <a href="#" id="menusuperior">HOME</a>
-            <a href="#" id="menusuperior">QUIENES SOMOS</a>
-            <a href="#" id="menusuperior">PROYECTOS</a>
-            <a href="#" id="menusuperior">RESEÑAS</a>
-            <a href="#" id="menusuperior">CONTACTO</a>
-        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#" id="menusuperior">HOME</a></li>
+                <li><a href="#" id="menusuperior">QUIENES SOMOS</a></li>
+                <li><a href="#" id="menusuperior">PROYECTOS</a></li>
+                <li><a href="#" id="menusuperior">RESEÑAS</a></li>
+                <li><a href="#" id="menusuperior">CONTACTO</a></li>
+            </ul>
+        </nav>
     </header>
     <!-- Final de la cabecera -->
 
@@ -111,13 +111,9 @@
         <!-- Para poner los datos -->
         <form action="app/index.html" method="post" onsubmit="enviar(event)" id="formKey">
             <label for="inputKey"></label>
-            <input type="text" id="inputUser" placeholder="Usuario" name="Usuario" required><br>y
+            <input type="text" id="inputUser" placeholder="Usuario" name="Usuario" required><br>
             <label for="inputKey"></label>
             <input type="password" id="inputKey" placeholder="Contraseña" name="Contraseña" required>
-        
-            <div id="centrarboton">
-                <button id="botonEscritorio" type="submit"> <p id="login">LOGIN</p></button>
-            </div>
             
         </form>
         

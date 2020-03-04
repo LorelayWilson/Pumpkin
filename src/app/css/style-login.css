@@ -78,7 +78,7 @@ img{
 
 /* Para tablets (es igual que para la versión de escritorio) */
 /* @media es una "condición" para que se active otra versión distinta a la actual (es decir, para que pase de móvil a tables o escritorio) */
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 600px) {
 
 /* Activamos la versión de escritorio */
 #escritorio { 
@@ -322,7 +322,7 @@ h2{
 }
 
 /* El apartado para el usuario */
-#inputUsuario{
+#inputUser{
     margin-bottom: 10px;
     background: 0px;
     border-top: 0px;
