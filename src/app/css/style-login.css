@@ -61,7 +61,15 @@ img{
     border-bottom: 2px solid black;
     margin-top: 50px;
     margin-left: 10px;
+    margin-bottom: 10px;
     font-size: 20px;
+}
+
+#recuperarMobil{
+    margin-top: 50px;
+    margin-left: 15px;
+    color: rgb(0, 0, 180);
+    text-decoration: none;
 }
 
 /* El botón para enviar los datos */
@@ -105,7 +113,7 @@ img{
 
 /* Este es el logo de la empresa */
 #foto{   
-    margin-top: 70px;
+    margin-top: 100px;
     margin-bottom: 70px;
     display: flex;
     justify-content: flex-end;
@@ -150,7 +158,7 @@ img{
     border-bottom: 2px solid black;
     margin-top: 70px;
     margin-left: 10px; 
-
+    margin-bottom: 30px;
 }
 
 #inputUser::placeholder{
@@ -159,6 +167,14 @@ img{
 
 #inputKey::placeholder{
     font-size: 25px;
+}
+
+#recuperarMobil{
+    margin-top: 100px;
+    margin-left: 10px;
+    color: rgb(0, 0, 180);
+    text-decoration: none;
+    font-size: 20px;
 }
 
 /* El botón para enviar los datos */
@@ -192,7 +208,7 @@ img{
 /* Activamos la versión de escritorio */
 #escritorio { 
     /* Para el fondo */
-    background-image: url("../img/imagenes-login/campos.png");
+    background-image: url("../img/imagenes-login/cultivos.png");
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -247,7 +263,8 @@ nav ul li a{
     text-decoration: none;
     display: block;
     padding: 10px;
-    font-size: 25px;
+    font-size: 20px;
+    margin: 35px
 }
 
 /* -------------------------------------Aquí termina la cabecera--------------------------------------- */
@@ -262,8 +279,8 @@ nav ul li a{
 
 /* La letra del texto anterior */
 h1{
-    color: #333333;
-    opacity: 60%;
+    color: black;
+    opacity: 70%;
     text-align: justify;
     text-size-adjust: 100px;
     font-size: 50px;
@@ -272,7 +289,7 @@ h1{
 
 /* El formulario para introducir el usuario y la contraseña */
 #formularioEscritorio{
-    background: #FDF4DF; 
+    background: rgba(245, 155, 231, 0.425); 
     width: 500px;
     height: 600px;
     margin: 20px;
@@ -281,7 +298,7 @@ h1{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+    border-radius: 8px;
 }
 
 /* Logo de Pumpkin en el formulario */
@@ -292,9 +309,10 @@ h1{
 
 /* El texto para iniciar sesión */
 #iniciar{
-    color: #7A4186;
+    color: black;
     text-align: center;
     text-decoration: underline;
+    font-family: ;
 }
 
 /* El apartado para el usuario */
@@ -320,6 +338,20 @@ h1{
     margin-left: 30px;
     border-bottom: auto black;
     width: auto;
+}
+
+#inputUser::placeholder{
+    color: black;
+}
+
+#inputKey::placeholder{
+    color: black;
+}
+
+#recuperar{
+    margin-left: 30px;
+    color: rgb(0, 0, 180);
+    text-decoration: none;
 }
 
 /* Esto es para centrar el botón */
@@ -348,7 +380,7 @@ h1{
 #piedepagina{
     width: auto;
     height: 70px;
-    background: #FFFF80;
+    background: rgba(248, 231, 77, 0.699);
     display: flex;
     flex-direction: row;
     align-self: flex-end;
@@ -362,7 +394,7 @@ h1{
 /* Estos són los enlaces para el pie de página */
 #links{
     margin: 15px;
-    margin-left: 100px;
+    margin-left: 700px;
 }
 
 #links a{
