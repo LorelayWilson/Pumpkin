@@ -28,21 +28,20 @@
     <div id="mobil">
 
     <!-- La foto de la empresa -->
-    <div id="foto">
-        <img src="../app/img/logoGTI.svg" alt="Logo de la empresa">
-    </div>  
-
+    <a href="../index.html">
+        <img id="foto" src="../app/img/logoGTI.svg" alt="Logo de la empresa"> 
+    </a>
     <!-- La foto de Pumpkin -->
-    <img src="../app/img/imagenes-login/tecnologia-pumpkin.png" alt="Logo Pumpkin">
+    <img id="pumpkin" src="../app/img/imagenes-login/tecnologia-pumpkin.png" alt="Logo Pumpkin">
 
     <!-- Para los datos -->
     <div id="formularioMobil">
     <form action="app/index.html" method="post" onsubmit="enviar(event)" id="formKey">
-        <label for="inputKey"></label>
+        <label for="inputUser"></label>
         <input type="text" id="inputUser" placeholder="Usuario" name="Usuario" required><br>
         <label for="inputKey"></label>
         <input type="password" id="inputKey" placeholder="Contraseña" name="Contraseña" required>
-    
+
         <!-- Para enviar los datos -->
     <script>
         function enviar(evento) {
@@ -64,7 +63,7 @@
 
     <!-- El botón de envio -->
     <div id="centrarboton">
-        <button id="botonEscritorio" type="submit"> <p id="login">LOGIN</p></button>
+        <button id="botonMobil" type="submit"> <p id="login">LOGIN</p></button>
     </div>
     
     </div> <!-- Final formulario móviles -->
@@ -79,14 +78,15 @@
 
     <!-- La cabecera -->
     <header id="cabecera">
-        <img id="logoescritorio" src="../images/imagenes-login/logoGTI.png" alt="Logo de la empresa">
-        <nav class="menu">
+        <a href="../index.html">
+        <img id="logoescritorio" src="../app/img/logoGTI.svg" alt="Logo de la empresa">
+        </a>
+        <nav>
             <ul>
-                <li><a href="#" id="menusuperior">HOME</a></li>
-                <li><a href="#" id="menusuperior">QUIENES SOMOS</a></li>
-                <li><a href="#" id="menusuperior">PROYECTOS</a></li>
-                <li><a href="#" id="menusuperior">RESEÑAS</a></li>
-                <li><a href="#" id="menusuperior">CONTACTO</a></li>
+                <li><a href="#">QUIENES SOMOS</a></li>
+                <li><a href="#">PROYECTOS</a></li>
+                <li><a href="#">RESEÑAS</a></li>
+                <li><a href="#">CONTACTO</a></li>
             </ul>
         </nav>
     </header>
@@ -105,17 +105,15 @@
     <div id="formularioEscritorio"> 
         
         <!-- Texto que aparece encima -->
-        <h2>INICIAR SESIÓN</h2>
-        <img id="pumpkin" src="../images/imagenes-login/Pumpkin.png" alt="Logo Pumpkin">
+        <h1 id="iniciar">INICIAR SESIÓN</h1>
+        <img id="pumpkin" src="../app/img/imagenes-login/Pumpkin.png" alt="Logo Pumpkin">
         
         <!-- Para poner los datos -->
         <form action="app/index.html" method="post" onsubmit="enviar(event)" id="formKey">
-            <label for="inputKey"></label>
+            <label for="inputUser"></label>
             <input type="text" id="inputUser" placeholder="Usuario" name="Usuario" required><br>
             <label for="inputKey"></label>
             <input type="password" id="inputKey" placeholder="Contraseña" name="Contraseña" required>
-            
-        </form>
         
         <!-- Para enviar los datos-->
         <script>
@@ -147,7 +145,7 @@
     <footer id="piedepagina" role="contentinfo">
 
         <!-- Texto para el copy -->
-        <p>&copy; 2020 GTI Grado en Tecnologías Interactivas. Todos los derechos reservados.</p>
+        <p id="copy">&copy; 2020 GTI Grado en Tecnologías Interactivas. Todos los derechos reservados.</p>
         
         <!-- Los links del pie de página -->
         <div id="links">
