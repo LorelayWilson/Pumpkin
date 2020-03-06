@@ -264,6 +264,7 @@ MOBILE <= 966 px width
 	font-family: fantasy;
 	font-size: 3vw;
 	color: whitesmoke;
+	width: 40%;
 }
 
 .container_why_gti > img{
@@ -324,6 +325,10 @@ MOBILE <= 966 px width
 	margin: 70px 37.5% auto;
 }
 
+#contact_button:hover{
+ 	background-color: #fef7fe;
+ 	color: #292929;
+}
 
 
 @media(max-width: 966px){
@@ -344,5 +349,53 @@ MOBILE <= 966 px width
 		display: none;
 	}
 
+	.container_why_gti{
+		display: block; 
+		height: 100%;
+	}
+	.container_why_gti > h2{
+		margin-left: 30%;
+	}
+	.square_reason{
+		margin:60px 5%;
+	}
+	#tooTall{
+		margin-top: 90px; 
+	}
+}
 }
 
+@media(max-width: 900px){
+	.square_reason{
+		margin: 80px 20% auto; 
+	}
+}
+
+@media(max-width:590px){
+	.button{
+		position: absolute;
+		border-radius: 7px;
+		height: 55px;
+		width: 30%;
+		min-width: 25%;
+		text-align: center;
+	}
+	.logo{
+		margin-left: 30%;
+	}
+
+}
+@media(max-width:470px){
+	.logo{
+		margin-left: 26%; 
+	}
+
+
+}
+@media(max-width:405px){
+	.logo{
+		margin-left: 20%; 
+	}
+
+
+}
