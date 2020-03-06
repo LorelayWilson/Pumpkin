@@ -250,7 +250,7 @@ MOBILE <= 966 px width
 
 .container_why_gti{
 	height: 600px;
-	width: 100%
+	width: 100%;
 	border: 1px solid red;
 	position: relative;
 	background-image: url("../img/green_background.jfif");
@@ -260,6 +260,9 @@ MOBILE <= 966 px width
 }
 .container_why_gti > h2{
 	position: absolute;
+	font-family: fantasy;
+	font-size: 3vw;
+	color: whitesmoke;
 }
 
 .container_why_gti > img{
@@ -273,16 +276,16 @@ MOBILE <= 966 px width
 	margin-top:20%;
 	display: inline-block;
 	float: left;
+	font-family: Bahnschrift;
+	font-size: 1vw;
 	width: 350px;
 	height: 350px;
 	border: 1px solid red;
-}
-
 .square_reason>img{
 	width: 100%;
-	height: 50%
 	position:relative;
-	/*object-fit: cover;*/
+	height: 50%
+}
 }
 .square_reason>p{
 	position: absolute;
