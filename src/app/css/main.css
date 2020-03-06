@@ -61,6 +61,7 @@ MOBILE <= 966 px width
 
 }
 
+
 .navbar > ul{
 	list-style-type: none;
 	padding: 0;
@@ -186,45 +187,42 @@ MOBILE <= 966 px width
 }
 
 #budget_button:hover{
- 	background-color: #fef7fe;
+ 	background-color: #fae587;
  	color: #292929;
 }
 
 .landing_page_video{
 	position: relative;
 	display: inline-block;
-	height: 60%;
 	width: 40%;
-	min-width: 100px;
-	margin: 50px auto;
+
 	margin-right: 2%;
 	margin-left: 5%;
-	border: 0.1px solid black; /*por que afecta el borde del calltoaction a la distribucion del h1, h2..?*/
 	border-radius: 7px;
-	color: #292929;
-	font-size: 30px;
 	font-family: Arial;
 	text-align: center;
 	background-image: url("../img/video_template.jpg");
-	background-size: 100% 100%;
+	background-size: 40%;
 }
 #video_caption{
 	height: 30px;
 	width: 100%;
-	/*margin:auto 0;*/
-	background-color: #FDF4FD;
+	background-color: #fd5964;
 	opacity: 0.3;
 	border-radius: 3px;
 	display: inline-block;
 }
 
 .container_who_are_we{
-	height: 600px;
+	width: 100%;
+	background-size: contain;
+	border: 1px solid black;
 }
 
 .who_are_we_text_container{
 	display: inline-block;
-	position: absolute;
+	margin-top: 2%;
+	margin-bottom: 2%;
 	color: #292929;
 	font-family: Arial;
 	text-align: center;
@@ -250,10 +248,10 @@ MOBILE <= 966 px width
 }
 
 .container_why_gti{
-	height: 600px;
+	background-size: contain;
 	width: 100%;
 	border: 1px solid whitesmoke;
-	position: relative;
+
 	background-image: url("../img/green_background.jfif");
 	background-size: 100% 100%;
 	display: flex;
@@ -267,18 +265,13 @@ MOBILE <= 966 px width
 	width: 40%;
 }
 
-.container_why_gti > img{
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	position: relative;
-}
 
 .square_reason {
-	margin-top: 10%;
+	margin: 10% 1% 10% 1%;
 	display: inline-block;
 	background-size: contain;
 	width: 350px;
+
 	border: 1px solid black;
 	background-color: whitesmoke;
 	border-radius: 6px;
@@ -287,30 +280,29 @@ MOBILE <= 966 px width
 .square_reason>img{
 	margin: 10% 10% 10% 10%;
 	width: 80%;
-
-	background-color: #292929;
-	height: 50%
+	height: 50%;
 }
 
 .square_reason>p{
-	background: #292929;
 	font-family: Bahnschrift;
-	font-size: 1vw;
+	font-size: 1.5vw;
+	margin: 1%;
 }
 
 .container_contact{
-	height: 600px;
+	background-size: contain;
 	border: 1px solid black;
-	border-radius: 3px; 
+	border-radius: 3px;
+
 }
 
 .contact_text > p{
 	position: relative;
 
 	width: 80%;
-	margin: 180px 10% auto;
+	margin: 10% auto;
 	color: #292929;
-	font-size: 30px;
+	font-size: 3vw;
 	font-family: Arial;
 	text-align: center;
 }
@@ -320,9 +312,37 @@ MOBILE <= 966 px width
 	color:#292929;
 	border: 3px solid #ffde59;
 	font-family: Bahnschrift;
-	font-size: 18px;
+	font-size: 2vw;
 	font-weight: bold;
-	margin: 70px 37.5% auto;
+
+
+}
+
+.contact_button{
+	display: flex;
+	margin-top: 10%;
+	margin-bottom: 10%;
+	justify-content: center;
+	background-size: contain;
+}
+
+.footer{
+	background-size: contain;
+	background: rgba(0, 0, 0, 0.85);
+	color: whitesmoke;
+}
+
+.footer >  ul {
+
+	list-style: none;
+	text-decoration: none;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.footer >  ul > li > a{
+
+	color: whitesmoke;
 }
 
 #contact_button:hover{
