@@ -122,7 +122,7 @@
             function enviar(evento) {
                 evento.preventDefault();
         
-                fetch('api/v1.0/modelos/sesion', {
+                fetch('api/v1.0/sesion', {
                     method : 'post',
                     body : new FormData(document.getElementById('formKey'))
                 }).then(function (respuesta) {
@@ -137,9 +137,7 @@
 
         <a id="recuperar" href="#">Recupera tu contraseña</a>
 
-        <div id="centrarboton">
-            <button id="botonEscritorio" type="submit"> <p id="login">LOGIN</p></button>
-        </div>
+        
     </div> 
     <!-- Final formulario escritorio -->
 
