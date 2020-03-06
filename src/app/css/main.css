@@ -172,7 +172,6 @@ MOBILE <= 966 px width
 	height: 55px;
 	width: 25%;
 	min-width: 50px;
-	margin:auto 37.5%;
 	text-align: center;
 }
 
@@ -183,6 +182,7 @@ MOBILE <= 966 px width
 	font-family: Bahnschrift;
 	font-size: 18px;
 	font-weight: bold;
+	margin:auto 37.5%;
 }
 
 #budget_button:hover{
@@ -283,7 +283,7 @@ MOBILE <= 966 px width
 	border: 1px solid red;
 .square_reason>img{
 	width: 100%;
-	position:relative;
+	/*object-fit: cover;*/
 	height: 50%
 }
 }
@@ -291,6 +291,35 @@ MOBILE <= 966 px width
 	position: absolute;
 	display: block;
 }
+
+.container_contact{
+	height: 600px;
+	border: 1px solid black;
+	border-radius: 3px; 
+}
+
+.contact_text > p{
+	position: relative;
+
+	width: 80%;
+	margin: 180px 10% auto;
+	color: #292929;
+	font-size: 30px;
+	font-family: Arial;
+	text-align: center;
+}
+
+#contact_button{
+	background-color: #FFDE59;
+	color:#292929;
+	border: 3px solid #ffde59;
+	font-family: Bahnschrift;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 70px 37.5% auto;
+}
+
+
 
 @media(max-width: 966px){
 	.navbar > ul{
