@@ -274,14 +274,15 @@ nav ul li a{
     display: flex;
     width: 600px;
     margin-top: 100px;
-    margin-left: 200px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 /* La letra del texto anterior */
 h1{
     color: black;
     opacity: 70%;
-    text-align: justify;
+    text-align: left;
     text-size-adjust: 100px;
     font-size: 50px;
 }
@@ -295,6 +296,8 @@ h1{
     margin: 20px;
     margin-top: 90px;
     margin-bottom: 70px;
+    margin-right: 10%;
+    margin-left: 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -312,7 +315,7 @@ h1{
     color: black;
     text-align: center;
     text-decoration: underline;
-    font-family: ;
+    font-family: Calibri;
 }
 
 /* El apartado para el usuario */
@@ -379,7 +382,7 @@ h1{
 /* Esto será el pie de página */
 #piedepagina{
     width: auto;
-    height: 70px;
+    height: 10%;
     background: rgba(248, 231, 77, 0.699);
     display: flex;
     flex-direction: row;

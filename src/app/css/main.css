@@ -228,20 +228,24 @@ MOBILE <= 966 px width
 	color: #292929;
 	font-family: Arial;
 	text-align: center;
-	height:290px;
 	margin-left: 10%;
 	width: 35%;
+	background-size: contain;
 	background-color: rgba(217, 77, 169, 0.1);
-
+	border-radius: 8px;
 }
 
 #who_are_we_title{
-	font-size: 24px;
+	font-size: 3vw;
 	opacity: 1;
+	font-family: fantasy;
 }
 
 #who_are_we_description{
-	font-size: 20px;
+	font-size: 1.5vw;
+	font-family: Bahnschrift;
+	margin: 10px;
+	text-align: justify;
 }
 
 
