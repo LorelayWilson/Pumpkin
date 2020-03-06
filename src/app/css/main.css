@@ -193,7 +193,7 @@ MOBILE <= 966 px width
 .landing_page_video{
 	position: relative;
 	display: inline-block;
-	height: 40%;
+	height: 60%;
 	width: 40%;
 	min-width: 100px;
 	margin: 50px auto;
@@ -209,7 +209,7 @@ MOBILE <= 966 px width
 	background-size: 100% 100%;
 }
 #video_caption{
-	height: 15px;
+	height: 30px;
 	width: 100%;
 	/*margin:auto 0;*/
 	background-color: #FDF4FD;
@@ -273,12 +273,21 @@ MOBILE <= 966 px width
 	margin-top:20%;
 	display: inline-block;
 	float: left;
-	width: 150px;
-	height: 150px;
-
-	/*position: absolute;*/
+	width: 350px;
+	height: 350px;
+	border: 1px solid red;
 }
 
+.square_reason>img{
+	width: 100%;
+	height: 50%
+	position:relative;
+	/*object-fit: cover;*/
+}
+.square_reason>p{
+	position: absolute;
+	display: block;
+}
 
 @media(max-width: 966px){
 	.navbar > ul{
