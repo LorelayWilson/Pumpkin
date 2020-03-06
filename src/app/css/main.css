@@ -233,6 +233,7 @@ MOBILE <= 966 px width
 	background-size: contain;
 	background-color: rgba(217, 77, 169, 0.1);
 	border-radius: 8px;
+	box-shadow: 5px 10px #292929;
 }
 
 #who_are_we_title{
@@ -251,7 +252,7 @@ MOBILE <= 966 px width
 .container_why_gti{
 	height: 600px;
 	width: 100%;
-	border: 1px solid red;
+	border: 1px solid whitesmoke;
 	position: relative;
 	background-image: url("../img/green_background.jfif");
 	background-size: 100% 100%;
@@ -272,24 +273,28 @@ MOBILE <= 966 px width
 	position: relative;
 }
 
-.square_reason{
-	margin-top:20%;
+.square_reason {
+	margin-top: 10%;
 	display: inline-block;
-	float: left;
-	font-family: Bahnschrift;
-	font-size: 1vw;
+	background-size: contain;
 	width: 350px;
-	height: 350px;
-	border: 1px solid red;
+	border: 1px solid black;
+	background-color: whitesmoke;
+	border-radius: 6px;
+	box-shadow: 5px 10px #292929;
+}
 .square_reason>img{
-	width: 100%;
-	/*object-fit: cover;*/
+	margin: 10% 10% 10% 10%;
+	width: 80%;
+
+	background-color: #292929;
 	height: 50%
 }
-}
+
 .square_reason>p{
-	position: absolute;
-	display: block;
+	background: #292929;
+	font-family: Bahnschrift;
+	font-size: 1vw;
 }
 
 .container_contact{
