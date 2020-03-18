@@ -1,110 +1,173 @@
-	<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="app/css/main.css">
-    <title>GTI</title>
+	<title>GTI - Grado en Tecnologías Interactivas</title>
 </head>
 
 <body>
-	<div class="header">
 
-		<div class="menu_button"><img src="app/img/menu_button.png"></div>
-		<div class="logo"><img src="app/img/logoGTI2.svg"></div>
-		<nav class="navbar">
+	<!-- HEADER -->
+	<header>
+		<img src="app/img/logo.svg" alt="Logo de GTI" class="logo"> <!-- LOGO -->
+		<nav>
 			<ul>
-				<li><a href="#">QUIÉNES SOMOS</a></li>
-				<li><label>|</label></li>
-				<li><a href="#">PROYECTOS</a></li>
-				<li><label>|</label></li>
-				<li><a href="#">CONTACTO</a></li>
-				<li><label>|</label></li>
-				<li><a href="#">FAQ</a></li>
+				<li><a href="#">Quiénes somos</a></li>
+				<li><a href="#">Por qué elegirnos</a></li>
+				<li><a href="#">Parámetros</a></li>
+				<li><a href="#">Contacto</a></li>
+				<li class="login-button"><a href="#">Iniciar sesión</a></li>
 			</ul>
 		</nav>
-		<div class="login"><a href="app/index.html">Iniciar sesión</a></div>
-	</div>
-<!-------------- </ CABECERA >----------------->
+			<img src="app/img/menu.png" class="access-nav" > <!-- MENU BURGER LINES -->
+	</header>
+	<!-- // -->
 
-<!-------------- < CALL TO ACTION > ------------>
-	<section class="landing_page_calltoaction">
-<!-- 		<img class="landing_page_calltoaction_img" src="app/img/grassland.jpg" alt="grassland"> -->
-		<h1 class="heading">Monitoriza tus campos.</h1>
-		<h2 class="subheading">Descubre nuestras sondas de última tecnología<span class="landing_page_calltoaction_fullstop">.</span></h2> <!-- Esto solo es para poner punto final color lila -->
-		<button class="button" id="budget_button">PEDIR PRESUPUESTO</button>
+	<!-- LANDINGPAGE: -->
 
+	<!-- MAIN SECTION "HELLO" --> 
+	<section class="hello-container">
+<!--  		<img src="app/img/agua-blanco.png" alt="Mujer con sombrero">  --><!-- HELLO BACKGROUND -->
+		<div class="hello-title">
+			<h1 class="title">Monitoriza tus campos.</h1>
+			<h2>Descubre nuestras sondas de alta tecnología.</h2>
+		</div>
+
+		<div class="hello-calltoaction">
+			<button class="full">CONSULTAR</button>
+			<button class="empty login-button">INICIAR SESIÓN</button>
+		</div>
+		<div class="arrow-down">
+			<a href="#"><img src="app/img/flecha-blanca.png" alt="Flecha bajar"></a> <!-- ARROW DOWN -->
+		</div>
 	</section>
-<!-------------- </ CALL TO ACTION > ------------>
+	<!-- // -->
 
-<!-------------- < QUIENES SOMOS > -------------->
-	<section class="container_who_are_we">
-		<div class="landing_page_video"><span id="video_caption">Video promocional GTI.</span></div>
-		<div class="who_are_we_text_container">
-			<div id="who_are_we_title"><h3>¿Quiénes somos?</h3></div>
-			<div id="who_are_we_description">
-				<p>
-				Grado en Tecnologías Interactivas es una empresa que se preocupa por el pequeño y gran agricultor para optimizar el mantenimiento de sus cultivos.
-					<br><br>Se hace uso de unos avanzados sensores con la tecnología PUMPKIN con los cuales somos capaces de conocer las condiciones ambientales de las cosechas y de informar al agricultor de cualquier anomalía que pueda afectar a la producción.
-				</p>
+	<!-- WHO ARE WE SECTION "WHO" -->
+	<section class="who-container">
+		<div class="who-text-container">
+			<h1 class="title">¿Quiénes somos?</h1>
+			<article>
+				Grado en Tecnologías Interactivas es una empresa que se preocupa por optimizar el mantenimiento de tus cultivos.<br>Usamos sensores avanzados con la tecnología PUMPKIN para conocer las condiciones de las cosechas y de informar al agricultor de cualquier anomalía que pueda afectar a la producción.
+			</article>
+		</div>
+		<div class="separator"></div> <!-- SEPARATOR -->
+		<!-- <div class="video-container"> -->
+			<img class="video"src="app/img/video.jpg" alt="Clickbyte de video promocional"> <!-- VIDEO TEMPLATE (TEMPORARY) -->
+		<!-- </div>  -->
+		<div class="arrow-down">
+			<a href="#"><img src="app/img/flecha-blanca.png" alt="Flecha bajar"></a> <!-- ARROW DOWN -->
+		</div>
+	</section>
+	<!-- // -->
+
+	<!-- WHY US SECTION "WHY" -->
+	<section class="why-container">
+		<!-- <img src="#" alt="Campo de trigo"> --><!-- BACKGROUND -->
+		<h1 class="title">¿Por qué elegirnos?</h1>
+
+		<div class="why-text-container1">
+			<div class="why-text">
+				<p>Monitorización de cultivos en todo tipo de zonas.</p>
+			</div>
+			<div class="why-text">
+				<div class="separator"></div> <!-- SEPARATOR -->
+			</div>
+			<div class="why-text">
+				<p>Soporte técnico y garantía.</p>
+			</div>
+			<div class="why-text">
+				<div class="separator"></div> <!-- SEPARATOR -->
 			</div>
 		</div>
 
-		
+		<div class="why-text-container2">
+			<div class="why-text">
+				<p>Incremento de productividad en el sector agrario.</p>
+			</div>
+			<div class="why-text">
+				<div class="separator"></div> <!-- SEPARATOR -->
+			</div>
+			<div class="why-text">
+				<p>Compromiso con el medioambiente.</p>
+			</div>			
+		</div>
+
+		<div class="arrow-down">
+			<a href="#"><img src="app/img/flecha-blanca.png" alt="Flecha bajar"></a> <!-- ARROW DOWN -->
+		</div>
 	</section>
+	<!-- // -->
 
-<!------------- < POR QUE GTI > ---------------->
-	<section class="container_why_gti">
-		<h2>¿Por qué elegirnos?</h2>
-		<!-- <img src="app/img/green_background.jfif" alt="green background"> -->
+	<!-- DATA PARAMETERS SECTION "DATA" -->
+	<section class="data-container">
+		<!-- <img src="app/img/leafes.png" alt="Hojas verdes"> --> <!-- BACKGROUND -->
+		<h1 class="title">Controla tus datos:</h1>
 
-		<div class="square_reason">
-			<img src="app/img/sheep.jfif">
-			<p>Monitorización de cultivos en todo tipo de zonas.</p>
-		</div>
-		<div class="square_reason" id="tooTall">
-			<img src="app/img/handshake.jfif">
-			<p>Soporte técnico y garantía.</p>
-		</div>
-		<div class="square_reason">
-			<img src="app/img/field.jfif">
-			<p>Incremento de la productividad en el sector agrario.</p>
-		</div>
-		<div class="square_reason">
-			<img src="app/img/bike.jfif">
-			<p>Compromiso con el medioambiente y cero contaminación</p>
+		<div class="data-text">
+			<div class="icon-box">
+				<h4>HUMEDAD</h4>
+				<img src="app/img/agua-blanco.png" alt="icono gotas">
+			</div>
+			<div class="icon-box">
+				<h4>SALINIDAD</h4>
+				<img src="app/img/sal-blanco.png" alt="icono salero">
+			</div>
+
+			<div class="icon-box">
+				<h4>TEMPERATURA</h4>
+				<img src="app/img/termometro-blanco.png" alt="icono termometro">
+			</div>
+
+			<div class="icon-box">
+				<h4>LUMINOSIDAD</h4>
+				<img src="app/img/nubes-y-sol-blanco.png" alt="icono sol y nubes">
+			</div>
+
+			<div class="icon-box">
+				<h4>GPS</h4>
+				<img src="app/img/mapa-blanco.png" alt="icono mapa">
+			</div>
+
+			<div class="icon-box">
+				<h4>ANTIRROBO</h4>
+				<img src="app/img/proteger-blanco.png" alt="icono escudo">
+			</div>
 		</div>
 
+		<div class="arrow-down">
+			<a href="#"><img src="app/img/flecha-blanca.png" alt="Flecha bajar"></a> <!-- ARROW DOWN -->
+		</div>
 	</section>
+	<!-- // -->
 
-<!------------- </ POR QUE GTI > ---------------->
+	<!-- CONTACT SECTION "CONTACT" -->
+	<section class="contact-container">
+		<!-- <img src="#" alt="Joven agricultor sonriendo"> --> <!-- CONTACT IMAGE -->
+		<div class="contact-text-container">
+			<h1 class="title">Nadie nace sabiéndolo todo.</h1>
+			<h3>Por eso, queremos estar ahí para ayudarte con cada paso.</h3>
+			<button class="empty">CONTACTAR</button>
+		</div>
+	</section>
+	<!-- // -->
 
-<!-------------- < CONTACTO > ----------------->
-<section class="container_contact">
-
-	<div class="contact_text">
-		<p>Nadie sabiendo de todo.<br>Por eso, queremos estar ahí para ayudarte con cada	 paso.</p>
-	</div>
-	<div class="contact_button"><button class="button" id="contact_button">CONTACTAR</button></div>
-</section>
-<!-------------- </ CONTACTO > ----------------->
-
-	<footer class="footer" role="contentinfo">
-
-		<p>&copy; 2020 Grado en Tecnologías Interactivas. Todo los derechos reservados</p>
-
-		<ul>
-			<li><a href="#">Facebook</a></li>
-			<li><a href="#">Twitter</a></li>
-			<li><a href="#">Youtube</a></li>
-
-		</ul>
+	<!-- FOOTER -->
+	<footer>
+		<img src="#" alt="Logo de GTI versión blanca" class="logo"> <!-- LOGO (WHITE) -->
+		<nav>
+			<ul>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
+				<li><a href="#">Link 3</a></li>
+			</ul>
+		</nav>
 	</footer>
-
-
-	<a href="#" class="ir_arriba">Ir arriba</a>
+	<!-- // --> 
 
 </body>
-
 </html>
