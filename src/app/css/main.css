@@ -77,6 +77,7 @@ h1,h2,h3,h4{
 	border: 5px solid #292929; 
 	font-family:'Poppins', sans-serif;
 	font-weight: 300;
+	width: 
 
 }
 
@@ -267,6 +268,11 @@ section{
 .icon-box img{
 	height: 70px;
 	width: 70px;
+}
+
+/*------SECTION CONTACT------*/
+.contact-container h3{
+	font-weight: 300;
 }
 
 
