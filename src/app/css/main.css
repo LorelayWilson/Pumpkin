@@ -362,8 +362,10 @@ MOBILE <= 966 px width
 	#tooTall{
 		margin-top: 90px; 
 	}
+	
+
 }
-}
+
 
 @media(max-width: 900px){
 	.square_reason{
