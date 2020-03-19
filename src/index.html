@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1437242e61.js" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="app/css/main.css">
 	<title>GTI - Grado en Tecnologías Interactivas</title>
@@ -14,23 +15,34 @@
 	<!-- HEADER -->
 	<header>
 		<img src="app/img/logo.svg" alt="Logo de GTI" class="logo"> <!-- LOGO -->
+<!-- 		<input type="checkbox" id="chk">
+		<label for="chk" class="show-menu-btn">
+			<i class="fas fa-bars"></i>
+		</label> -->
 		<nav>
-			<ul>
-				<li><a href="#">Quiénes somos</a></li>
-				<li><a href="#">Por qué elegirnos</a></li>
-				<li><a href="#">Parámetros</a></li>
-				<li><a href="#">Contacto</a></li>
-				<li class="login-button"><a href="#">Iniciar sesión</a></li>
+			<input type="checkbox" id="check">
+			<label for="check" class="check-btn">
+				<i class="fas fa-bars"></i> <!-- MENU BURGER LINES -->
+			</label>
+			<ul class="menu">
+				<li class="login-option"><a href="#">Iniciar sesión</a></li>
+				<li><a href="#HELLO">Inicio</a></li>
+				<li><a href="#WHO">Quiénes somos</a></li>
+				<li><a href="#WHY">Por qué elegirnos</a></li>
+				<li><a href="#DATA">Parámetros</a></li>
+				<li><a href="#CONTACT">Contacto</a></li>
+			<!-- 	<label for="chk" class="hide-menu-btn">
+					<i class="fas fa-times"></i> 
+				</label> -->
 			</ul>
 		</nav>
-			<img src="app/img/menu.png" class="access-nav" > <!-- MENU BURGER LINES -->
 	</header>
 	<!-- // -->
 
 	<!-- LANDINGPAGE: -->
 
 	<!-- MAIN SECTION "HELLO" --> 
-	<section class="hello-container">
+	<section class="hello-container" id="HELLO">
 <!--  		<img src="app/img/agua-blanco.png" alt="Mujer con sombrero">  --><!-- HELLO BACKGROUND -->
 		<div class="hello-title">
 			<h1 class="title">Monitoriza tus campos.</h1>
@@ -41,24 +53,26 @@
 			<button class="full">CONSULTAR</button>
 			<button class="empty login-button">INICIAR SESIÓN</button>
 		</div>
-		<div class="arrow-down">
+		<div class="arrow-down hello-img">
 			<a href="#"><img src="app/img/flecha-blanca.png" alt="Flecha bajar"></a> <!-- ARROW DOWN -->
 		</div>
 	</section>
 	<!-- // -->
 
 	<!-- WHO ARE WE SECTION "WHO" -->
-	<section class="who-container">
+	<section class="who-container" id="WHO">
+		<h1 class="title">¿Quiénes somos?</h1>
+		<div class="cont">
 		<div class="who-text-container">
-			<h1 class="title">¿Quiénes somos?</h1>
 			<article>
 				Grado en Tecnologías Interactivas es una empresa que se preocupa por optimizar el mantenimiento de tus cultivos.<br>Usamos sensores avanzados con la tecnología PUMPKIN para conocer las condiciones de las cosechas y de informar al agricultor de cualquier anomalía que pueda afectar a la producción.
 			</article>
 		</div>
-		<div class="separator"></div> <!-- SEPARATOR -->
-		<!-- <div class="video-container"> -->
+		<!-- <div class="separator"></div> --> <!-- SEPARATOR -->
+		<div class="video-container">
 			<img class="video"src="app/img/video.jpg" alt="Clickbyte de video promocional"> <!-- VIDEO TEMPLATE (TEMPORARY) -->
-		<!-- </div>  -->
+		</div>
+		</div> 
 		<div class="arrow-down">
 			<a href="#"><img src="app/img/flecha-blanca.png" alt="Flecha bajar"></a> <!-- ARROW DOWN -->
 		</div>
@@ -66,7 +80,7 @@
 	<!-- // -->
 
 	<!-- WHY US SECTION "WHY" -->
-	<section class="why-container">
+	<section class="why-container" id="WHY">
 		<!-- <img src="#" alt="Campo de trigo"> --><!-- BACKGROUND -->
 		<h1 class="title">¿Por qué elegirnos?</h1>
 
@@ -104,7 +118,7 @@
 	<!-- // -->
 
 	<!-- DATA PARAMETERS SECTION "DATA" -->
-	<section class="data-container">
+	<section class="data-container" id="DATA">
 		<!-- <img src="app/img/leafes.png" alt="Hojas verdes"> --> <!-- BACKGROUND -->
 		<h1 class="title">Controla tus datos:</h1>
 
@@ -146,28 +160,42 @@
 	<!-- // -->
 
 	<!-- CONTACT SECTION "CONTACT" -->
-	<section class="contact-container">
-		<img src="#" alt="Joven agricultor sonriendo"> <!-- CONTACT IMAGE -->
+	<section class="contact-container" id="CONTACT">
+		<div class="contact-img"></div> <!-- BACKGROUND IMG CONTAINER -->
 		<div class="contact-text-container">
 			<h1 class="title">Nadie nace sabiéndolo todo.</h1>
 			<h3>Por eso, queremos estar ahí para ayudarte con cada paso.</h3>
 			<button class="empty">CONTACTAR</button>
 		</div>
-	</section>
+
+	<!-- FOOTER - inside contact section --> 
+		<!--<footer>
+			<img src="app/img/logo-white.png" alt="Logo de GTI versión blanca" > 
+			<nav>
+				<ul>
+					<li><a href="#">Link 1</a></li>
+					<li>|</li>
+					<li><a href="#">Link 2</a></li>
+					<li>|</li>
+					<li><a href="#">Link 3</a></li>
+				</ul>
+			</nav>
+		</footer>-->
 	<!-- // -->
 
-	<!-- FOOTER -->
+	</section>
+	<!-- // -->
 	<footer>
-		<img src="#" alt="Logo de GTI versión blanca" class="logo"> <!-- LOGO (WHITE) -->
+		<img src="app/img/logo-white.png" alt="Logo de GTI versión blanca" > <!-- LOGO (WHITE) -->
 		<nav>
 			<ul>
 				<li><a href="#">Link 1</a></li>
+				<li>|</li>
 				<li><a href="#">Link 2</a></li>
+				<li>|</li>
 				<li><a href="#">Link 3</a></li>
 			</ul>
 		</nav>
 	</footer>
-	<!-- // --> 
-
 </body>
 </html>
