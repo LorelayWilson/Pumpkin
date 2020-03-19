@@ -3,162 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login GTI - Grado en Tecnologías Interactivas</title>
    
-    <link rel="stylesheet" href="css/style-login.css"/>
+    <link rel="stylesheet" href="css/login.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     
-    <style>
-
-       
-    </style>
 </head>
 
 
-<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
 <body>
-
-    <!-- Para móbiles-->
-
-    <!-- El nombre de la versión -->
-    <div id="mobil">
-
-    <!-- La foto de la empresa -->
-    <a href="../index.html">
-        <img id="foto" src="../app/img/logoGTI.svg" alt="Logo de la empresa"> 
-    </a>
-    <!-- La foto de Pumpkin -->
-    <img id="pumpkin" src="../app/img/imagenes-login/tecnologia-pumpkin.png" alt="Logo Pumpkin">
-
-    <!-- Para los datos -->
-    <div id="formularioMobil">
-    <form action="app/index.html" method="post" onsubmit="enviar(event)" id="formKey">
-        <label for="inputUser"></label>
-        <input type="text" id="inputUser" placeholder="Usuario" name="user" required><br>
-        <label for="inputKey"></label>
-        <input type="password" id="inputKey" placeholder="Contraseña" name="password" required>
-
-        <!-- Para enviar los datos -->
-    <script>
-        function enviar(evento) {
-            evento.preventDefault();
     
-            fetch('api/v1.0/modelos/sesion', {
-                method : 'post',
-                body : new FormData(document.getElementById('formKey'))
-            }).then(function (respuesta) {
-                if (respuesta.status == 200){
-                    location.href = './app';
-                } else {
-    
-                }
-            });
-        }
+  <!-- HEADER -->
+	<header>
+		<img src="img/logo.svg" alt="Logo de GTI" class="logo"> <!-- LOGO -->
+		<nav>
+			<ul>
+				<li><a href="#">Quiénes somos</a></li>
+				<li><a href="#">Por qué elegirnos</a></li>
+				<li><a href="#">Parámetros</a></li>
+				<li><a href="#">Contacto</a></li>
+				<li class="login-button"><a href="#">Iniciar sesión</a></li>
+			</ul>
+		</nav>
+			<img src="img/menu.png" class="access-nav" > <!-- MENU BURGER LINES -->
+	</header>
+	<!-- // -->
+
+	<!-- LOGIN: -->
+  
+    <div class = "login-text-container">
         
-    </script><br>
-
-    <a id="recuperarMobil" href="#">Recupera tu contraseña</a>
-
-    <!-- El botón de envio -->
-    <div id="centrarboton">
-        <button id="botonMobil" type="submit"> <p id="login">LOGIN</p></button>
+        
+        <!-- Formulario para entrar a la app -->
+        
+           
+            <h1 class="login">INICIAR SESIÓN</h1>
+            
+            <form action="index.html" method="post" onsubmit="enviar(event)" id="login"> <!-- Creamos el cuadro donde se escribirá el usuario -->
+            
+            <input type="text" placeholder="Usuario" id="inputUser" name="User" required>
+            <input type="password" placeholder="Contraseña" id="inputKey" name="Key" required>
+            </form>
+            
+       
+        
+        
+        <a href="#">Recupera tu contraseña</a>
+        <button class="full" type="button">ENTRAR</button>
+        
     </div>
-    
-    </div> <!-- Final formulario móviles -->
-
-    </div> <!-- Final versión móviles-->
-
-<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <!-- Para tablets y escritorio --> 
-
-    <!-- La cabecera -->
-    <header id="cabecera">
-        <a href="../index.html">
-        <img id="logoescritorio" src="../app/img/logoGTI.svg" alt="Logo de la empresa">
-        </a>
-        <nav>
-            <ul>
-                <li><a href="#">QUIENES SOMOS</a></li>
-                <li><a href="#">PROYECTOS</a></li>
-                <li><a href="#">RESEÑAS</a></li>
-                <li><a href="#">CONTACTO</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- Final de la cabecera -->
-
-    <!-- La versión de tablet/escritorio -->
-    <div id="escritorio">
-     
-    <!-- El texto -->
-    <div id="textoVigila">
-        <h1>VIGILA TUS CULTIVOS DESDE LA COMODIDAD DE TU CASA</h1> <!-- Texto de relleno -->
-    </div>
-    <!-- Final del texto -->
-
-    <!-- Formulario para el envio de datos -->
-    <div id="formularioEscritorio"> 
         
-        <!-- Texto que aparece encima -->
-        <h1 id="iniciar">INICIAR SESIÓN</h1>
-        <img id="pumpkin" src="../app/img/imagenes-login/pumpkin.png" alt="Logo Pumpkin">
-        
-        <!-- Para poner los datos -->
-        <form action="app/index.html" method="post" onsubmit="enviar(event)" id="formKey">
-            <label for="inputUser"></label>
-            <input type="text" id="inputUser" placeholder="Usuario" name="user" required><br>
-            <label for="inputKey"></label>
-            <input type="password" id="inputKey" placeholder="Contraseña" name="password" required>
-        
-        <!-- Para enviar los datos-->
-        <script>
-            function enviar(evento) {
-                evento.preventDefault();
-        
-                fetch('api/v1.0/sesion', {
-                    method : 'post',
-                    body : new FormData(document.getElementById('formKey'))
-                }).then(function (respuesta) {
-                    if (respuesta.status == 200){
-                        location.href = './app';
-                    } else {
-        
-                    }
-                });
-            }
-        </script>
-
-        <a id="recuperar" href="#">Recupera tu contraseña</a>
-
-        
-    </div> 
-    <!-- Final formulario escritorio -->
-
-    </div> 
-    <!-- Final escritorio-->
-
-    <!-- El pie de página -->
-    <footer id="piedepagina" role="contentinfo">
-
-        <!-- Texto para el copy -->
-        <p id="copy">&copy; 2020 GTI Grado en Tecnologías Interactivas. Todos los derechos reservados.</p>
-        
-        <!-- Los links del pie de página -->
-        <div id="links">
-        <a href="#">Mapa del sitio</a>
-        <a href="#">Español</a> <!-- En realidad, "español" no será un link, sino un menú para los idiomas, pero como aún no lo vamos ha hacer, de momento será un link para hacernos a la idea -->
-        </div>
-        <!-- Final de los links -->
-
-    </footer>
-    <!-- Final del pie de página -->
-
+      
 </body>
 </html>
