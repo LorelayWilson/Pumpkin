@@ -438,7 +438,7 @@ section{
 
 }
 
-.why-container > .why-text-container1{
+.why-container  .why-text-container1{
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -446,7 +446,7 @@ section{
 	text-align: center;
 	align-items: center;
 }
-.why-container > .why-text-container2{
+.why-container .why-text-container2{
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -521,6 +521,121 @@ section{
 	height: 70px;
 	width: 70px;
 }
+
+
+/*------ MERGED SECTIONS (WHY / DATA) ------*/
+@media (min-width:720px){
+
+	.hide-arrow, .hide-separator{
+		display: none;
+	}
+	
+
+	.why-container{
+		background-image: none;
+		flex-grow: 1;
+	}
+
+	.why-container .why-text-container-all{
+		height: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: stretch; 
+		flex-wrap: nowrap;
+	}
+
+	.why-container .why-text-container1 .why-text{
+		margin: 10px;
+		font-size: 16px;
+		
+	}
+
+	.why-container .why-text-container2 .why-text{
+		margin: 10px;
+		font-size: 16px;
+				
+	}
+
+	.data-container{
+		background-size: 100% auto;
+		background-position: 0 30%;
+	}
+
+	.data-text{
+		margin: 20px 0;
+		padding: 20px 20px ;
+		height: auto;
+	}
+
+	.icon-box{
+
+		height: 90px;
+		width: 90px; 
+		margin: 10px;
+		display: flex;
+		flex-wrap: wrap;
+		text-align: center;
+		justify-content: space-around;
+	}
+	.icon-box h4{
+		font-size: 16px;
+		font-weight: 300;
+		width: 100%;
+		color: #fafafa;
+		margin: 0 0;
+	}
+	.icon-box img{
+		flex-wrap: nowrap;
+		height: 60px;
+		width: 60px;
+	}
+
+	.why-container, .data-container{
+		height: 50%;
+		padding: 0;
+		margin: 0;
+	}
+	.why-container .title, .data-container .title{
+		font-size: 28px;
+		font-weight: 400;
+		margin-top: 40px;
+	}
+	
+}
+/*.data-text{
+	padding:15px;
+	height:100%; 
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap; 
+	justify-content: space-between;
+	align-content: center;
+}
+
+.icon-box{
+	height:100px;
+	width: 100px; 
+	margin: 5%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+
+.icon-box h4{
+	font-size: 16px;
+	font-weight: 300;
+	width: 100%;
+	color: #fafafa;
+	margin: 0 100%;
+}
+.icon-box img{
+	height: 70px;
+	width: 70px;
+}*/
+
 
 /*------SECTION CONTACT------*/
 .contact-container{
