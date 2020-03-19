@@ -1,0 +1,29 @@
+
+
+
+@media screen and (min-width: 600px){
+    
+  
+}
+
+*{
+  margin: 0;
+  padding: 0;
+   
+} 
+html, body{
+
+   
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+body{
+     background-image: url("../img/login.png"); 
+    background-size: cover;
+
+	min-height: 100vh;
+}
