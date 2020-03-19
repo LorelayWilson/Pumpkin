@@ -1,412 +1,93 @@
- /* Para que no haga márgenes con el buscador */
- html, body{
-    margin: 0;
-}
-/* Para móbiles */
+*{
+  margin: 0;
+  padding: 0;
+   
+} 
+html, body{
 
-/* Desactivamos todas las versiones */
-#escritorio {display: none;}
-#cabecera {display: none;}
-#piedepagina {display: none;}
+   
 
-/* Activamos la versión para móviles */
-#mobil {
-    margin: 0;
-    background: #FDF4FD;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    }
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-/* Este es el logo de la empresa */
-#foto{
-    margin-top: 70px;
-    margin-bottom: 70px;
-    display: flex;
-    justify-content: flex-end;
-    max-width: 400px;
-    height: auto;
 }
 
-/* Este es el logo de Pumpkin */
-img{
-    display:block;
-    margin:auto;
-    max-width: 100%;
-}
-
-/* El formulario para introducir el usuario y la contraseña */
-#formularioMobil{
-    margin: 50px auto;
-    width: 375px;
-    
-}
-
-/* El apartado para el usuario */
-#inputUser{
-    width: 300px;
-    border: 0;
-    background-color: #FDF4FD;
-    border-bottom: 2px solid black;
-    margin-top: 70px;
-    margin-left: 10px;
-    font-size: 20px;
-}
-
-/* El apartado para la contraseña */
-#inputKey{
-    width: 300px;
-    border: 0;
-    background-color: #FDF4FD;
-    border-bottom: 2px solid black;
-    margin-top: 50px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    font-size: 20px;
-}
-
-#recuperarMobil{
-    margin-top: 50px;
-    margin-left: 15px;
-    color: rgb(0, 0, 180);
-    text-decoration: none;
-}
-
-/* El botón para enviar los datos */
-#botonMobil{
-    width: 375px;
-    height: 75px;
-    margin-top: 70px;
-    background: #8400FF;
-    border-radius: 4px;
-}
-
-/* El texto que aparece en el botón anterior */
-#login{
-    color: white;
-    font-size: 25px;
-}
-/* Aquí termina el diseño de la versión para móviles */
-
-/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-
-/* Para tablets (es igual que para la versión de escritorio) */
-/* @media es una "condición" para que se active otra versión distinta a la actual (es decir, para que pase de móvil a tables o escritorio) */
-@media only screen and (min-width: 600px) {
-
-#escritorio {display: none}
-#cabecera {display: none;}
-#piedepagina {display: none;}
-
-/* Activamos la versión para móviles */
-#mobil {
-    margin: 0;
-    background: #FDF4FD;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    }
-
-/* Este es el logo de la empresa */
-#foto{   
-    margin-top: 100px;
-    margin-bottom: 70px;
-    display: flex;
-    justify-content: flex-end;
-    max-width: auto;
-    max-height: 700px;
-}
-
-/* Este es el logo de Pumpkin */
-#pumpkin{
-    display: block;
-    margin:auto;
-    max-width: 800%;
-    height: auto;
-}
-
-/* El formulario para introducir el usuario y la contraseña */
-#formularioMobil{
-    margin: 50px auto;
-    width: 768px;
-    display: flex;
-    justify-content: center;
-    
-}
-
-/* El apartado para el usuario */
-#inputUser{
-    width: 500px;
-    height: 50px;
-    border: 0;
-    background-color: #FDF4FD;
-    border-bottom: 2px solid black;
-    margin-top: 70px;
-    margin-left: 10px; 
-}
-
-/* El apartado para la contraseña */
-#inputKey{
-    width: 500px;
-    height: 50px;
-    border: 0;
-    background-color: #FDF4FD;
-    border-bottom: 2px solid black;
-    margin-top: 70px;
-    margin-left: 10px; 
-    margin-bottom: 30px;
-}
-
-#inputUser::placeholder{
-    font-size: 25px;
-}
-
-#inputKey::placeholder{
-    font-size: 25px;
-}
-
-#recuperarMobil{
-    margin-top: 100px;
-    margin-left: 10px;
-    color: rgb(0, 0, 180);
-    text-decoration: none;
-    font-size: 20px;
-}
-
-/* El botón para enviar los datos */
-#botonMobil{
-    width: 750px;
-    height: 100px;
-    margin-top: 70px;
-    background: #8400FF;
-    border-radius: 4px;
-    margin-left: 0;
-}
-
-/* El texto que aparece en el botón anterior */
-#login{
-    color: white;
-    font-size: 35px;
-}
-}
-/* Final del diseño para tablets */
-
-
-/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-
-/* Para escritorio */
-@media only screen and (min-width: 1165px) {
-
-/* Activamos la versión de escritorio */
-#escritorio { 
-    /* Para el fondo */
-    background-image: url("../img/imagenes-login/cultivos.png");
-    background-repeat: no-repeat;
+body{
+     background-image: url("../img/login.png"); 
     background-size: cover;
 
-    /* Para el contenido*/
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    }
-
-/* Desactivamos la versión móvil*/    
-#mobil {display: none;} 
-
-/* Esta será nuestra cabecera */
-#cabecera{
-    height: 75px;
-    background: #7A4186;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+	min-height: 100vh;
 }
 
-/* Este es el logo de la empresa */
-#logoescritorio{ 
-    margin-left: 0px;
-    margin-right: 300px;
-    max-width: 30%;
-    height: auto;
-}
 
-/* El menú de la cabecera */
-nav{
-    width: 900px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-right: 80px;
-}
+.login-text-container{
 
-nav ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
 
-/* Para el color de los enlaces */
-nav ul li a{
-    color: white;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-    font-size: 20px;
-    margin: 35px
-}
-
-/* -------------------------------------Aquí termina la cabecera--------------------------------------- */
-
-/* Un texto que aparece al lado del formulario */
-#textoVigila{
-    display: flex;
-    width: 600px;
-    margin-top: 100px;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-/* La letra del texto anterior */
-h1{
-    color: black;
-    opacity: 70%;
-    text-align: left;
-    text-size-adjust: 100px;
-    font-size: 50px;
-    margin-left: 10px;
-}
-/* ------------------------------------Aquí termina el texto------------------------------------------- */
-
-/* El formulario para introducir el usuario y la contraseña */
-#formularioEscritorio{
-    background: rgba(245, 155, 231, 0.425); 
-    width: 500px;
-    height: 600px;
-    margin: 20px;
-    margin-top: 90px;
-    margin-bottom: 70px;
-    margin-right: 10%;
-    margin-left: 10%;
+    max-width: 500px;
+    width: 100%;
+    margin: 50% auto;
     display: flex;
     flex-direction: column;
+}
+
+.login{
+
+	font-size: 28px;
+	color: #820053;
+	font-weight: 400;
+	margin: 50px auto;
+	text-align: center;
+}
+form{
+  display: flex;
+    flex-direction: column;
+}
+
+#inputUser, #inputKey{
+  
+   font: "Poppins";
     justify-content: center;
-    border-radius: 8px;
-}
-
-/* Logo de Pumpkin en el formulario */
-#pumpkin{
-    max-width: 50%;
-    opacity: 0.5;
-}
-
-/* El texto para iniciar sesión */
-#iniciar{
-    color: black;
-    text-align: center;
-    text-decoration: underline;
-    font-family: Calibri;
-}
-
-/* El apartado para el usuario */
-#inputUser{
-    margin-bottom: 10px;
-    background: 0px;
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
-    margin-left: 30px;
-    border-bottom: auto black;
-    width: auto;
-}
-
-/* El apartado para la contraseña */
-#inputKey{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background: 0px;
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
-    margin-left: 30px;
-    border-bottom: auto black;
-    width: auto;
-}
-
-#inputUser::placeholder{
-    color: black;
-}
-
-#inputKey::placeholder{
-    color: black;
-}
-
-#recuperar{
-    margin-left: 30px;
-    color: rgb(0, 0, 180);
+    align-items: center;
+    margin: 5% 0 5% 0;
+    border-radius: 5px;
+    -webkit-appearance: none;
     text-decoration: none;
-}
-
-/* Esto es para centrar el botón */
-#centrarboton{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-/* El botón para eviar los datos */
-#botonEscritorio{
-    width: 500px;
-    height: 100px;
-    margin-top: 30px;
-    background: #86518E;
-    border-radius: 4px;
-    margin-bottom: 0px;
-}
-
-/* El texto del botón anterior */
-#login{
-    color:  white;
-}
-
-/* Esto será el pie de página */
-#piedepagina{
-    width: auto;
-    height: 10%;
-    background: rgba(248, 231, 77, 0.699);
-    display: flex;
-    flex-direction: row;
-    align-self: flex-end;
-}
-
-#copy{
-    margin-left: 10px;
+    box-sizing: border-box;
+    padding: 12px 20px;
     font-size: 20px;
+    
 }
 
-/* Estos són los enlaces para el pie de página */
-#links{
-    margin: 15px;
-    margin-left: 700px;
-}
+.login-text-container a{
 
-#links a{
-    font-size: 25px;
     text-decoration: none;
-    color: black;
-    margin: auto 35px;
+    color: #797979;
+    opacity: 0.8;
+    margin: 5% 5% 5% 0;
+    
+}
+
+.login-text-container a:hover{
+    opacity: 1;
+}
+
+.full:active{
+    transform: scale(0.95);
+}
+
+.login-text-container a:active{
+    transform: scale(0.95);
 }
 
 
+.full{
+    opacity: 0.8;
+}
+.full:hover{
+    opacity: 1;
+}
+
+.full:hover{
+    opacity: 1;
 }
