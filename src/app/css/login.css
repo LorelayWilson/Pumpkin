@@ -41,7 +41,53 @@ body{
 }
 form{
   display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 800px ) {
+    body{
+        background-image: url("../img/writing.png"); 
+    background-size: cover;
+        background-attachment: fixed;
+
+	min-height: 100vh;
+    }
+    
+    .login-text-container{
+
+
+    max-width: 700px;
+    width: 100%;
+    margin: 30px;
+    display: flex;
     flex-direction: column;
+    }
+    
+    .login{
+
+	font-size: 50px;
+	color: white;
+	font-weight: 400;
+	margin: 50px auto;
+	text-align: center;
+    }
+    
+    #inputUser, #inputKey{
+  
+    font: "Poppins";
+    justify-content: center;
+    align-items: center;
+    margin: 5% 0 5% 0;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding: 20px 20px;
+    font-size: 24px;
+    
+   }
+    
+    
 }
 
 #inputUser, #inputKey{
@@ -81,13 +127,3 @@ form{
 }
 
 
-.full{
-    opacity: 0.8;
-}
-.full:hover{
-    opacity: 1;
-}
-
-.full:hover{
-    opacity: 1;
-}
