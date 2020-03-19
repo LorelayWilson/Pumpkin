@@ -17,8 +17,7 @@ section{
 	height:88%; /*DEJAR ASI*/
 	padding-top: 80px;
 	display: flex;
-	flex-direction: column;
-/**/ 
+	flex-direction: column; /*ATENTO A ESTO, TODAS ESTAN EN COLUMN.*/
 }
 
 
@@ -82,6 +81,13 @@ section{
 		font-size: 32px;
 	}
 }
+@media(min-width: 700px){
+	.hello-title .title{
+		font-weight: 500;
+		font-size: 36px;
+		margin-top: 50px;
+	}
+}
 
 .hello-title h2{
 	font-size: 18px;
@@ -95,12 +101,13 @@ section{
 		font-size: 22px;
 	}
 }
-@media (min-width: 900px) {
+@media (min-width: 700px) {
 	.hello-title h2{
 		font-weight: 300;
 		font-size: 24px;
 	}
 }
+
 
 .hello-calltoaction{
 	margin-top: 30px;
@@ -135,8 +142,8 @@ section{
 .hello-img{ 
 	background-image: url(../img/main1.png);
 	background-repeat: no-repeat;
-	background-size:  auto 100% ;
-	background-position: 50% 0;
+	background-size:  100% auto ;
+	background-position: 50% 50%;	
 }
 @media(min-width: 500px) {
 	.hello-img{
@@ -173,9 +180,9 @@ section{
 
 .who-text-container{
 	display: flex;
-/*	flex-wrap: wrap;
+	flex-wrap: wrap;
 	justify-content: center;
-	text-align: center;*/
+	text-align: center;
 	padding: 0 15px;
 }
 @media(min-width: 700px){
@@ -184,9 +191,6 @@ section{
 		flex: 1 1 auto;
 		text-align: center;
 		margin: auto 15px; 
-		/*margin-top:20px;
-		margin-bottom:20px;   
-		height: 100%*/
 	}
 }
 
@@ -204,7 +208,7 @@ section{
 	
 }@media (min-width:700px) {
 .who-text-container article{
-		font-size: 22px;
+		font-size: 18px;
 		font-weight: 300;
 	}	
 	
@@ -331,7 +335,6 @@ section{
 
 /*------ MERGED SECTIONS (WHY / DATA) ------*/
 @media (min-width:720px){
-
 	.hide-arrow, .hide-separator{
 		display: none;
 	}
@@ -340,19 +343,22 @@ section{
 	.why-container{
 		background-image: none;
 		flex-grow: 1;
-		border-top: 10px solid #657F14; 
-		border-left: 10px solid #657F14; 
-		border-right: 10px solid #798A4E; 
+/*		border-top: 15px solid #657F14; 
+		border-left: 20px solid #657F14; 
+		border-right: 20px solid #798A4E; */
 	}
 
 	.why-container .why-text-container-all{
-
 		height: 100%;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
 		align-items: stretch; 
 		flex-wrap: nowrap;
+	}
+
+	.why-container p{
+		font-size: 18px;
 	}
 
 	.why-container .why-text-container1 .why-text{
@@ -370,10 +376,13 @@ section{
 	.data-container{
 		background-size: 100% auto;
 		background-position: 0 30%;
+		padding: 0 40px;
+		border-top-left-radius: 10px; 
+		border-top-right-radius: 10px; 
 	}
 
 	.data-text{
-		margin: 20px 0;
+		margin: auto auto;
 		padding: 20px 20px ;
 		height: auto;
 	}
@@ -388,6 +397,12 @@ section{
 		text-align: center;
 		justify-content: space-around;
 	}
+	@media (min-width: 850px )  {
+		.icon-box{
+			height: 100px;
+			width: 100px;
+		} 	
+	}
 	.icon-box h4{
 		font-size: 16px;
 		font-weight: 300;
@@ -400,6 +415,12 @@ section{
 		height: 60px;
 		width: 60px;
 	}
+	@media (min-width: 850px )  {
+		.icon-box img{
+			height: 80px;
+			width: 80px;
+		} 	
+	}
 
 	.why-container, .data-container{
 		height: 50%;
@@ -407,50 +428,19 @@ section{
 		margin: 0;
 	}
 	.why-container .title, .data-container .title{
-		font-size: 28px;
+		font-size: 36px;
 		font-weight: 400;
 		margin-top: 40px;
 	}
 	
 }
-/*.data-text{
-	padding:15px;
-	height:100%; 
-
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap; 
-	justify-content: space-between;
-	align-content: center;
-}
-
-.icon-box{
-	height:100px;
-	width: 100px; 
-	margin: 5%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-
-}
-
-.icon-box h4{
-	font-size: 16px;
-	font-weight: 300;
-	width: 100%;
-	color: #fafafa;
-	margin: 0 100%;
-}
-.icon-box img{
-	height: 70px;
-	width: 70px;
-}*/
 
 
 /*------SECTION CONTACT------*/
 .contact-container{
 	height: 85%;
 	padding: 0;
+	display: flex;
 }
 .contact-container .contact-img{
 	width: 100%;
@@ -466,10 +456,31 @@ section{
 /*	margin-top: 360px;*/
 	padding: 0 15px 0;
 	min-height: 230px;
-	justify-content: flex-start;
-	align-content: center;
-	align-items: center;
 	text-align: center;
+}
+@media(min-width: 500px){
+	.contact-container{
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: stretch;
+	}	
+	.contact-text-container{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 35%;
+		flex: 1 1 auto;
+		text-align: center;
+		margin: 0; 
+	}
+	.contact-container .contact-img{
+	width: 50%;
+	height : auto;
+	background-image: url(../img/contact.jpg);
+	background-repeat: no-repeat;
+	background-size: 200% auto;
+	background-position: 50% 50% ; 
+	}
 }
 
 .contact-text-container .title{
@@ -482,4 +493,53 @@ section{
 }
 .contact-text-container .empty{
 	margin: 15px auto;
+}
+
+@media(min-width: 1000px){
+	.title{
+		font-size: 60px !important;
+	}
+	h2{
+		font-size: 48px !important;
+	}
+	h3{
+		font-size: 40px !important;
+	}
+	h4{
+		font-size: 28px !important;
+	}
+	p{
+		font-size: 36px  !important;
+	}
+	article{
+		font-size: 36px  !important;
+	}
+	.full{
+		font-size: 48px !important;
+		width: 600px !important;
+		height: 90px !important;
+	}
+	.hello-container .empty{
+		font-size: 40px !important;
+		width: 500px !important;
+		height: 85px !important;
+
+	}
+	.contact-container .empty{
+		font-size: 40px !important;
+		width: 450px !important;
+		height: 80px !important;
+	}
+	.icon-box{
+		height: 150px !important;
+		width: 150px !important;
+	}
+	.icon-box img{
+		height: 130px;
+		width: 130px;
+	}
+	.arrow-down img {
+		height:60px !important;
+		width: 60px !important;
+	}
 }
