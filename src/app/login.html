@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login GTI - Grado en Tecnologías Interactivas</title>
+   
+    <link rel="stylesheet" href="css/login.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
+</head>
+
+
+<body>
+    
+  <!-- HEADER -->
+	<header>
+		<img src="img/logo.svg" alt="Logo de GTI" class="logo"> <!-- LOGO -->
+		<nav>
+			<ul>
+				<li><a href="#">Quiénes somos</a></li>
+				<li><a href="#">Por qué elegirnos</a></li>
+				<li><a href="#">Parámetros</a></li>
+				<li><a href="#">Contacto</a></li>
+				<li class="login-button"><a href="#">Iniciar sesión</a></li>
+			</ul>
+		</nav>
+			<img src="img/menu.png" class="access-nav" > <!-- MENU BURGER LINES -->
+	</header>
+	<!-- // -->
+
+	<!-- LOGIN: -->
+  
+    <div class = "login-text-container">
+        
+        
+        <!-- Formulario para entrar a la app -->
+        
+           
+            <h1 class="login">INICIAR SESIÓN</h1>
+            
+            <form action="index.html" method="post" onsubmit="enviar(event)" id="login"> <!-- Creamos el cuadro donde se escribirá el usuario -->
+            
+            <input type="text" placeholder="Usuario" id="inputUser" name="User" required>
+            <input type="password" placeholder="Contraseña" id="inputKey" name="Key" required>
+            </form>
+            
+       
+        
+        
+        <a href="#">Recupera tu contraseña</a>
+        <button class="full" type="button">ENTRAR</button>
+        
+    </div>
+        
+      
+</body>
+</html>
