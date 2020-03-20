@@ -1,19 +1,10 @@
 
-
-
-@media screen and (min-width: 600px){
-    
-  
-}
-
 *{
   margin: 0;
   padding: 0;
    
 } 
 html, body{
-
-   
 
 	display: flex;
 	align-items: center;
@@ -22,8 +13,49 @@ html, body{
 }
 
 body{
-     background-image: url("../img/login.png"); 
+    background-image: url("../img/field.jpeg"); 
     background-size: cover;
+	min-height: 100vh;
+    max-height: 100%;
+    
+}
+
+.contact-text-container{
+    width: 100%;
+    max-width: 700px;
+    
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact{
+    border: 40px;
+}
+
+#inputEmail, #inputPhone, textarea{
+  
+    display: flex;
+   font: "Poppins";
+    justify-content: center;
+    align-items: center;
+    margin: 5% 0 5% 0;
+    border-radius: 5px;
+    -webkit-appearance: none;
+   
+    padding: 12px 20px;
+    font-size: 20px;
+    
+}
+
+@media screen and  (min-width: 800px ){
+      body{
+        background-image: url("../img/handshake.jfif"); 
+    background-size: cover;
+        background-attachment: fixed;
 
 	min-height: 100vh;
+    }
 }

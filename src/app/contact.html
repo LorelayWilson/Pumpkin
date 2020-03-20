@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login GTI - Grado en Tecnologías Interactivas</title>
+    <title>Contact us GTI - Grado en Tecnologías Interactivas</title>
    
     <link rel="stylesheet" href="css/contact.css"/>
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,500&display=swap" rel="stylesheet">
@@ -14,21 +14,39 @@
 
 <body>
     
-  <header>
+  <!-- HEADER -->
+	<header>
 		<img src="img/logo.svg" alt="Logo de GTI" class="logo"> <!-- LOGO -->
 <!-- 		<input type="checkbox" id="chk">
 		<label for="chk" class="show-menu-btn">
 			<i class="fas fa-bars"></i>
 		</label> -->
-		
+		<nav>
+			<input type="checkbox" id="check">
+			<label for="check" class="check-btn">
+				<i class="fas fa-bars"></i> <!-- MENU BURGER LINES -->
+			</label>
+			<ul class="menu">
+				<li class="login-option"><a href="#">Iniciar sesión</a></li>
+				<li><a href="#HELLO">Inicio</a></li>
+				<li><a href="#WHO">Quiénes somos</a></li>
+				<li><a href="#WHY">Por qué elegirnos</a></li>
+				<li><a href="#DATA">Parámetros</a></li>
+				<li><a href="#CONTACT">Contacto</a></li>
+			<!-- 	<label for="chk" class="hide-menu-btn">
+					<i class="fas fa-times"></i> 
+				</label> -->
+			</ul>
+		</nav>
 	</header>
+	<!-- // -->
 
-	<!-- LOGIN: -->
+	<!-- Contacta: -->
   
     <div class = "contact-text-container">
         
         
-        <!-- Formulario para entrar a la app -->
+        <!-- Formulario para contactar -->
         
            
             <h1 class="contact">CONTÁCTANOS</h1>
@@ -37,9 +55,9 @@
             
             <input type="email" placeholder="Email" id="inputEmail" name="Email" required>
             <input type="tel" placeholder="Phone" id="inputPhone" name="Phone" required>
-            <input type="text" placeholder="Message" id="inputmMessage" name="Message" required>
-            </form>
-            
+            <textarea name="comentarios" rows="10" cols="40">Introduzca su mensaje
+            </textarea>
+        </form>
        
     
         <button class="full" type="button">ENVIAR</button>
