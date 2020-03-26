@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1437242e61.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/parcelas-lista.css">
+	<title>GTI - Grado en Tecnologías Interactivas</title>
+</head>
+
+<body>
+
+	<!-- HEADER -->
+	<header>
+		<a href="../index.html"><img src="img/logo.svg" alt="Logo de GTI" class="logo" /></a><!-- LOGO -->
+		<nav>
+			<input type="checkbox" id="check">
+			<label for="check" class="check-btn">
+				<i class="fas fa-bars"></i> <!-- MENU BURGER LINES -->
+			</label>
+			<ul class="menu">
+				<li class="login-option"><a href="login.html">Cerrar sesión</a></li>
+				<li><a href="../index.html#CONTACT">Contacto</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- // -->
+
+	<div class="main-container">
+		<h1 class="title">Mis parcelas</h1>
+		
+		<div class="list-or-map">
+				<a href="#"><img id="list" src="img/lista-parcelas.png" alt="Lista Parcelas"></a>
+				<a href="parcelas-mapa.html"><img id="map" src="img/mapa-parcelas.png" alt="Mapa Parcelas"></a>
+		</div>	
+
+
+		<h3>Seleccionar parcela:</h3>
+		<div class="accordion">
+			<button class="ccaa">Andalucia</button>
+			<div class="panel-parcela">
+				<ul>
+					<li class="parcela"><a href="#">Olivar Manuel e Hijos S.L, Villaviciosa, Córdoba</a></li>
+					<li class="parcela"><a href="#">Legumbres Menendez, Dos Hermanas, Sevilla</a></li> 
+				</ul>
+			</div>
+			<button class="ccaa">Comunidad Autónoma</button>
+			<div class="panel-parcela">
+				<ul>
+					<li class="parcela"><a href="#">Campo Laureles, Gandía, Valencia</a></li>
+					<li class="parcela"><a href="#">Verduras Jesus, Xeraco, Valencia</a></li> 
+				</ul>
+			</div>
+			<button class="ccaa">Pais Vasco</button>
+			<div class="panel-parcela">
+				<ul>
+					<li class="parcela"><a href="#">Arantxu de Guinea SL, Pasajes, San Sebastián</a></li> 
+				</ul>
+			</div>
+			<button class="ccaa">Región de Murcia</button>
+			<div class="panel-parcela">
+				<ul>
+					<li class="parcela"><a href="#">Villalobos y Hermanos, Cartagena, Murcia</a></li>
+					<li class="parcela"><a href="#">Naranjas Morales, Torrenevada, Murcia</a></li> 
+					<li class="parcela"><a href="#">Lechugas Rodriguez, Cartagena, Murcia</a></li> 
+					<li class="parcela"><a href="#">Verde que te quiero verde SA, Manzananueva, Murcia</a></li> 
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script>
+		var acc = document.getElementsByClassName("ccaa");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+		  acc[i].addEventListener("click", function() {
+		    this.classList.toggle("active");
+		    var panel = this.nextElementSibling;
+		    if (panel.style.display === "block") {
+		      panel.style.display = "none";
+		    } else {
+		      panel.style.display = "block";
+		    }
+		  });
+		}
+	</script>
+
+	<footer>
+		<img src="img/logo-white.png" alt="Logo de GTI versión blanca" > <!-- LOGO (WHITE) -->
+		<nav>
+			<ul>
+				<li><a href="#">Link 1</a></li>
+				<li>|</li>
+				<li><a href="#">Link 2</a></li>
+				<li>|</li>
+				<li><a href="#">Link 3</a></li>
+			</ul>
+		</nav>
+	</footer>
+
+</body>
+</html>
