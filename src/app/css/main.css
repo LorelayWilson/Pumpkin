@@ -11,6 +11,7 @@ body{
 
 /*------HEADER------*/
 header{
+	max-width: 2000px;
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -30,12 +31,12 @@ header{
 }
 
 header nav{
-	
+
 	height: 100%;
 	/*P*/
 /*	display: none;*/
-/*	display: flex;
-	flex-direction: column;
+	/*display: flex;*/
+	/*flex-direction: column;
 	justify-content: center;
 	align-items: flex-end;*/
 }
@@ -53,8 +54,8 @@ header nav{
 }
 .menu li{
 	display: inline-block;
-	margin-bottom: 5px; 
-	font-size: 12px;
+	margin: 10px 12px 10px; 
+	font-size: 16px;
 	font-weight: 300; 
 }
 .menu li a{
@@ -78,7 +79,7 @@ header nav{
 	font-size: 18px;
 } 
 .menu .login-option a{
-	line-height: 45px;
+/*	line-height: 45px;*/
 }
 
 .menu .login-option:hover{
@@ -101,15 +102,6 @@ header nav{
 	display: none;
 }
 
-@media(min-width: 650px) {
-	.check-btn{
-		display: none;
-	}
-	.menu .login-option{
-		display: none;
-	}
-}
-
 @media(max-width: 650px){
 	.menu{
 		position: fixed;
@@ -127,9 +119,12 @@ header nav{
 		display: block;
 		margin: 50px 0;
 		line-height: 30px;  
+		color: #fafafa;
+
 	}
 	.menu li a{
 		font-size: 20px;
+		align-items: center;        
 	}
 	a:hover{
 		background: none;
@@ -138,10 +133,76 @@ header nav{
 	#check:checked ~ .menu{
 		left: 0;
 	} 
+
 }
 
+@media(min-width: 650px) {
+	.menu{
+		display: flex;
+		direction: column;
+		flex-wrap: nowrap;
+		justify-content: flex-end; 
+		align-items: center;
+	}
 
+	.menu li a{
+		color: #292929;
+		margin: 0 5px;
+		font-size: 14px;
+	}
+	.check-btn{
+		display: none;
+	}
 
+	.menu .login-option{
+	display: inline-block;
+	background-color:transparent;
+	border-radius: 50;
+	color: #292929;
+	width:auto;
+	margin: 0 0 5px 10px; ;
+	font-weight: 300;
+	border: 2px solid #292929;
+	height: auto;
+	font-size: 14px;
+	order: 1;
+} 
+/*.menu .login-option a{
+	line-height: 45px;
+}*/
+
+.menu .login-option:hover{
+	background: #fafafa;
+	color:#820053;
+	}
+}
+
+@media(min-width: 720px){
+	#hide-data{
+		display: none;
+	}
+	.menu{
+		justify-content: flex-end; 
+		align-items: center;
+
+	}
+	.menu .login-option{
+		
+	}
+} 
+
+@media (min-width: 850px) {	
+	.logo{
+		width:170px ;
+	}
+	header{
+		height: 55px;
+	}
+	.menu li a{
+		font-size: 20px;
+	}
+	
+}
 
 /*------GENERAL------*/
 
@@ -205,6 +266,8 @@ h1,h2,h3,h4,h5,h6,p,pre{
 }
 
 footer{ 
+	max-width: 2000px;
+	float: left;
 	padding: 10px 0;
 	margin: 0 auto;
 	color: #fafafa;
@@ -213,12 +276,14 @@ footer{
 	z-index: 1;
 	display: flex;
 	/*flex-direction: column;*/
+	justify-content: space-between;
 	flex-grow: 1;
 }
 
 footer nav{
 	width: 200px;
-	margin: auto 15px auto auto;
+	float: right;
+	margin-right: 15px;
 
 
 }
@@ -239,7 +304,24 @@ footer nav a {
 
 footer >img{
 	width: 150px;
+	margin-left: 15px;
 	/*height: auto;*/
+
+}
+
+@media (min-width: 850px) {
+	footer{
+		height: 80px ;
+	}
+	footer > img{
+		width: 200px ;
+	}
+	footer nav {
+		width: 300px;
+	}
+	footer nav li a{
+		font-size: 18px ;
+	}
 
 }
 

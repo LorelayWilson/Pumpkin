@@ -13,49 +13,47 @@ html, body{
 }
 
 body{
-    background-image: url("../img/field.jpeg"); 
-    background-size: cover;
-	min-height: 100vh;
-    max-height: 100%;
+    background-image: url("../img/grassland.jpg"); 
+    background-size: auto 100% ;
+    background-repeat: no-repeat;
+    background-position: center; 
     
 }
 
-.contact-text-container{
-    width: 100%;
-    max-width: 700px;
-    
-}
-
-form{
+.main-container{  
+    justify-content: center;
     display: flex;
     flex-direction: column;
 }
-
-.contact{
-    border: 40px;
+h1{
+    text-align: center;
 }
-
-#inputEmail, #inputPhone, textarea{
-  
-    display: flex;
-   font: "Poppins";
+form{
+    margin: 0 auto;
+    width: 100%;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+form div input{
+    width: 90%;
     justify-content: center;
-    align-items: center;
-    margin: 5% 0 5% 0;
-    border-radius: 5px;
-    -webkit-appearance: none;
-   
-    padding: 12px 20px;
-    font-size: 20px;
-    
+}
+form div{
+    margin-bottom: 10px;
 }
 
-@media screen and  (min-width: 800px ){
-      body{
-        background-image: url("../img/handshake.jfif"); 
-    background-size: cover;
-        background-attachment: fixed;
+input, textarea{
+    outline: none;
 
-	min-height: 100vh;
-    }
 }
+.full{
+    justify-content: center;
+    margin: 0 auto;
+    align-content: center;
+    text-align: center;
+}
+
+
+
+

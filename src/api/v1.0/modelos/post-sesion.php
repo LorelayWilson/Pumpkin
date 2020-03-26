@@ -1,23 +1,25 @@
 <?php
  //
-
+/*
+user.id as userId,
+user.name as userName,
+user.password as userPassword,
+user.rol as userRol,
+role.*  FROM `user`, `role`     and user.rol = role.id
+*/
 if (isset($_POST['password']) && $_POST['password'] != '' && isset($_POST['user']) && $_POST['user'] != '') {
 
     $user = $_POST['user'];
 $password = $_POST['password'];
-$conexion = mysqli_connect("localhost", "root", "", "bbdd_pumpkin");
-$consulta ="SELECT  user.id as userId,
-user.name as userName,
-user.password as userPassword,
-user.rol as userRol,
-role.*  FROM `user`, `role` WHERE user.name='$user' and user.password='$password' and user.rol = role.id ";
+$conexion = mysqli_connect("localhost", "root", "", "bbdd_pumpkin_parcelas");
+$consulta ="SELECT usuarios.id_usuarios as id_usuario, usuarios.nombre_usuario as usuario, usuarios.contraseña as contraseña, roles.id_rol as rol_id, roles.nombre_rol as nombre_rol, localizacion.* FROM `usuarios`, `localizacion`, `roles`  WHERE usuarios.nombre_usuario='$user' and usuarios.contraseña='$password' and roles.id_rol = usuarios.id_rol ";
 $resultado=mysqli_query($conexion, $consulta);
 //------------------
 //$mostrar=mysqli_fetch_array($resultado)
     
 //--------------------------------
     
-filas = mysqli_num_rows($resultado);
+$filas = mysqli_num_rows($resultado);
     /*if($filas>0)*/
 
 if($filas>0){

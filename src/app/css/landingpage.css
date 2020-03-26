@@ -12,6 +12,7 @@
 	height: 45px;
 }
 
+
 /*------SECTION GLOBAL------*/
 section{
 	height:88%; /*DEJAR ASI*/
@@ -24,6 +25,7 @@ section{
 /*------SECTION HELLO------*/
 .hello-container {
 /*	background-color: #fff;*/
+	max-width: 2500px;
 }
 @media (min-width: 500px) {
 	.hello-container{
@@ -41,15 +43,12 @@ section{
 	background-position: 50% 10%;
 	}
 }
+@media (min-height: 1080px) {
+	.hello-container{
+		height: 1080px;
+	}
+}
 
-/*
-	FLEX TEMPLATE
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	text-align: center;
-	align-items: center;*/
 
 .hello-title{
 	margin-top: 20%; /*shall be CORRECTED!!*/
@@ -66,15 +65,13 @@ section{
 	}
 }
 @media (min-width: 900px) {
-	.hello-title{
+	.hello-title title{
 		margin-top: 0;
+		font-size: 48px;
+		font-weight: 500;
 	}
 }
 
-/*.title{
-	font-size: 28px;
-	font-weight: 400;
-}*/
 @media (min-width: 550px) {
 	.hello-title .title{
 		font-weight: 400;
@@ -133,12 +130,6 @@ section{
 }
 
 /*BACKGROUND HELLO*/
-
-/*	background-image: url(../img/main2.png);
-	background-repeat: no-repeat;
-	background-size:  auto 100% ;
-	background-position: 50% 0;
-	}*/
 .hello-img{ 
 	background-image: url(../img/main1.png);
 	background-repeat: no-repeat;
@@ -150,11 +141,35 @@ section{
 		background-image: none;
 	}
 }
+@media (min-width: 900px) {
+	.hello-container .hello-title .title{
+		font-weight: 500;
+		font-size: 48px; 
+	}
+	.hello-container .hello-title h2{
+		font-weight: 300;
+		font-size: 30px;
+	}
+	.hello-calltoaction .full{
+		font-size: 28px;
+		width: 270px;
+	}
+	.hello-calltoaction .login-button{
+	width: 200px;
+	font-size: 20px;
+	}
+	
+}
+
+
+
+
 
 
 /*------SECTION WHO------*/
 .who-container{
 	/*display: flex;*/
+	max-width: 2500px;
 }
 
 @media (min-width:700px){
@@ -170,7 +185,7 @@ section{
 		background-image: url(../img/blue-skyX2.png);
 		background-repeat: no-repeat;
 		background-size:  auto 100% ;
-		background-position: 0 0;
+		background-position: center;
 
 	}
 	.who-container .title{
@@ -222,7 +237,7 @@ section{
 
 .who-container .video{
 	width: 100%;
-	max-width: 400px;
+	max-width: 700px;
 	height: auto;
 
 }
@@ -232,21 +247,39 @@ section{
 		align-items: stretch;*/
 	}
 	.who-container .video-container{
-		width: 40%;
+		width: 70%;
 		height: auto;
 		margin:auto 15px;
 	}
 }
+@media (min-height: 1080px) {
+	.who-container{
+		height: 1080px;
+	}
+	
+}
+@media (min-width: 900px) {
+	.who-container .title{
+		font-weight: 500;
+		font-size: 48px; 
+	}
+	.who-container article{
+		font-size: 22px;
+		font-weight: 300;
+	}
+
+}
 
 /*------SECTION WHY------*/
 .why-container {
+	max-width: 2500px;
 	/*BACKGROUND WHY*/
 	background-image: url(../img/blue-skyX.png);
 	background-repeat: no-repeat;
 	background-size:  auto 100% ;
 	background-position: 25% 0;
-
 }
+
 
 .why-container  .why-text-container1{
 	display: flex;
@@ -282,7 +315,17 @@ section{
 	height: 0;
 	border-radius: 1px;
 }
-
+@media (min-height: 1080px) {
+	.why-container{
+		height: 1080px;
+	}
+}
+@media (min-width:900px){
+	why-container .why-text p{
+		font-size: 24px;
+	} 
+	
+}
 
 
 
@@ -290,6 +333,7 @@ section{
 
 /*------SECTION DATA------*/ 
 .data-container{
+	max-width: 2500px;
 	background-image:url(../img/leafes.png);
 	background-repeat: no-repeat;
 	background-size: auto 100%;
@@ -333,7 +377,9 @@ section{
 }
 
 
+
 /*------ MERGED SECTIONS (WHY / DATA) ------*/
+
 @media (min-width:720px){
 	.hide-arrow, .hide-separator{
 		display: none;
@@ -434,10 +480,17 @@ section{
 	}
 	
 }
+@media (min-height: 1080px) {
+	.why-container, .data-container{
+		height: 590px;
+	}
+	
+}
 
 
 /*------SECTION CONTACT------*/
 .contact-container{
+	max-width: 2500px;
 	height: 85%;
 	padding: 0;
 	display: flex;
@@ -495,11 +548,18 @@ section{
 	margin: 15px auto;
 }
 
-@media(min-width: 1000px){
+@media (min-height: 1080px) {
+	.contact-container{
+		height: 1080px;
+	}
+	
+}
+
+/*@media(min-width: 1000px){
 	.title{
 		font-size: 60px !important;
 	}
-	h2{
+	h2{x
 		font-size: 48px !important;
 	}
 	h3{
@@ -542,4 +602,4 @@ section{
 		height:60px !important;
 		width: 60px !important;
 	}
-}
+}*/

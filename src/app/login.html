@@ -15,7 +15,8 @@
 <body>
     
   <header>
-		<img src="img/logo.svg" alt="Logo de GTI" class="logo"> <!-- LOGO -->
+      <a href="../index.html"><img src="../app/img/logo.svg" alt="Logo de GTI" class="logo" /></a>
+		 <!-- LOGO -->
 <!-- 		<input type="checkbox" id="chk">
 		<label for="chk" class="show-menu-btn">
 			<i class="fas fa-bars"></i>
@@ -33,17 +34,13 @@
            
             <h1 class="login">INICIAR SESIÓN</h1>
             
-            <form action="index.html" method="post" onsubmit="enviar(event)" id="login"> <!-- Creamos el cuadro donde se escribirá el usuario -->
+            <form action="index.php" method="post" onsubmit="enviar(event)" id="login"> <!-- Creamos el cuadro donde se escribirá el usuario -->
             
-            <input type="text" placeholder="Usuario" id="inputUser" name="User" required>
-            <input type="password" placeholder="Contraseña" id="inputKey" name="Key" required>
+            <input type="text" placeholder="Usuario" id="inputUser" name="user">
+            <input type="password" placeholder="Contraseña" id="inputKey" name="password">
+             <a href="#">Recupera tu contraseña</a>
+            <button class="full" type="submit">ENTRAR</button>
             </form>
-            
-       
-        
-        
-        <a href="#">Recupera tu contraseña</a>
-        <button class="full" type="button">ENTRAR</button>
         
     </div>
         

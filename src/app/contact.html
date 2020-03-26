@@ -16,7 +16,8 @@
     
   <!-- HEADER -->
 	<header>
-		<img src="img/logo.svg" alt="Logo de GTI" class="logo"> <!-- LOGO -->
+	    <a href="../index.html"><img src="img/logo.svg" alt="Logo de GTI" class="logo"> </a>
+		 <!-- LOGO -->
 <!-- 		<input type="checkbox" id="chk">
 		<label for="chk" class="show-menu-btn">
 			<i class="fas fa-bars"></i>
@@ -27,43 +28,41 @@
 				<i class="fas fa-bars"></i> <!-- MENU BURGER LINES -->
 			</label>
 			<ul class="menu">
-				<li class="login-option"><a href="#">Iniciar sesión</a></li>
-				<li><a href="#HELLO">Inicio</a></li>
-				<li><a href="#WHO">Quiénes somos</a></li>
-				<li><a href="#WHY">Por qué elegirnos</a></li>
-				<li><a href="#DATA">Parámetros</a></li>
-				<li><a href="#CONTACT">Contacto</a></li>
-			<!-- 	<label for="chk" class="hide-menu-btn">
-					<i class="fas fa-times"></i> 
-				</label> -->
+				<li class="login-option"><a href="login.html">Iniciar sesión</a></li>
 			</ul>
 		</nav>
 	</header>
 	<!-- // -->
 
 	<!-- Contacta: -->
-  
-    <div class = "contact-text-container">
-        
-        
-        <!-- Formulario para contactar -->
-        
-           
-            <h1 class="contact">CONTÁCTANOS</h1>
-            
-            <form action="index.html" method="post" onsubmit="enviar(event)" id="contact"> <!-- Creamos el cuadro donde se escribirá el usuario -->
-            
-            <input type="email" placeholder="Email" id="inputEmail" name="Email" required>
-            <input type="tel" placeholder="Phone" id="inputPhone" name="Phone" required>
-            <textarea name="comentarios" rows="10" cols="40">Introduzca su mensaje
-            </textarea>
-        </form>
-       
-    
-        <button class="full" type="button">ENVIAR</button>
-        
-    </div>
-        
+	<div class="main-container">
+		<form action="index.html" method="post" onsubmit="enviar(event)" id="contact"> 
+		<h1 class="title">Contáctanos</h1>
+		<div class="inp1">
+			<label>Nombre:</label><br>
+			<input type="text" name="name" id="inputName" placeholder="Nombre" required>
+		</div>
+		<div class="inp2">
+			<label>Apellidos:</label><br>
+			<input type="text" name="surname" id="inputSurname" placeholder="Apellidos" required>
+		</div>
+		<div class="inp3">
+			<label>Email:</label><br>
+			<input type="email" placeholder="Correo electrónico" id="inputEmail" name="Email" required>
+		</div>
+		<div class="inp4">
+			<label>Teléfono:</label><br>
+			<input type="tel" placeholder="Número de teléfono" id="inputPhone" name="Phone" required>
+		</div>
+		<div class="inp5">
+			<label>Introduce tu mensaje:</label><br>
+			<textarea name="comentarios" rows="10" cols="40"></textarea>
+		</div>
+		<button class="full" type="button">ENVIAR</button>
+	</form>
+	</div>
+
+
       
 </body>
 </html>

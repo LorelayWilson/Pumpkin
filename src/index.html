@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/1437242e61.js" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="app/css/main.css">
-    <link rel="stylesheet" type="text/css" href="app/css/landingpage.css">
+    <link rel="stylesheet" type="text/css" href="app/css/LANDINGPAGE.css">
 	<title>GTI - Grado en Tecnologías Interactivas</title>
 </head>
 
@@ -15,7 +15,7 @@
 
 	<!-- HEADER -->
 	<header>
-		<img src="app/img/logo.svg" alt="Logo de GTI" class="logo"> <!-- LOGO -->
+		<a href="index.html"><img src="app/img/logo.svg" alt="Logo de GTI" class="logo"> </a><!-- LOGO -->
 <!-- 		<input type="checkbox" id="chk">
 		<label for="chk" class="show-menu-btn">
 			<i class="fas fa-bars"></i>
@@ -26,11 +26,11 @@
 				<i class="fas fa-bars"></i> <!-- MENU BURGER LINES -->
 			</label>
 			<ul class="menu">
-				<li class="login-option"><a href="#">Iniciar sesión</a></li>
-				<li><a href="#HELLO">Inicio</a></li>
+				<li class="login-option"><a href="app/login.html">Iniciar sesión</a></li>
+				<!-- <li><a href="#HELLO">Inicio</a></li> -->
 				<li><a href="#WHO">Quiénes somos</a></li>
 				<li><a href="#WHY">Por qué elegirnos</a></li>
-				<li><a href="#DATA">Parámetros</a></li>
+				<li><a href="#DATA" id="hide-data">Parámetros</a></li>
 				<li><a href="#CONTACT">Contacto</a></li>
 			<!-- 	<label for="chk" class="hide-menu-btn">
 					<i class="fas fa-times"></i> 
@@ -51,8 +51,8 @@
 		</div>
 
 		<div class="hello-calltoaction">
-			<button class="full">CONSULTAR</button>
-			<button class="empty login-button">INICIAR SESIÓN</button>
+			<button class="full" onclick = "location='app/contact.html'">CONSULTAR</button>
+			<button class="empty login-button" onclick = "location='app/login.html'">INICIAR SESIÓN</button>
 		</div>
 		<div class="arrow-down hello-img">
 			<a href="#WHO"><img src="app/img/flecha-blanca.png" alt="Flecha bajar"></a> <!-- ARROW DOWN -->
@@ -167,7 +167,7 @@
 		<div class="contact-text-container">
 			<h1 class="title">Nadie nace sabiéndolo todo.</h1>
 			<h3>Por eso, queremos estar ahí para ayudarte con cada paso.</h3>
-			<button class="empty">CONTACTAR</button>
+			<button class="empty" onclick = "location='app/contact.html'">CONTACTAR</button>
 		</div>
 
 	</section>
@@ -185,4 +185,5 @@
 		</nav>
 	</footer>
 </body>
+
 </html>
