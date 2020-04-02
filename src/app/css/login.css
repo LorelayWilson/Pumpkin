@@ -68,7 +68,7 @@ form{
 	font-size: 50px;
 	color: white;
 	font-weight: 400;
-	margin: 50px auto;
+	margin: 30px auto;
 	text-align: center;
     }
     
@@ -115,7 +115,7 @@ form{
 .login-text-container a{
 
     text-decoration: none;
-    color: #797979;
+    color: #820053;
     opacity: 0.8;
     margin: 5% 5% 5% 0;
     
@@ -133,4 +133,7 @@ form{
     transform: scale(0.95);
 }
 
-
+.login-button-container{
+    display: flex;
+    justify-content: center;
+}

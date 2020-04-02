@@ -3,6 +3,9 @@ html{
 	font-family: 'Poppins', sans-serif;
 	color:#292929;
 }
+button{
+	font-family: 'Poppins', sans-serif;
+}
 body{
 	background-color: #fff;
 	/*padding: 0 15px;*/
@@ -278,6 +281,7 @@ footer{
 	/*flex-direction: column;*/
 	justify-content: space-between;
 	flex-grow: 1;
+
 }
 
 footer nav{
@@ -303,7 +307,7 @@ footer nav a {
 }
 
 footer >img{
-	width: 150px;
+	width: 120px;
 	margin-left: 15px;
 	/*height: auto;*/
 
@@ -311,10 +315,10 @@ footer >img{
 
 @media (min-width: 850px) {
 	footer{
-		height: 80px ;
+		height: 60px ;
 	}
 	footer > img{
-		width: 200px ;
+		width: 170px ;
 	}
 	footer nav {
 		width: 300px;

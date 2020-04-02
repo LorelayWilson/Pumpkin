@@ -21,8 +21,9 @@ body{
 }
 
 .main-container{  
-    justify-content: center;
+    padding: 5px;
     display: flex;
+    justify-content: center;
     flex-direction: column;
 }
 h1{
@@ -35,9 +36,9 @@ form{
     border-radius: 3px;
     font-size: 0.8em;
 }
+
 form div input{
-    width: 90%;
-    justify-content: center;
+    width: 100%;
 }
 form div{
     margin-bottom: 10px;
@@ -45,14 +46,19 @@ form div{
 
 input, textarea{
     outline: none;
+    width: 100%;
 
 }
 .full{
-    justify-content: center;
     margin: 0 auto;
     align-content: center;
     text-align: center;
 }
+.send-button-container{
+    display: flex;
+    justify-content: center;
+}
+
 
 
 
