@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-04-2020 a las 18:33:25
+-- Tiempo de generación: 03-04-2020 a las 03:57:58
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `bbdd_pumpkin`
+-- Base de datos: `bbdd_pumpkin_parcelas`
 --
 
 -- --------------------------------------------------------
@@ -186,6 +186,22 @@ CREATE TABLE `localizacion` (
   `lng` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `localizacion`
+--
+
+INSERT INTO `localizacion` (`id_localizacion`, `lat`, `lng`) VALUES
+(1, 48.1496, 24.2824),
+(2, 3.11214, 101.694),
+(3, 8.58224, 125.893),
+(4, 41.5737, 120.449),
+(5, -7.09706, 107.577),
+(6, -8.90663, 121.306),
+(7, 33.5138, 36.2765),
+(8, 37.2426, 111.857),
+(9, 28.6428, 111.161),
+(10, 53.1459, 20.8157);
+
 -- --------------------------------------------------------
 
 --
@@ -207,23 +223,8 @@ CREATE TABLE `luminosidad` (
 
 CREATE TABLE `puntos_clave` (
   `id` int(11) NOT NULL,
-  `id_campo` int(11) NOT NULL,
-  `lat1` float NOT NULL,
-  `lng1` float NOT NULL,
-  `lat2` float NOT NULL,
-  `lng2` float NOT NULL,
-  `lat3` float NOT NULL,
-  `lng3` float NOT NULL,
-  `lat4` float NOT NULL,
-  `lng4` float NOT NULL
+  `id_campo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `puntos_clave`
---
-
-INSERT INTO `puntos_clave` (`id`, `id_campo`, `lat1`, `lng1`, `lat2`, `lng2`, `lat3`, `lng3`, `lat4`, `lng4`) VALUES
-(1, 1, 1.2, 1.2, 2.1, 2.1, 3.2, 3.2, 4.3, 4.3);
 
 -- --------------------------------------------------------
 
@@ -446,6 +447,7 @@ ALTER TABLE `luminosidad`
 --
 ALTER TABLE `puntos_clave`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`),
   ADD KEY `id_campo` (`id_campo`);
 
 --
@@ -509,12 +511,6 @@ ALTER TABLE `humedad`
   ADD CONSTRAINT `humedad_ibfk_1` FOREIGN KEY (`id_localizacion`) REFERENCES `localizacion` (`id_localizacion`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `localizacion`
---
-ALTER TABLE `localizacion`
-  ADD CONSTRAINT `localizacion_ibfk_1` FOREIGN KEY (`id_localizacion`) REFERENCES `puntos_clave` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Filtros para la tabla `luminosidad`
 --
 ALTER TABLE `luminosidad`
@@ -524,7 +520,8 @@ ALTER TABLE `luminosidad`
 -- Filtros para la tabla `puntos_clave`
 --
 ALTER TABLE `puntos_clave`
-  ADD CONSTRAINT `puntos_clave_ibfk_1` FOREIGN KEY (`id_campo`) REFERENCES `campos` (`id_campos`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `puntos_clave_ibfk_1` FOREIGN KEY (`id_campo`) REFERENCES `campos` (`id_campos`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `puntos_clave_ibfk_2` FOREIGN KEY (`id`) REFERENCES `localizacion` (`id_localizacion`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `salinidad`
