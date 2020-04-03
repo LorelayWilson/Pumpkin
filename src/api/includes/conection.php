@@ -6,9 +6,9 @@ $bbdd_password ='Asdf1234*';
 $bbdd = 'liflores_Pumpkin';
 */
 $bbdd_server = 'localhost';
-$bbdd_user = 'liflores';
-$bbdd_password = 'Asfg1234**';
-$bbdd = 'liflores_Pumpkin';
+$bbdd_user = 'root';
+$bbdd_password = '';
+$bbdd = 'bbdd_pumpkin_parcelas';
 
 $conection = mysqli_connect($bbdd_server, $bbdd_user, $bbdd_password, $bbdd);
 
