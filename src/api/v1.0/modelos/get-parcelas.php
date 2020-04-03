@@ -1,6 +1,6 @@
 <?php
 
-//require('../../includes/conexion.php');
+include '../../includes/acceso.php';
 
 $connection = mysqli_connect("localhost", "root", "", "bbdd_pumpkin_parcelas");
 
