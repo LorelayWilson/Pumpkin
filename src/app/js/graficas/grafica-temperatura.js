@@ -1,4 +1,4 @@
-//SALINIDAD
+//Temperatura
 let datosTemperatura = {
     labels: ['lunes', 'martes', 'miércoles', 'jueves', 'viernes'],
     datasets: [

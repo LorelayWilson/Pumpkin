@@ -4,20 +4,16 @@
    
 } 
 html, body{
-
-   
-
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
 }
 
 body{
      background-image: url("../img/login.png"); 
     background-size: cover;
-
-	min-height: 100vh;
+    background-position: 0 50%;
+	min-height: 100vh; 
 }
 
 
@@ -26,7 +22,7 @@ body{
 
     max-width: 500px;
     width: 100%;
-    margin: 50% auto;
+    
     display: flex;
     flex-direction: column;
 }
@@ -36,7 +32,7 @@ body{
 	font-size: 28px;
 	color: #820053;
 	font-weight: 400;
-	margin: 50px auto;
+	margin: 20px auto;
 	text-align: center;
 }
 form{
@@ -44,7 +40,7 @@ form{
   flex-direction: column;
 }
 
-@media (min-width: 800px ) {
+@media (min-width: 500px ) {
     body{
         background-image: url("../img/writing.png"); 
     background-size: cover;

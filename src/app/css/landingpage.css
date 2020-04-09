@@ -65,10 +65,13 @@ section{
 	}
 }
 @media (min-width: 900px) {
-	.hello-title title{
+	.hello-title .title{
 		margin-top: 0;
 		font-size: 48px;
 		font-weight: 500;
+	}
+	.hello-title{
+		margin-top: 0; 
 	}
 }
 
@@ -357,6 +360,11 @@ section{
 	flex-wrap: wrap; /*MANTIENE 3 FILAS, 2 COLUMNAS HASTA TAMAÑO IPAD*/
 	justify-content: space-between;
 	align-content: center;
+}
+@media (max-width: 300px){
+	.data-text{
+		justify-content: center;
+	}
 }
 
 .icon-box{
