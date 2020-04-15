@@ -196,7 +196,7 @@ section{
 
 	}
 	.who-container .title{
-		color:#fafafa;
+		/*color:#fafafa;*/
 	}
 }
 
@@ -209,7 +209,7 @@ section{
 }
 @media(min-width: 700px){
 	.who-text-container{
-		width: 35%;
+		width: 50%;
 		flex: 1 1 auto;
 		text-align: center;
 		margin: auto 15px; 
@@ -254,7 +254,7 @@ section{
 		align-items: stretch;*/
 	}
 	.who-container .video-container{
-		width: 70%;
+		width: 50%;
 		height: auto;
 		margin:auto 15px;
 	}
@@ -271,7 +271,7 @@ section{
 		font-size: 48px; 
 	}
 	.who-container article{
-		font-size: 22px;
+		font-size: 24px;
 		font-weight: 300;
 	}
 

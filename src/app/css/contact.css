@@ -14,7 +14,7 @@ html, body{
 
 body{
     background-image: url("../img/grassland.jpg"); 
-    background-size: auto 100% ;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center; 
     
@@ -51,7 +51,7 @@ input, textarea{
 }
 .full{
     margin: 0 auto;
-    align-content: center;
+    align-items: center;
     text-align: center;
 }
 .send-button-container{

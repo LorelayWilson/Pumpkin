@@ -43,10 +43,9 @@ form{
 @media (min-width: 500px ) {
     body{
         background-image: url("../img/writing.png"); 
-    background-size: cover;
+        background-size: cover;
         background-attachment: fixed;
-
-	min-height: 100vh;
+        min-height: 100vh;
     }
     
     .login-text-container{
