@@ -14,6 +14,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/index.php" afterPath="$PROJECT_DIR$/src/app/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/login.html" afterPath="$PROJECT_DIR$/src/app/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/parcelas-lista.html" afterPath="$PROJECT_DIR$/src/app/parcelas-lista.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/includes/conection.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/includes/conection.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -214,21 +216,10 @@
       <workItem from="1583367306099" duration="846000" />
       <workItem from="1583451318997" duration="20421000" />
       <workItem from="1585852386408" duration="165000" />
+<<<<<<< Updated upstream
       <workItem from="1585877370252" duration="7000" />
       <workItem from="1585878480443" duration="178000" />
       <workItem from="1585878677626" duration="53000" />
-      <workItem from="1587403538595" duration="60000" />
-      <workItem from="1587403599203" duration="13000" />
-      <workItem from="1587403728559" duration="39000" />
-      <workItem from="1587403784185" duration="38000" />
-      <workItem from="1587404552202" duration="223000" />
-      <workItem from="1587404776194" duration="80000" />
-      <workItem from="1587404857418" duration="112000" />
-      <workItem from="1587405095830" duration="4959000" />
-      <workItem from="1587496192930" duration="5700000" />
-      <workItem from="1587569335761" duration="1994000" />
-      <workItem from="1587575106067" duration="2080000" />
-      <workItem from="1587577798478" duration="5784000" />
     </task>
     <servers />
   </component>
@@ -284,11 +275,18 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< Updated upstream
     <state x="524" y="273" key="com.intellij.ide.util.TipDialog" timestamp="1585878678447">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="524" y="273" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585878678447" />
     <state x="655" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585852551198" />
+=======
+    <state x="655" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585863511978">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="655" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585863511978" />
+>>>>>>> Stashed changes
     <state x="1096" y="244" key="run.anything.popup" timestamp="1583470895599">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

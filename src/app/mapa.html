@@ -1,79 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mapa</title>
-    
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mapas</title>
+
     <style>
         #map {
-            width: 960px;
-            height: 50vh;
+            width: 90vw;
+            height: 90vh;
             border: solid 1px black;
         }
+
     </style>
+
 </head>
 <body>
-    
-    <div id="map"></div>
-    
-    <script>
-        let map;
-        let infowindow;
-        function initMap(){
-            
-            /*inicializacion del mapa*/
-            map = new google.maps.Map(document.getElementById('map'), {
-                center:{ lat: 38.9965055, lng: -0.1674364},
-                zoom: 15,
+
+
+<div id="map"></div>
+
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM&callback=initMap"
+        async defer></script>
+<script>
+    var map;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 38.9965055, lng: -0.1674364}, //tiene 2 propiedades, latitud, longitud
+            zoom: 15,
                 mapTypeId: 'hybrid',
                 styles: [
-                            {
-                                featureType: 'poi',
-                                stylers: [{visibility:'off'}]
-                            }, 
-                            {
-                                featureType: 'transit',
-                                stylers:[{visibility: 'off'}]
-                            }
-
-                        ],
+                    {
+                        featureType: 'poi',
+                        stylers: [{visibility: 'off'}]
+                    },
+                    {
+                        featureType: 'transit',
+                        stylers: [{visibility: 'off'}]
+                    }
+                ],
                 mapTypeControl: false,
                 streetViewControl: false,
                 rotateControl: false,
             });
-            
-            //Fijar vista
-            map.setTilt(0);
-            
-            cargarPosiciones();
-            cargarParcelas();
-            abrirInfoWindow();
-            
-            infowindow=new google.maps.InfoWindow();
-        }
-        
+        map.setTilt(0);
+
+        cargarParcelas();
+        cargarPosiciones();
+
+
         function cargarPosiciones(){
-            fetch('posiciones.json').then(function(r){
-                return r.json();
+            fetch('js/posiciones.json').then(function(r){
+                    return r.json();
             }).then(function(j){
-                j.forEach(function(position){
+                j.forEach(function(posicion){
                     var marker = new google.maps.Marker({
-                        position:position,
-                        label: "" + position.id.toString(),
+                        position: {lat: posicion.lat, lng: posicion.lng},
                         animation: google.maps.Animation.DROP,
-                        map: map
-                    })
+                        map: map,
+                        url: 'mediciones.html?idsonda='+posicion.id,
+                        label: posicion.id
+                    });
+                    marker.addListener('click', function(){
+                        window.location.href = this.url;
+                    });
+
                 })
+
             })
         }
-        
         function cargarParcelas(){
-            
-            fetch('parcelas.json').then(function(r){
+            fetch('js/parcelas.json').then(function (r){
                 return r.json();
-            }).then(function(j){
+            }).then(function (j) {
                 let bounds = new google.maps.LatLngBounds();
-                j.forEach(function(parcela){
+                j.forEach(function (parcela){
+
                     let polygon = new google.maps.Polygon({
                         paths: parcela.vertices,
                         strokeColor: parcela.color,
@@ -83,28 +88,32 @@
                         fillOpacity: 0.35,
                         map: map
                     });
-                    polygon.getPath().getArray().forEach(function(v){
+                    polygon.getPath().getArray().forEach(function (v) {
                         bounds.extend(v);
                     })
-                    polygon.addListener('click', () => {
-                        openInfoWindow(`<b>${parcel.nombre}</b>`, parcel.vertices);
+                    /*
+                    polygon.addListener('click', function(event){
+                        abrirInfoWindow(parcela.nombre, event.latlng)
                     })
+                    */
                 });
-                
                 map.fitBounds(bounds);
-            })       
+            })
+
         }
-    
+        var infowindow = new google.maps.InfoWIndow();
         function abrirInfoWindow(contenido, posicion){
             infowindow.setContent(contenido);
-            infowindow.open(map, posicion);
+            infowindow.open(map, posicion)
+
         }
-        
-    </script>
-    
-    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
-async defer></script>
-    
-<script src="js/sesion.js"></script>
+        }
+
+
+
+</script>
+<script src="js/hack.js"></script>
+
+
 </body>
 </html>
