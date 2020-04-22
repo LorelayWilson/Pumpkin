@@ -8,7 +8,7 @@ $bbdd = 'liflores_Pumpkin';
 $bbdd_server = 'localhost';
 $bbdd_user = 'root';
 $bbdd_password = '';
-$bbdd = 'bbdd_pumpkin_parcelas';
+$bbdd = 'bbdd_pumpkinzz';
 
 $conection = mysqli_connect($bbdd_server, $bbdd_user, $bbdd_password, $bbdd);
 

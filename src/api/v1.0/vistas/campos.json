@@ -1,4 +1,5 @@
 [
-  {"id_campos": 1, "nombre_campos": "campo de patatas", "id_clientes": 1},
-  {"id_campos": 2, "nombre_campos": "campos de alcachofas", "id_clientes": 1}
+	{"id": 1, "nombre": "Campo de patatas", "user": "aghost13"},
+	{"id": 2, "nombre": "Campo de alcachofas", "user": "aghost13"},
+	{"id": 3, "nombre": "Campo de calabazas", "user": "beton2p"}
 ]

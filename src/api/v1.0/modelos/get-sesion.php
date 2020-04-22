@@ -1,24 +1,13 @@
 <?php
-/* ESTE ES EL CÓDIGO PARA RESTRINGIR EL ACCESO*/
 
 include '../../includes/acceso.php';
-/* Con esto incluiremos el archivo que va a restringir el acceso a este archivo, para
-que nadie pueda obtener una cuenta por la cara.*/
-
-
-/*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*/
-
-/* ESTE ES EL CÓDIGO PARA GET-SESION*/
 
 session_start();
 
-if (isset($_SESSION['registrado']) && $_SESSION['registrado'] == 'ok') {
+if (isset($_SESSION['registered']) && $_SESSION['registered'] == 'ok') {
     $http_code = 200;
-} else {
+    
+}
+else {
     $http_code = 401;
 }

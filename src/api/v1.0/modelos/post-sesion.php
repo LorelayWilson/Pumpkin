@@ -13,6 +13,7 @@ if (isset($_POST['password']) && $_POST['password'] != '' && isset($_POST['user'
 $password = $_POST['password'];
 $conexion = mysqli_connect("localhost", "root", "", "bbdd_pumpkin_parcelas");
 $consulta ="SELECT usuarios.id_usuarios as id_usuario, usuarios.nombre_usuario as usuario, usuarios.contraseña as contraseña, roles.id_rol as rol_id, roles.nombre_rol as nombre_rol, localizacion.* FROM `usuarios`, `localizacion`, `roles`  WHERE usuarios.nombre_usuario='$user' and usuarios.contraseña='$password' and roles.id_rol = usuarios.id_rol ";
+  
 $resultado=mysqli_query($conexion, $consulta);
 //------------------
 //$mostrar=mysqli_fetch_array($resultado)

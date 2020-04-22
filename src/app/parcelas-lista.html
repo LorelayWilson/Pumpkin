@@ -28,6 +28,7 @@
 			</ul>
 		</nav>
 	</header>
+
 	<!-- // -->
 
 	<div class="main-container">
@@ -36,42 +37,34 @@
 
 		<h3>Seleccionar parcela:</h3>
 
-
-
-<!--		<table>
-			<thead>
-			<td>N. Identificador</td>
-			<td>Nombre de parcela</td>
-			</thead>
-			<tbody id="tablaParcelas"></tbody>
-		</table>-->
 		<div id="tablaParcelas">
-			a,b,c
-
+			<!--aqui va el script-->
 		</div>
 
-<!-- 		<div class="list-or-map">
-				<a href="#"><img id="list" src="img/lista-parcelas.png" alt="Lista Parcelas"></a>
-				<a href="parcelas-mapa.html"><img id="map" src="img/mapa-parcelas.png" alt="Mapa Parcelas"></a>
-		</div>	 -->
-
-
 		<script>
+			//SELECT JSON_OBJECT("id",id,"nombre",nombre,"id",id) INTO OUTFILE 'C:/xampp/htdocs/Pumpkin/src/api/v1.0/vistas/campos.js' FROM campos
 			fetch('../api/v1.0/vistas/campos.json').then(function (respuesta) {
 				return respuesta.json(); })
 			.then(function (datosJson) {
 				let tabla = document.getElementById("tablaParcelas");
-				tabla.innerHTML = `<h1>${datosJson}</h1>`;
-
-
-				/*datosJson.forEach(function (item) {
-                    //console.log(item);
-                    tabla.innerHTML += `<tr>
-						<td>sssss</td>
-						<td>${item.nombre_campos}</td>
-					</tr>`;
-                })*/
-            });
+				tabla.innerHTML = `
+					<table>
+					<thead>
+						<th>Nombre de parcela</th>
+						<th>N. Identificador</th>
+					</thead>
+					<tbody>
+						${datosJson.map(function(dato){
+							return `
+								<tr>
+									<td>${dato.nombre}</td>
+									<td>${dato.id}</td>
+									<td><a href="pagina-parcela.html"> >> </a></td>
+								</tr>
+							`
+						}).join('')}
+					</tbody>
+				`;})
 		</script>
 	</div>
 		<!--<div class="accordion"> HTML ACCORDION
@@ -139,6 +132,6 @@
 	</footer>
 
 
-	<script src="js/sesion.js"></script>
+<!-- 	<script src="js/sesion.js"></script> -->
 </body>
 </html>

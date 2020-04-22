@@ -56,7 +56,7 @@ if(respuesta.status == 200) location.href = 'login.html';
     <br>
     <br>
     <br>
-<a href="parcelas.html"> VER LISTADO DE PARCELAS </a>
+<a href="parcelas-lista.html"> VER LISTADO DE PARCELAS </a>
     
 </body>
 </html>
