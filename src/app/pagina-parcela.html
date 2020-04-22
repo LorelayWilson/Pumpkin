@@ -43,7 +43,13 @@
 
 		<div class="map-chart-container">
 
-			<div class="map-container" id="map-container-id">Aqui va el mapa de la parcela seleccionada. Selecciona esta <button onclick="openChart()">sonda</button></div>
+			<div class="map-container" id="map-container-id">
+				<!-- <button onclick="openChart()">sonda</button> ESTO ES LO QUE SE DEBE ABRIR CUANDO SELECCIONAS SONDA -->
+				<script type="text/javascript" src="js/mapa.js"></script> <!-- Esto es el mapa de la parcela -->
+				<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script> 
+
+			</div>
+			 
 			<script>
 				var maxWidth = window.matchMedia("(max-width: 850px)");
 				openChart(); // Call listener function at run time

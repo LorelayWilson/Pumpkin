@@ -31,16 +31,50 @@
 	<!-- // -->
 
 	<div class="main-container">
+
 		<h1 class="title">Mis parcelas</h1>
-		
+
+		<h3>Seleccionar parcela:</h3>
+
+
+
+<!--		<table>
+			<thead>
+			<td>N. Identificador</td>
+			<td>Nombre de parcela</td>
+			</thead>
+			<tbody id="tablaParcelas"></tbody>
+		</table>-->
+		<div id="tablaParcelas">
+			a,b,c
+
+		</div>
+
 <!-- 		<div class="list-or-map">
 				<a href="#"><img id="list" src="img/lista-parcelas.png" alt="Lista Parcelas"></a>
 				<a href="parcelas-mapa.html"><img id="map" src="img/mapa-parcelas.png" alt="Mapa Parcelas"></a>
 		</div>	 -->
 
 
-		<h3>Seleccionar parcela:</h3>
-		<div class="accordion">
+		<script>
+			fetch('../api/v1.0/vistas/campos.json').then(function (respuesta) {
+				return respuesta.json(); })
+			.then(function (datosJson) {
+				let tabla = document.getElementById("tablaParcelas");
+				tabla.innerHTML = `<h1>${datosJson}</h1>`;
+
+
+				/*datosJson.forEach(function (item) {
+                    //console.log(item);
+                    tabla.innerHTML += `<tr>
+						<td>sssss</td>
+						<td>${item.nombre_campos}</td>
+					</tr>`;
+                })*/
+            });
+		</script>
+	</div>
+		<!--<div class="accordion"> HTML ACCORDION
 			<button class="ccaa">Andalucia</button>
 			<div class="panel-parcela">
 				<ul>
@@ -71,8 +105,10 @@
 				</ul>
 			</div>
 		</div>
-	</div>
-	<script>
+	</div>-->
+
+
+<!--	<script> SCRIPT ACCORDION
 		var acc = document.getElementsByClassName("ccaa");
 		var i;
 
@@ -87,7 +123,7 @@
 		    }
 		  });
 		}
-	</script>
+	</script>-->
 
 	<footer>
 		<img src="img/logo-white.png" alt="Logo de GTI versión blanca" > <!-- LOGO (WHITE) -->
