@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Recuperar contraseña</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, maximum-scale=1">
+    <meta http-equip="x-ua-compatible" content="ie-edge">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div class="login-text-container">
+        <section class="login-text">
+            <a href="#"> <img src="img/logoGTI2.svg" alt="logo"> </a>
+            <h1>Recuperar contraseña</h1>
+        </section>
+        <p>
+            Escriba su email y en breve le enviaremos un correo para volver a establecer la contraseña de su cuenta.
+        </p>
+        <section class="form">
+            <p>Introduce tu email:</p>
+            <input type="text" id="correo" placeholder="Correo electrónico">
+            <div id="error"></div>
+        </section>
+        <section class="enviar">
+            <a href="login.html" class="volver">
+                <p>Volver</p>
+            </a>
+            <a href="#" onclick="validarDatos(document.getElementById('correo').value)" class="entrar">
+                <p>Enviar</p>
+            </a>
+        </section>
+    </div>
+    
+    <script src="contrasenya_olvidada.js"></script>
+    
+</body>
+
+</html>
