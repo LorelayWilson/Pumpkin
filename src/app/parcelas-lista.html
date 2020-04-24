@@ -8,6 +8,11 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/parcelas-lista.css">
 	<title>GTI - Lista de parcelas</title>
+	<style>
+		a{
+			text-decoration: none;
+		}
+	</style>
 </head>
 
 <body>
@@ -51,14 +56,13 @@
 					<table>
 					<thead>
 						<th>Nombre de parcela</th>
-						<th>N. Identificador</th>
+
 					</thead>
 					<tbody>
 						${datosJson.map(function(dato){
 							return `
 								<tr>
 									<td>${dato.nombre}</td>
-									<td>${dato.id}</td>
 									<td><a href="pagina-parcela.html"> >> </a></td>
 								</tr>
 							`
@@ -132,6 +136,6 @@
 	</footer>
 
 
-<!-- 	<script src="js/sesion.js"></script> -->
+ 	<!--<script src="js/sesion.js"></script>-->
 </body>
 </html>

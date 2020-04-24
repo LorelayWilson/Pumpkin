@@ -36,7 +36,7 @@
 	<!-- // -->
 
 	<div class="main-container">
-		<h1 class="title">Campo Laureles, Gandia</h1> <!-- PONER NOMBRE PARCELA -->
+		<h1 class="title">Campo de patatas, Gandia</h1> <!-- PONER NOMBRE PARCELA -->
 
 
 		<h3>Seleccionar sonda:</h3>
@@ -44,12 +44,11 @@
 		<div class="map-chart-container">
 
 			<div class="map-container" id="map-container-id">
-				<!-- <button onclick="openChart()">sonda</button> ESTO ES LO QUE SE DEBE ABRIR CUANDO SELECCIONAS SONDA -->
 				<script type="text/javascript" src="js/mapa.js"></script> <!-- Esto es el mapa de la parcela -->
-				<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script> 
-
+				<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+				<button onclick="openChart()">sonda</button>
 			</div>
-			 
+
 			<script>
 				var maxWidth = window.matchMedia("(max-width: 850px)");
 				openChart(); // Call listener function at run time
@@ -176,6 +175,6 @@
 	<script type="text/javascript" src="js/graficas/grafica-luminosidad.js"></script>
 
 
-	<script src="js/sesion.js"></script>
+	<!--<script src="js/sesion.js"></script>-->
 </body>
 </html>

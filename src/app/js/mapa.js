@@ -23,7 +23,43 @@ function initMap(){
         streetViewControl: false,
         rotateControl: false,
     });
-    
+
+//--------------------------------------------------------
+    var marker = new google.maps.Marker({
+        position: {lat: 38.996243, lng: -0.168021},
+        label: "1",
+        animation: google.maps.Animation.DROP,
+        map: map,
+    });
+    marker.addListener('click', function() {
+        openChart();
+    });
+
+/*
+    var triangleCoords = [
+        {lat: 38.997062, lng: -0.169131},
+        {lat: 38.995790, lng: -0.170502},
+        {lat: 38.995757, lng: -0.167680},
+        {lat: 38.996349, lng: -0.167154}
+
+    ];
+
+    // Construct the polygon.
+    var bermudaTriangle = new google.maps.Polygon({
+        paths: triangleCoords,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35
+    });
+    bermudaTriangle.setMap(map);
+}
+*/
+
+
+//---------------------------------------------------------
+
     //Fijar vista
     map.setTilt(0);
     
@@ -35,7 +71,7 @@ function initMap(){
 }
 
 function cargarPosiciones(){
-    fetch('../posiciones.json').then(function(r){
+/*    fetch('../posiciones.json').then(function(r){
         return r.json();
     }).then(function(j){
         j.forEach(function(position){
@@ -46,7 +82,30 @@ function cargarPosiciones(){
                 map: map
             })
         })
-    })
+    })*/
+
+/*
+        var triangleCoords = [
+            {lat: 38.997062, lng: -0.169131},
+            {lat: 38.995790, lng: -0.170502},
+            {lat: 38.995757, lng: -0.167680},
+            {lat: 38.996349, lng: -0.167154}
+
+        ];
+
+        // Construct the polygon.
+        var bermudaTriangle = new google.maps.Polygon({
+            paths: triangleCoords,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35
+        });
+        bermudaTriangle.setMap(map);
+    }
+*/
+
 }
 
 function cargarParcelas(){
