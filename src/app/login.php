@@ -25,7 +25,34 @@ include_once('header.php');
         
            
             <h1 class="login">INICIAR SESIÓN</h1>
-            
+
+            <?php
+            //POSIBLES ERRORES LOGIN
+            if (isset($_GET['error'])) {
+                if ($_GET['error'] == "emptyfields") {
+                    echo "<p>Hay campos en blanco.</p>";
+
+                } else if ($_GET['error'] == "sqlerror") {
+                    echo "<p>Error en la consulta con la base de datos. <br><a href='contact.php'>Contacta con nosotros.</a></p>";
+
+                } else if ($_GET['error'] == "wrongpwd") {
+                    echo "<p>Contraseña incorrecta.</p>";
+
+                } else if ($_GET['error'] == "pwderror") {
+                    echo "<p>Error desconocido con la contraseña.<br><a href='contact.php'>Contacta con nosotros.</a></p>";
+
+                } else if ($_GET['error'] == "nouser") {
+                    echo "<p>No existe el usuario.<br><a href='contact.php'>Contacta con nosotros.</a></p>";
+
+                }else
+                    echo "<p>Error desconocido.<br><a href='contact.php'>Contacta con nosotros.</a></p>";
+            }
+            //MENSAJE LOGOUT
+            if (isset($_GET['logoutsuccess'])) {
+                echo "<p>Has cerrado sesión.</p>";
+            }
+            ?>
+
             <form action="../api/includes/acceso.php" method="post" id="login"> <!--onsubmit="enviar(event)" -->  <!-- Creamos el cuadro donde se escribirá el usuario -->
             
                 <input type="text" placeholder="Usuario" id="inputUser" name="user">

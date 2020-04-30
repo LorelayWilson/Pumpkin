@@ -34,7 +34,7 @@ if(isset($_POST['login-submit']))
                 //$passwordCheck = password_verify($password,$row['contraseña']); //stores boolean
                 if ($password != $row['contraseña'])
                 {
-                    header("Location:../../app/login.php?error=wrongpwd=".$row['contraseña']."eee");
+                    header("Location:../../app/login.php?error=wrongpwd");
                     exit();
                 }
                 elseif ($password == $row['contraseña'])
@@ -46,9 +46,9 @@ if(isset($_POST['login-submit']))
                     header("Location:../../app/parcelas-lista.php?login=success");
                     exit();
                 }
-                else//in case somehow passwordcheck is not true and/or not working
+                else//in case somehow the password check comparisson is not working
                 {
-                    header("Location:../../app/login.php?error=wrongpwd2");
+                    header("Location:../../app/login.php?error=pwderror");
                     exit();
                 }
             }
