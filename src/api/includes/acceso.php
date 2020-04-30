@@ -1,12 +1,68 @@
 <?php
 
-//session_start();
+if(isset($_POST['login-submit']))
+{
+    require 'connection.php';
 
-if (!isset($_SESSION['registered']) || $_SESSION['registered'] != 'ok') {
-http_response_code(401);
-die('{"error":"No autorizado"}');
+    $user = $_POST['user'];
+    $password = $_POST['password'];
 
-//exit;
-    //
-    //../../app/login.html
+    if(empty($user) || empty($password))
+    {
+        header("Location:../../app/login.php?error=emptyfields");
+        exit();
+    }
+    else
+    {
+        $sql = "SELECT * FROM usuarios WHERE user=?;";
+        $statement = mysqli_stmt_init($connection);
+
+        if (!mysqli_stmt_prepare($statement,$sql))
+        {
+            header("Location:../../app/login.php?error=sqlerror");
+            exit();
+        }
+        else
+        {
+            mysqli_stmt_bind_param($statement, "s", $user);
+            mysqli_stmt_execute($statement);
+            $result = mysqli_stmt_get_result($statement);
+
+            //check if we actually got result from database
+            if ($row = mysqli_fetch_assoc($result))
+            {
+                //$passwordCheck = password_verify($password,$row['contraseña']); //stores boolean
+                if ($password != $row['contraseña'])
+                {
+                    header("Location:../../app/login.php?error=wrongpwd=".$row['contraseña']."eee");
+                    exit();
+                }
+                elseif ($password == $row['contraseña'])
+                {
+                    session_start();
+                    $_SESSION['user']=$row['user'];
+                    $_SESSION['nie']=$row['nie'];
+
+                    header("Location:../../app/parcelas-lista.php?login=success");
+                    exit();
+                }
+                else//in case somehow passwordcheck is not true and/or not working
+                {
+                    header("Location:../../app/login.php?error=wrongpwd2");
+                    exit();
+                }
+            }
+            else
+            {
+                header("Location:../../app/login.php?error=nouser");
+                exit();
+            }
+        }
+    }
+}
+else
+{
+    header("Location:../../app/login.php?notset");
+    exit();
+
 }

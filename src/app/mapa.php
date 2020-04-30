@@ -1,19 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Mapa</title>
-    
+<?php
+
+//$PageTitle="Iniciar sesión - Grado en Tecnologías Interactivas";//Opcional. Por defecto: GTI Tecnologias Interactivas
+
+function customPageHeader(){?>
     <style>
-        #map {
-            width: 960px;
-            height: 50vh;
-            border: solid 1px black;
-        }
+    #map {
+        width: 960px;
+        height: 50vh;
+        border: solid 1px black;
+    }
     </style>
-</head>
+<?php }
+    include_once('header.php');
+
+    ?>
 <body>
-    
     <div id="map"></div>
     
     <script>

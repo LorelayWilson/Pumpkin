@@ -1,22 +1,19 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact us GTI - Grado en Tecnologías Interactivas</title>
-   
-    <link rel="stylesheet" href="css/contact.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    
-</head>
+<?php
+
+$PageTitle="Contact us GTI - Grado en Tecnologías Interactivas";//Opcional. Por defecto: GTI Tecnologias Interactivas
+
+function customPageHeader(){?>
+    <link rel="stylesheet" type="text/css" href="css/contact.css">
+<?php }
+include_once('header.php');
+?>
 
 
 <body>
     
   <!-- HEADER -->
 	<header>
-	    <a href="../index.html"><img src="img/logo.svg" alt="Logo de GTI" class="logo"> </a>
+	    <a href="../index.php"><img src="img/logo.svg" alt="Logo de GTI" class="logo"> </a>
 		 <!-- LOGO -->
 <!-- 		<input type="checkbox" id="chk">
 		<label for="chk" class="show-menu-btn">
@@ -28,7 +25,7 @@
 				<i class="fas fa-bars"></i> <!-- MENU BURGER LINES -->
 			</label>
 			<ul class="menu">
-				<li class="login-option"><a href="login.html">Iniciar sesión</a></li>
+				<li class="login-option"><a href="login.php">Iniciar sesión</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -36,7 +33,7 @@
 
 	<!-- Contacta: -->
 	<div class="main-container">
-		<form action="index.html" method="post" onsubmit="enviar(event)" id="contact"> 
+		<form action="index.php" method="post" onsubmit="enviar(event)" id="contact">
 		<h1 class="title">Contáctanos</h1>
 		<div class="inp1">
 			<label>Nombre:</label><br>

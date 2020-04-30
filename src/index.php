@@ -1,21 +1,19 @@
-<!DOCTYPE html>
-<html lang="es">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/1437242e61.js" crossorigin="anonymous"></script>
-	<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="app/css/main.css">
+//$PageTitle="New Page Title";//Opcional. Por defecto: GTI Tecnologias Interactivas
+
+function customPageHeader(){?>
     <link rel="stylesheet" type="text/css" href="app/css/landingpage.css">
-	<title>GTI - Grado en Tecnologías Interactivas</title>
-</head>
+    <link rel="stylesheet" type="text/css" href="app/css/main.css">
+<?php }
+include_once('app/header.php');
+?>
 
 <body>
 
 	<!-- HEADER -->
 	<header>
-		<a href="index.html"><img src="app/img/logo.svg" alt="Logo de GTI" class="logo"> </a><!-- LOGO -->
+		<a href="index.php"><img src="app/img/logo.svg" alt="Logo de GTI" class="logo"> </a><!-- LOGO -->
 <!-- 		<input type="checkbox" id="chk">
 		<label for="chk" class="show-menu-btn">
 			<i class="fas fa-bars"></i>
@@ -26,7 +24,7 @@
 				<i class="fas fa-bars"></i> <!-- MENU BURGER LINES -->
 			</label>
 			<ul class="menu">
-				<li class="login-option"><a href="app/login.html">Iniciar sesión</a></li>
+				<li class="login-option"><a href="app/login.php">Iniciar sesión</a></li>
 				<!-- <li><a href="#HELLO">Inicio</a></li> -->
 				<li><a href="#WHO">Quiénes somos</a></li>
 				<li><a href="#WHY">Por qué elegirnos</a></li>
@@ -51,8 +49,8 @@
 		</div>
 
 		<div class="hello-calltoaction">
-			<button class="full" onclick = "location='app/contact.html'">CONSULTAR</button>
-			<button class="empty login-button" onclick = "location='app/login.html'">INICIAR SESIÓN</button>
+			<button class="full" onclick = "location='app/contact.php'">CONSULTAR</button>
+			<button class="empty login-button" onclick = "location='app/login.php'">INICIAR SESIÓN</button>
 		</div>
 		<div class="arrow-down hello-img">
 			<a href="#WHO"><img src="app/img/flecha-blanca.png" alt="Flecha bajar"></a> <!-- ARROW DOWN -->
@@ -167,7 +165,7 @@
 		<div class="contact-text-container">
 			<h1 class="title">Nadie nace sabiéndolo todo.</h1>
 			<h3>Por eso, queremos estar ahí para ayudarte con cada paso.</h3>
-			<button class="empty" onclick = "location='app/contact.html'">CONTACTAR</button>
+			<button class="empty" onclick = "location='app/contact.php'">CONTACTAR</button>
 		</div>
 
 	</section>

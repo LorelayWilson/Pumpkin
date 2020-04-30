@@ -1,20 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/1437242e61.js" crossorigin="anonymous" SameSite=None Secure></script>
-	<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+<?php
+
+$PageTitle="Tu parcela";//Opcional. Por defecto: GTI Tecnologias Interactivas
+
+function customPageHeader(){?>
     <link rel="stylesheet" type="text/css" href="css/pagina-parcela.css">
-	<title>GTI - Tu parcela</title>
-</head>
+<?php }
+include_once('header.php');
+?>
 
 <body>
 
 	<!-- HEADER -->
 	<header>
-		<a href="../index.html"><img src="img/logo.svg" alt="Logo de GTI" class="logo" /></a><!-- LOGO -->
+		<a href="../index.php"><img src="img/logo.svg" alt="Logo de GTI" class="logo" /></a><!-- LOGO -->
 <!-- 		<input type="checkbox" id="chk">
 		<label for="chk" class="show-menu-btn">
 			<i class="fas fa-bars"></i>
@@ -25,8 +23,8 @@
 				<i class="fas fa-bars"></i> <!-- MENU BURGER LINES -->
 			</label>
 			<ul class="menu">
-				<li class="login-option"><a href="login.html">Cerrar sesión</a></li>
-				<li><a href="../index.html#CONTACT">Contacto</a></li>
+				<li class="login-option"><a onclick="logoutForm()">Cerrar sesión</a></li>
+				<li><a href="../index.php#CONTACT">Contacto</a></li>
 			<!-- 	<label for="chk" class="hide-menu-btn">
 					<i class="fas fa-times"></i> 
 				</label> -->
@@ -35,7 +33,20 @@
 	</header>
 	<!-- // -->
 
-	<div class="main-container">
+    <!-- esto es para el logout, no deberia ser visible. añadir este bloque a todos los archivos donde se deba poder cerrar sesion -->
+    <form id='hiddenLogoutForm' style="display: none;" action="../api/includes/cerrar-sesion.php">
+        <button type="submit" name="logout-submit">logout(should be hidden)</button>
+    </form>
+
+    <script>
+        function logoutForm() {
+            document.getElementById("hiddenLogoutForm").submit();
+        }
+    </script>
+    <!-- // -->
+
+
+    <div class="main-container">
 		<h1 class="title">Campo de patatas, Gandia</h1> <!-- PONER NOMBRE PARCELA -->
 
 

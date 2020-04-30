@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <title>Recuperar contraseña</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, maximum-scale=1">
-    <meta http-equip="x-ua-compatible" content="ie-edge">
+$PageTitle="Recuperar Contraseña"; //Opcional. Por defecto: GTI Tecnologias Interactivas
+
+function customPageHeader(){?>
     <link rel="stylesheet" href="css/login.css">
-</head>
+<?php }
+include_once('header.php');
+?>
 
 <body>
     <div class="login-text-container">
@@ -24,7 +23,7 @@
             <div id="error"></div>
         </section>
         <section class="enviar">
-            <a href="login.html" class="volver">
+            <a href="login.php" class="volver">
                 <p>Volver</p>
             </a>
             <a href="#" onclick="validarDatos(document.getElementById('correo').value)" class="entrar">
@@ -33,7 +32,7 @@
         </section>
     </div>
     
-    <script src="contrasenya_olvidada.js"></script>
+    <script src="contrasenya_olvidada.js"></script> //NO EXISTE ESTO!!
     
 </body>
 

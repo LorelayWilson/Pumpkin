@@ -1,7 +1,7 @@
 <?php
 //$conexion = mysqli_connect("localhost", "root", "", "bbdd_pumpkin_parcelas");
 
-require_once('../api/v1.0/modelos/post-sesion.php');
+/*require_once('../api/v1.0/modelos/post-sesion.php');*/
 require_once('../api/includes/acceso.php');
 ?>
 
@@ -12,7 +12,7 @@ require_once('../api/includes/acceso.php');
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Control de ventas</title>
+    <title>sssssssss</title>
     <style>
         td {
             border: solid 1px black;
@@ -30,10 +30,17 @@ require_once('../api/includes/acceso.php');
 
 <body>
 
+<!--DANI-->
+<a href="javascript:fetch('../api/v1.0/sesion',{method:'delete'}).then(function(respuesta) {
+  if(respuesta.status == 200) location.href = '..';
+})">Cerrar sesion</a>
+
+<!--
+    DENIS
 <a href="javascript:fetch('../api/v1.0/sesion',{method:'delete'}).then(
 function(respuesta) {
 if(respuesta.status == 200) location.href = 'login.html';
-})"> Cerrar sesión </a>
+})"> Cerrar sesión </a>-->
 
 <br>
 

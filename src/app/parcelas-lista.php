@@ -1,33 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/1437242e61.js" crossorigin="anonymous"></script>
-	<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+<?php
+
+$PageTitle="Lista de parcelas";//Opcional. Por defecto: GTI Tecnologias Interactivas
+
+function customPageHeader(){?>
     <link rel="stylesheet" type="text/css" href="css/parcelas-lista.css">
-	<title>GTI - Lista de parcelas</title>
-	<style>
-		a{
-			text-decoration: none;
-		}
-	</style>
-</head>
+    <style>
+        a{
+            text-decoration: none;
+        }
+    </style>
+<?php }
+include_once('header.php');
+?>
+
 
 <body>
 
-	<!-- HEADER -->
+
 	<header>
-		<a href="../index.html"><img src="img/logo.svg" alt="Logo de GTI" class="logo" /></a><!-- LOGO -->
+		<a href="../index.php"><img src="img/logo.svg" alt="Logo de GTI" class="logo" /></a><!-- LOGO -->
 		<nav>
 			<input type="checkbox" id="check">
 			<label for="check" class="check-btn">
 				<i class="fas fa-bars"></i> <!-- MENU BURGER LINES -->
 			</label>
 			<ul class="menu">
-				<li class="login-option"><a href="login.html">Cerrar sesión</a></li>
-				<li><a href="contact.html">Contacto</a></li>
+                <li class="login-option"><a onclick="logoutForm()">Cerrar sesión</a></li>
+				<li><a href="contact.php">Contacto</a></li>
 				<li><a href="#">Editar perfil</a></li>
 				<li><a href="#">Ver perfil</a></li>
 			</ul>
@@ -35,6 +34,24 @@
 	</header>
 
 	<!-- // -->
+
+
+    <!--
+    esto es para el logout, no deberia ser visible.
+    añadir este bloque a todos los archivos donde se deba poder cerrar sesion.
+    Tambien añadir: <a onclick="logoutForm()">Cerrar sesión</a> en el header
+    -->
+    <form id='hiddenLogoutForm' style="display: none;" action="../api/includes/cerrar-sesion.php">
+        <button type="submit" name="logout-submit">logout(should be hidden)</button>
+    </form>
+
+    <script>
+        function logoutForm() {
+            document.getElementById("hiddenLogoutForm").submit();
+        }
+    </script>
+    <!-- // -->
+
 
 	<div class="main-container">
 
@@ -46,12 +63,12 @@
 			<!--aqui va el script-->
 		</div>
 
-		<script>
-			//SELECT JSON_OBJECT("id",id,"nombre",nombre,"id",id) INTO OUTFILE 'C:/xampp/htdocs/Pumpkin/src/api/v1.0/vistas/campos.js' FROM campos
+		<script type="text/JavaScript">
+
 			fetch('../api/v1.0/vistas/campos.json').then(function (respuesta) {
 				return respuesta.json(); })
 			.then(function (datosJson) {
-				let tabla = document.getElementById("tablaParcelas");
+				let tabla = document.getElementById('tablaParcelas');
 				tabla.innerHTML = `
 					<table>
 					<thead>
@@ -63,7 +80,7 @@
 							return `
 								<tr>
 									<td>${dato.nombre}</td>
-									<td><a href="pagina-parcela.html"> >> </a></td>
+									<td><a href="pagina-parcela.php"> >> </a></td>
 								</tr>
 							`
 						}).join('')}
@@ -136,6 +153,6 @@
 	</footer>
 
 
- 	<!--<script src="js/sesion.js"></script>-->
+<!-- 	<script src="js/sesion.js"></script>-->
 </body>
 </html>

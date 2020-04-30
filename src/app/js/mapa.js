@@ -71,7 +71,7 @@ function initMap(){
 }
 
 function cargarPosiciones(){
-/*    fetch('../posiciones.json').then(function(r){
+/*    fetch('posiciones.json').then(function(r){
         return r.json();
     }).then(function(j){
         j.forEach(function(position){

@@ -80,9 +80,6 @@ header nav{
 	border: none;
 	height: 45px;
 	font-size: 18px;
-} 
-.menu .login-option a{
-/*	line-height: 45px;*/
 }
 
 .menu .login-option:hover{

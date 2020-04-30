@@ -1,6 +1,6 @@
 <?php
 
-require_once '../includes/conection.php';
+require_once '../includes/connection.php';
 
 define('API_VERSION', 'v1.0');
 

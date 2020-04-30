@@ -1,0 +1,14 @@
+<?php
+
+//encontrarás esta plantilla en src/docs/plantilla-header.txt .
+
+//PONER AQUI TITULO DE PAGINA EN CASO DE QUERER TENER TITULO PERSONALIZADO EN VEZ DEL GENÉRICO:
+//$PageTitle="New Page Title";
+
+//PARA ENLAZAR A CSS APARTE DE MAIN.CSS, PONER AQUI:
+function customPageHeader(){?>
+    <link rel="stylesheet" type="text/css" href="app/css/landingpage.css">
+<?php }
+
+include_once('app/header.php');
+?>
