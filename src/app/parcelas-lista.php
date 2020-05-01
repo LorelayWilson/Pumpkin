@@ -61,9 +61,49 @@ include_once('header.php');
 
 		<div id="tablaParcelas">
 			<!--aqui va el script-->
+
+            <?php
+
+            $sql = "SELECT nombre,localidad,ccaa FROM campos WHERE user='".$_SESSION['user']."';";
+            //$statement = mysqli_stmt_init($connection);
+
+            $result = mysqli_query($connection, $sql);
+
+            if (!empty($result) && mysqli_num_rows($result) > 0  )
+            {
+                echo '<table>
+					    <thead>
+					        <tr>
+						        <th>Nombre de parcela</th>
+						        <th>Localidad</th>
+						        <th>Com. Autónoma</th>
+						    </tr>
+					    </thead>
+					    <tbody> ';
+                while($row = mysqli_fetch_assoc($result))
+                {
+                    echo '
+					        <tr>
+					            <td>'. $row["nombre"].'</td>
+					            <td>'. $row["localidad"].'</td>
+					            <td>'. $row["ccaa"].'</td>
+					            <td><a href="pagina-parcela.php?user='.$_SESSION['user'].'"xº> >> </a></td>
+					        </tr>
+					        ';
+                }
+                echo ' </tbody>
+					</table>';
+            }
+            else
+            {
+                echo "No existen parcelas para este usuario.";
+            }
+
+
+            ?>
 		</div>
 
-		<script type="text/JavaScript">
+<!--		<script type="text/JavaScript">
 
 			fetch('../api/v1.0/vistas/campos.json').then(function (respuesta) {
 				return respuesta.json(); })
@@ -86,7 +126,7 @@ include_once('header.php');
 						}).join('')}
 					</tbody>
 				`;})
-		</script>
+		</script>-->
 	</div>
 		<!--<div class="accordion"> HTML ACCORDION
 			<button class="ccaa">Andalucia</button>

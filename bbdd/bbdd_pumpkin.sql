@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 21-04-2020 a las 21:24:08
--- Versión del servidor: 5.7.29-0ubuntu0.16.04.1
--- Versión de PHP: 7.3.15
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 01-05-2020 a las 20:42:43
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.2.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `liflores_Pumpkin`
+-- Base de datos: `bbdd_pumpkin`
 --
 
 -- --------------------------------------------------------
@@ -31,25 +30,56 @@ SET time_zone = "+00:00";
 CREATE TABLE `campos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
-  `user` varchar(100) NOT NULL
+  `user` varchar(100) NOT NULL,
+  `localidad` varchar(255) NOT NULL,
+  `ccaa` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `campos`
 --
 
-INSERT INTO `campos` (`id`, `nombre`, `user`) VALUES
-(1, 'Campo de patatas', 'aghost13'),
-(2, 'Campo de alcachofas', 'aghost13'),
-(3, 'Campo de calabazas', 'beton2p');
+INSERT INTO `campos` (`id`, `nombre`, `user`, `localidad`, `ccaa`) VALUES
+(1, 'Campo de patatas', 'aghost13', 'Gandia', 'Comunidad Valenciana'),
+(2, 'Campo de alcachofas', 'aghost13', 'Murcia', 'Region de Murcia'),
+(3, 'Campo de calabazas', 'beton2p', 'Xeraco', 'Comunidad Valenciana'),
+(4, 'Campo de laureles', 'admin', 'San Sebastian', 'Pais Vasco'),
+(5, 'Campo de papayas', 'admin', 'Tarragona', 'Catalunya'),
+(9, 'Campo de olivos', 'admin', 'Jaen', 'Andalucia'),
+(10, 'Campo de amapolas', 'admin', 'Sagunto', 'Comunidad Valenciana');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `empresa`
+-- Estructura de tabla para la tabla `clientes`
 --
 
-CREATE TABLE `empresa` (
+CREATE TABLE `clientes` (
+  `nie` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `apellido` varchar(100) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `telefono` float NOT NULL,
+  `id_empresa` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`nie`, `nombre`, `apellido`, `email`, `telefono`, `id_empresa`) VALUES
+(124, 'Stoddard', 'Bartol', 'sbartol14@xing.com', 1797210000, 2),
+(135, 'Ulrica', 'Trevarthen', 'utrevarthen1b@bloomberg.com', 7375410000, 3),
+(140, 'Emmalyn', 'Norridge', 'enorridge8@about.me', 5735640000, 1),
+(169, 'Sheri', 'Huxtable', 'shuxtable6@a8.net', 8669210000, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `empresas`
+--
+
+CREATE TABLE `empresas` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `email` varchar(250) NOT NULL,
@@ -57,10 +87,10 @@ CREATE TABLE `empresa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `empresa`
+-- Volcado de datos para la tabla `empresas`
 --
 
-INSERT INTO `empresa` (`id`, `nombre`, `email`, `telefono`) VALUES
+INSERT INTO `empresas` (`id`, `nombre`, `email`, `telefono`) VALUES
 (1, 'Thiel, Schowalter and Cruickshank', 'fduchan0@nifty.com', 6265400000),
 (2, 'Hermann, Kertzmann and O\'Kon', 'ivillar1@woothemes.com', 3029910000),
 (3, 'Schroeder-Abernathy', 'aarlidge2@msu.edu', 7911190000),
@@ -98,31 +128,6 @@ INSERT INTO `mediciones` (`fecha`, `posicion`, `humedad`, `salinidad`, `temperat
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `persona`
---
-
-CREATE TABLE `persona` (
-  `nie` int(11) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
-  `apellido` varchar(100) NOT NULL,
-  `email` varchar(250) NOT NULL,
-  `telefono` float NOT NULL,
-  `id_empresa` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `persona`
---
-
-INSERT INTO `persona` (`nie`, `nombre`, `apellido`, `email`, `telefono`, `id_empresa`) VALUES
-(124, 'Stoddard', 'Bartol', 'sbartol14@xing.com', 1797210000, 2),
-(135, 'Ulrica', 'Trevarthen', 'utrevarthen1b@bloomberg.com', 7375410000, 3),
-(140, 'Emmalyn', 'Norridge', 'enorridge8@about.me', 5735640000, 1),
-(169, 'Sheri', 'Huxtable', 'shuxtable6@a8.net', 8669210000, 1);
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `posiciones`
 --
 
@@ -152,19 +157,19 @@ INSERT INTO `posiciones` (`id`, `lat`, `lng`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `rol`
+-- Estructura de tabla para la tabla `roles`
 --
 
-CREATE TABLE `rol` (
+CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `rol`
+-- Volcado de datos para la tabla `roles`
 --
 
-INSERT INTO `rol` (`id`, `nombre`) VALUES
+INSERT INTO `roles` (`id`, `nombre`) VALUES
 (1, 'Admin'),
 (2, 'Equipo Técnico'),
 (3, 'Cliente');
@@ -212,10 +217,10 @@ INSERT INTO `sondas` (`id`, `nombre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `user`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE `usuarios` (
   `user` varchar(100) NOT NULL,
   `rol` int(11) NOT NULL,
   `contraseña` varchar(250) NOT NULL,
@@ -223,14 +228,15 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `user`
+-- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `user` (`user`, `rol`, `contraseña`, `nie`) VALUES
+INSERT INTO `usuarios` (`user`, `rol`, `contraseña`, `nie`) VALUES
+('admin', 1, 'admin', 140),
 ('aghost13', 3, 'iT3XaR', 124),
 ('beton2p', 3, 'hIr4aZ17M2bk', 135),
-('bpemberton1k', 1, 'JQ02ljkS9x', 140),
-('hgrinikhinov2d', 2, 'GBenuvtHU7K', 169);
+('hgrinikhinov2d', 2, 'GBenuvtHU7K', 169),
+('hola', 1, 'hola', 140);
 
 -- --------------------------------------------------------
 
@@ -265,9 +271,16 @@ ALTER TABLE `campos`
   ADD KEY `user` (`user`);
 
 --
--- Indices de la tabla `empresa`
+-- Indices de la tabla `clientes`
 --
-ALTER TABLE `empresa`
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`nie`),
+  ADD KEY `id_empresa` (`id_empresa`);
+
+--
+-- Indices de la tabla `empresas`
+--
+ALTER TABLE `empresas`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -279,22 +292,15 @@ ALTER TABLE `mediciones`
   ADD KEY `posicion` (`posicion`);
 
 --
--- Indices de la tabla `persona`
---
-ALTER TABLE `persona`
-  ADD PRIMARY KEY (`nie`),
-  ADD KEY `id_empresa` (`id_empresa`);
-
---
 -- Indices de la tabla `posiciones`
 --
 ALTER TABLE `posiciones`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `rol`
+-- Indices de la tabla `roles`
 --
-ALTER TABLE `rol`
+ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -313,9 +319,9 @@ ALTER TABLE `sondas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `user`
+-- Indices de la tabla `usuarios`
 --
-ALTER TABLE `user`
+ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`user`),
   ADD KEY `rol` (`rol`),
   ADD KEY `nie` (`nie`);
@@ -336,12 +342,12 @@ ALTER TABLE `vertices`
 -- AUTO_INCREMENT de la tabla `campos`
 --
 ALTER TABLE `campos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT de la tabla `empresa`
+-- AUTO_INCREMENT de la tabla `empresas`
 --
-ALTER TABLE `empresa`
+ALTER TABLE `empresas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
@@ -351,9 +357,9 @@ ALTER TABLE `posiciones`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1001;
 
 --
--- AUTO_INCREMENT de la tabla `rol`
+-- AUTO_INCREMENT de la tabla `roles`
 --
-ALTER TABLE `rol`
+ALTER TABLE `roles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
@@ -364,19 +370,19 @@ ALTER TABLE `rol`
 -- Filtros para la tabla `campos`
 --
 ALTER TABLE `campos`
-  ADD CONSTRAINT `campos_ibfk_1` FOREIGN KEY (`user`) REFERENCES `user` (`user`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `campos_ibfk_1` FOREIGN KEY (`user`) REFERENCES `usuarios` (`user`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  ADD CONSTRAINT `clientes_ibfk_1` FOREIGN KEY (`id_empresa`) REFERENCES `empresas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `mediciones`
 --
 ALTER TABLE `mediciones`
   ADD CONSTRAINT `mediciones_ibfk_1` FOREIGN KEY (`posicion`) REFERENCES `posiciones` (`id`);
-
---
--- Filtros para la tabla `persona`
---
-ALTER TABLE `persona`
-  ADD CONSTRAINT `persona_ibfk_1` FOREIGN KEY (`id_empresa`) REFERENCES `empresa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `sonda`
@@ -387,11 +393,11 @@ ALTER TABLE `sonda`
   ADD CONSTRAINT `sonda_ibfk_3` FOREIGN KEY (`id`) REFERENCES `sondas` (`id`);
 
 --
--- Filtros para la tabla `user`
+-- Filtros para la tabla `usuarios`
 --
-ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`rol`) REFERENCES `rol` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `user_ibfk_2` FOREIGN KEY (`nie`) REFERENCES `persona` (`nie`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `usuarios`
+  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`rol`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`nie`) REFERENCES `clientes` (`nie`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `vertices`

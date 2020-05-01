@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-
+include '../api/includes/connection.php';
 ?>
 
 <!DOCTYPE html>
