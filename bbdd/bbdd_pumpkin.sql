@@ -180,7 +180,7 @@ INSERT INTO `roles` (`id`, `nombre`) VALUES
 -- Estructura de tabla para la tabla `sonda`
 --
 
-CREATE TABLE `sonda` (
+CREATE TABLE `datos` (
   `id` int(11) NOT NULL,
   `posicion` int(11) NOT NULL,
   `fecha` date NOT NULL
@@ -190,7 +190,7 @@ CREATE TABLE `sonda` (
 -- Volcado de datos para la tabla `sonda`
 --
 
-INSERT INTO `sonda` (`id`, `posicion`, `fecha`) VALUES
+INSERT INTO `datos` (`id`, `posicion`, `fecha`) VALUES
 (1, 9, '2019-04-25');
 
 -- --------------------------------------------------------
@@ -304,9 +304,9 @@ ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `sonda`
+-- Indices de la tabla `datos`
 --
-ALTER TABLE `sonda`
+ALTER TABLE `datos`
   ADD PRIMARY KEY (`id`,`posicion`,`fecha`),
   ADD KEY `posicion` (`posicion`),
   ADD KEY `fecha` (`fecha`),
@@ -387,10 +387,10 @@ ALTER TABLE `mediciones`
 --
 -- Filtros para la tabla `sonda`
 --
-ALTER TABLE `sonda`
-  ADD CONSTRAINT `sonda_ibfk_1` FOREIGN KEY (`posicion`) REFERENCES `mediciones` (`posicion`),
-  ADD CONSTRAINT `sonda_ibfk_2` FOREIGN KEY (`fecha`) REFERENCES `mediciones` (`fecha`),
-  ADD CONSTRAINT `sonda_ibfk_3` FOREIGN KEY (`id`) REFERENCES `sondas` (`id`);
+ALTER TABLE `datos`
+  ADD CONSTRAINT `datos_ibfk_1` FOREIGN KEY (`posicion`) REFERENCES `mediciones` (`posicion`),
+  ADD CONSTRAINT `datos_ibfk_2` FOREIGN KEY (`fecha`) REFERENCES `mediciones` (`fecha`),
+  ADD CONSTRAINT `datos_ibfk_3` FOREIGN KEY (`id`) REFERENCES `sondas` (`id`);
 
 --
 -- Filtros para la tabla `usuarios`
