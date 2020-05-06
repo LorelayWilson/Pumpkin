@@ -1,0 +1,306 @@
+/* LAPTOP */
+
+html{
+	height: 100%;
+	font-family: 'Poppins', sans-serif;
+	color:#292929;
+
+}
+body{
+	background-color: #fff;
+	/*padding: 0 15px;*/
+	height: 100%;
+}
+
+.menu{
+    width: 75%;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu li{
+    height: 40px;
+    font-family: sans-serif;
+}
+
+.menu li a{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    color: #333333;
+}
+
+.menu .login-option{
+    display: flex;
+    background: none;
+    width: 200px;
+    height: 30px;
+    margin: 0;
+    order: 1;
+    border: solid 3px #292929;
+}
+
+.menu .login-option a{
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    margin-top: 0px;
+}
+
+.recuperar-contraseña{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.formulario-contraseña{
+    width: 723px;
+    height: 571px;
+    margin-top: 70px;
+    text-align: center;
+    opacity: 0.8;
+    border-radius: 30px;
+    border: 1px solid #797979;
+    background-image: linear-gradient(-180deg, #ffffff 0%, #f2f2f2 0%, #e4e4e4 100%, #ffffff 100%);
+}
+
+.texto-principal{
+    font-family: sans-serif;
+    margin-top: 70px; 
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.relleno{
+    width: 473px;
+    height: 77px;
+    margin-left: 126px;
+}
+
+.texto-relleno{
+    font-family: sans-serif;
+    margin-top: 83px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.correo{
+    width: 215px;
+    height: 58px;
+    margin-left: 102px;
+}
+
+.texto-correo{
+    font-family: sans-serif;
+    font-size: 18px;
+    text-align: left;
+}
+.buscador{
+    width: 519px;
+    height: 51px;
+    border-radius: 5px;
+    border: solid 1px #797979;
+}
+
+.botones{
+    margin-top: 65px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+}
+
+#volver{
+    margin-left: 102px;
+    width: 201px;
+    height: 54px;
+    margin-right: 117px;
+    background: #fff;
+    border: solid 1px #797979;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #333333; 
+    text-decoration: none;
+}
+
+#enviar{
+    width: 201px;
+    height: 54px;
+    background: #169bd5;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.div-volver{
+    margin-top: 20px;
+}
+
+.div-enviar{
+    margin-top: 20px;
+}
+
+
+/* MOBILE */
+@media(max-width: 650px){
+    .menu{
+        background: black;
+        float: right;
+        margin-right: 20px;
+        float: right;
+        width:100%;
+        height: 590px;
+        margin-top: 5px;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .menu li{
+        display: inline-block;
+        margin-bottom: 5px; 
+        font-size: 12px;
+        font-weight: 300; 
+    }
+
+    .menu li a{
+        color:#fafafa; 
+        text-decoration: none;
+    }
+
+    .menu li a:hover{
+        color:#820053;
+    }
+    
+    .menu .login-option{
+        background-color:#820053;
+        border-radius: 50px;
+        color: #fafafa;
+        width:250px;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 300;
+        border: none;
+        height: 45px;
+        font-size: 18px;
+    } 
+
+    .menu .login-option a{
+        line-height: 45px;
+        margin-left: 70px;
+    }
+    
+    .menu .login-option:hover{
+        background: #fafafa;
+        color:#820053;
+    }
+    
+    .check-btn{
+        font-size: 35px;
+        color: #292929;
+        float: right;
+        line-height: 45px;
+        margin-right: 15px; 
+        cursor: pointer;
+        display:block; 
+    
+    }
+    
+    #check{
+        display: none;
+    }
+
+    .formulario-contraseña{
+        width: 370px;
+        height: 440px;
+        margin-top: 100px;
+        text-align: center;
+        opacity: 0.8;
+        border-radius: 30px;
+        border: 1px solid #797979;
+        background-image: linear-gradient(-180deg, #ffffff 0%, #f2f2f2 0%, #e4e4e4 100%, #ffffff 100%);
+    }
+    
+    .texto-principal{
+        font-family: sans-serif;
+        margin-top: 69px;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    
+    .relleno{
+        width: 242px;
+        height: 74px;
+        margin-left: 63px;
+    }
+    
+    .texto-relleno{
+        font-family: sans-serif;
+        margin-top: 48px;
+        font-size: 14px;
+        text-align: left;
+    }
+    
+    .correo{
+        width: 188px;
+        height: 45px;
+        margin-left: 52px;
+    }
+    
+    .texto-correo{
+        font-family: sans-serif;
+        font-size: 16px;
+        text-align: left;
+    }
+    .buscador{
+        width: 265px;
+        height: 39px;
+        border-radius: 5px;
+        border: solid 1px #797979;
+    }
+    
+    .botones{
+        margin-top: 51px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+    }
+    
+    #volver{
+        margin-left: 52px;
+        width: 103px;
+        height: 42px;
+        margin-right: 60px;
+        background: #fff;
+        border: solid 1px #797979;
+        border-radius: 5px;
+        font-family: sans-serif;
+        font-size: 16px;
+        color: #333333;
+        text-decoration: none;
+    }
+    
+    #enviar{
+        width: 103px;
+        height: 42px;
+        background: #169bd5;
+        border-radius: 5px;
+        font-family: sans-serif;
+        font-size: 16px;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .div-volver{
+        margin-top: 12px;
+    }
+    
+    .div-enviar{
+        margin-top: 12px;
+    }
+}
