@@ -1,142 +1,115 @@
-
 let map;
 let infowindow;
+
+
+class getCenter{
+
+    constructor(pos){
+        //latitud
+        this.lat= pos[0]['lat'];
+        //longitud
+        this.lng= pos[0]['lng'];
+    }
+
+
+    latMenor(){
+        let i;
+        for(i=1;i<posiciones.length;i++){
+            if (this.lat > posiciones[i]['lat']){
+                this.lat = posiciones[i]['lat'];
+            }
+        }
+        return Number(this.lat);
+    }
+
+    latMayor(){        let i;
+
+        for(i=1;i<posiciones.length;i++){
+            if (this.lat < posiciones[i]['lat']){
+                this.lat  = posiciones[i]['lat'];
+            }
+        }
+        return Number(this.lat);
+    }
+
+    lngMenor(){        let i;
+
+        for(i=1;i<posiciones.length;i++){
+            if (this.lng > posiciones[i]['lng']){
+                this.lng  = posiciones[i]['lng'];
+            }
+        }
+        return Number(this.lng );
+    }
+
+    lngMayor(){        let i;
+
+        for(i=1;i<posiciones.length;i++){
+            if (this.lng  < posiciones[i]['lng']){
+                this.lng  = posiciones[i]['lng'];
+            }
+        }
+        return Number(this.lng);
+    }
+}
+
+//function initMap(){  centroLatitud = Number(posiciones[0]['lat']); centroLongitud = Number(posiciones[0]['lng']); /*inicializacion del mapa*/ var contenedorMapa = document.getElementById('map-container-id'); var opcionesMapa = { center:{lat: centroLatitud, lng: centroLongitud}, zoom: 16, mapTypeId: 'hybrid', styles: [ { featureType: 'poi', stylers: [{visibility:'off'}] }, { featureType: 'transit', stylers:[{visibility: 'off'}] } ], mapTypeControl: false, streetViewControl: false, rotateControl: false, }; var mapa = new google.maps.Map(contenedorMapa, opcionesMapa); var posicionesPoligono = new google.maps.MVCArray(); for (i = 0; i < posiciones.length; i++){ posicionesPoligono.push( new google.maps.LatLng( Number( posiciones[i]['lat'] ) , Number( posiciones[i]['lng'] ) ) ) } var opcionesPoligono = {path: posicionesPoligono, strokeColor:"#820053" , fillColor:"#fafafa"}; var poligono = new google.maps.Polygon(opcionesPoligono); poligono.setMap(mapa); }
+
+
 function initMap(){
-    
-    /*inicializacion del mapa*/
-    map = new google.maps.Map(document.getElementById('map-container-id'), {
-        center:{ lat: 38.9965055, lng: -0.1674364},
-        zoom: 15,
+
+    centroLatitud1 = new getCenter(posiciones);
+    x1 = centroLatitud1.latMenor();
+    x2 = centroLatitud1.latMayor();
+
+    centroLongitud1 = new getCenter(posiciones);
+    y1 = centroLongitud1.lngMenor();
+    y2 = centroLongitud1.lngMayor();
+
+    centroLatitud = x1 + ((x2 - x1) / 2);
+    centroLongitud = y1 + ((y2 - y1) / 2);
+    //center.x = x1 + ((x2 - x1) / 2);
+
+    var contenedorMapa = document.getElementById('map-container-id');
+    var opcionesMapa = {
+        center:{lat: centroLatitud, lng: centroLongitud},
+        zoom: 16,
         mapTypeId: 'hybrid',
         styles: [
-                    {
-                        featureType: 'poi',
-                        stylers: [{visibility:'off'}]
-                    }, 
-                    {
-                        featureType: 'transit',
-                        stylers:[{visibility: 'off'}]
-                    }
+            {
+                featureType: 'poi',
+                stylers: [{visibility:'off'}]
+            },
+            {
+                featureType: 'transit',
+                stylers:[{visibility: 'off'}]
+            }
 
-                ],
+        ],
+
         mapTypeControl: false,
         streetViewControl: false,
         rotateControl: false,
-    });
+    };
 
-//--------------------------------------------------------
-    var marker = new google.maps.Marker({
-        position: {lat: 38.996243, lng: -0.168021},
-        label: "1",
-        animation: google.maps.Animation.DROP,
-        map: map,
-    });
-    marker.addListener('click', function() {
-        openChart();
-    });
+    var mapa = new google.maps.Map(contenedorMapa, opcionesMapa);
 
-/*
-    var triangleCoords = [
-        {lat: 38.997062, lng: -0.169131},
-        {lat: 38.995790, lng: -0.170502},
-        {lat: 38.995757, lng: -0.167680},
-        {lat: 38.996349, lng: -0.167154}
-
-    ];
-
-    // Construct the polygon.
-    var bermudaTriangle = new google.maps.Polygon({
-        paths: triangleCoords,
-        strokeColor: '#FF0000',
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: '#FF0000',
-        fillOpacity: 0.35
-    });
-    bermudaTriangle.setMap(map);
-}
-*/
+    var posicionesPoligono = new google.maps.MVCArray();
 
 
-//---------------------------------------------------------
-
-    //Fijar vista
-    map.setTilt(0);
-    
-    cargarPosiciones();
-    cargarParcelas();
-    abrirInfoWindow();
-    
-    infowindow=new google.maps.InfoWindow();
-}
-
-function cargarPosiciones(){
-/*    fetch('posiciones.json').then(function(r){
-        return r.json();
-    }).then(function(j){
-        j.forEach(function(position){
-            var marker = new google.maps.Marker({
-                position:position,
-                label: "" + position.id.toString(),
-                animation: google.maps.Animation.DROP,
-                map: map
-            })
-        })
-    })*/
-
-/*
-        var triangleCoords = [
-            {lat: 38.997062, lng: -0.169131},
-            {lat: 38.995790, lng: -0.170502},
-            {lat: 38.995757, lng: -0.167680},
-            {lat: 38.996349, lng: -0.167154}
-
-        ];
-
-        // Construct the polygon.
-        var bermudaTriangle = new google.maps.Polygon({
-            paths: triangleCoords,
-            strokeColor: '#FF0000',
-            strokeOpacity: 0.8,
-            strokeWeight: 2,
-            fillColor: '#FF0000',
-            fillOpacity: 0.35
-        });
-        bermudaTriangle.setMap(map);
+    for (i = 0; i < posiciones.length; i++){
+        posicionesPoligono.push(
+            new google.maps.LatLng(
+                Number( posiciones[i]['lat'] ) ,
+                Number( posiciones[i]['lng'] )
+            )
+        )
     }
-*/
+
+    var opcionesPoligono = {path: posicionesPoligono, strokeColor:"#820053" , fillColor:"#fafafa"};
+    var poligono = new google.maps.Polygon(opcionesPoligono);
+
+    poligono.setMap(mapa);
 
 }
 
-function cargarParcelas(){
-    
-    fetch('../parcelas.json').then(function(r){
-        return r.json();
-    }).then(function(j){
-        let bounds = new google.maps.LatLngBounds();
-        j.forEach(function(parcela){
-            let polygon = new google.maps.Polygon({
-                paths: parcela.vertices,
-                strokeColor: parcela.color,
-                strokeOpacity: 0.8,
-                strokeWeight: 2,
-                fillColor: parcela.color,
-                fillOpacity: 0.35,
-                map: map
-            });
-            polygon.getPath().getArray().forEach(function(v){
-                bounds.extend(v);
-            })
-            polygon.addListener('click', () => {
-                openInfoWindow(`<b>${parcela.nombre}</b>`, parcela.vertices);
-            })
-        });
-        
-        map.fitBounds(bounds);
-    })       
-}
-
-function abrirInfoWindow(contenido, posicion){
-    infowindow.setContent(contenido);
-    infowindow.open(map, posicion);
-}

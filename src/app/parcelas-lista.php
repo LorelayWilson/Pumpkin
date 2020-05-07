@@ -64,41 +64,43 @@ include_once('header.php');
 
             <?php
 
-            $sql = "SELECT nombre,localidad,ccaa FROM campos WHERE user='".$_SESSION['user']."';";
-            //$statement = mysqli_stmt_init($connection);
 
-            $result = mysqli_query($connection, $sql);
+            if (isset($_SESSION['user'])) {
 
-            if (!empty($result) && mysqli_num_rows($result) > 0  )
-            {
-                echo '<table>
-					    <thead>
-					        <tr>
-						        <th>Nombre de parcela</th>
-						        <th>Localidad</th>
-						        <th>Com. Autónoma</th>
-						    </tr>
-					    </thead>
-					    <tbody> ';
-                while($row = mysqli_fetch_assoc($result))
-                {
-                    echo '
-					        <tr>
-					            <td>'. $row["nombre"].'</td>
-					            <td>'. $row["localidad"].'</td>
-					            <td>'. $row["ccaa"].'</td>
-					            <td><a href="pagina-parcela.php?user='.$_SESSION['user'].'"xº> >> </a></td>
-					        </tr>
-					        ';
+                $sql = "SELECT nombre,localidad,ccaa,id FROM campos WHERE user='".$_SESSION['user']."';";
+
+                //$statement = mysqli_stmt_init($connection);
+                $result = mysqli_query($connection, $sql);
+
+                if (!empty($result) && mysqli_num_rows($result) > 0) {
+                    echo '<table>
+                            <thead>
+                                <tr>
+                                    <th>Nombre de parcela</th>
+                                    <th>Localidad</th>
+                                    <th>Com. Autónoma</th>
+                                </tr>
+                            </thead>
+                            <tbody> ';
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo '
+                                <tr>
+                                    <td>' . $row["nombre"] . '</td>
+                                    <td>' . $row["localidad"] . '</td>
+                                    <td>' . $row["ccaa"] . '</td>
+                                    <td><a href="pagina-parcela.php?id=' . $row['id'] . '"> >> </a></td>
+                                </tr>
+                                ';
+                    }
+                    echo ' </tbody>
+                        </table>';
                 }
-                echo ' </tbody>
-					</table>';
             }
             else
             {
-                echo "No existen parcelas para este usuario.";
+                echo "<p>No se ha verificado el usuario. <a href='login.php'>Vuelve a iniciar sesion</a></p>";
             }
-
+            mysqli_close($connection);
 
             ?>
 		</div>

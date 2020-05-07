@@ -35,7 +35,7 @@ include_once('header.php');
 
     <!-- esto es para el logout, no deberia ser visible. añadir este bloque a todos los archivos donde se deba poder cerrar sesion -->
     <form id='hiddenLogoutForm' style="display: none;" action="../api/includes/cerrar-sesion.php">
-        <button type="submit" name="logout-submit">logout(should be hidden)</button>
+        <button type="submit" name="logout-submit">logout(this should be hidden)</button>
     </form>
 
     <script>
@@ -47,20 +47,70 @@ include_once('header.php');
 
 
     <div class="main-container">
-		<h1 class="title">Campo de patatas, Gandia</h1> <!-- PONER NOMBRE PARCELA -->
+		<h1 class="title"> <!-- NOMBRE PARCELA -->
+            <?php
+
+            $idParcela= $_GET['id'];
+
+            $sqlParcela = "SELECT nombre, localidad,id FROM campos WHERE id='".$idParcela."';";
+
+            $result = mysqli_query($connection, $sqlParcela);
+
+            $row = mysqli_fetch_assoc($result);
+
+            echo '<h1 class="title">'.$row['nombre'].', '.$row['localidad'].'</h1>';
+            ?>
+
 
 
 		<h3>Seleccionar sonda:</h3>
 
 		<div class="map-chart-container">
+            <?php
+            $sqlVertices = "SELECT id_posiciones FROM vertices WHERE id_parcelas='".$idParcela."';";
+
+            $verticesArray = array(); //tabla vertices con los datos del usuario logueado
+            $posicionesArray = array(); //posiciones (ltd y lng) de las parcelas de nuestro usuario
+
+            $resultVer = mysqli_query($connection, $sqlVertices);
+
+            while ($row = mysqli_fetch_assoc($resultVer)){
+                $verticesArray[] = $row;
+            }
+
+            for ($i = 0; $i < count($verticesArray); $i++){
+
+                $sqlPosiciones = "SELECT lat, lng FROM posiciones WHERE id='".$verticesArray[$i]['id_posiciones']."';";
+
+                $resultPos = mysqli_query($connection, $sqlPosiciones);
+
+                $row = mysqli_fetch_assoc($resultPos);
+
+                //ESTE ARRAY ( $posicionesArray ) CONTIENE CADA ID DE POSICION, Y CADA POSICION CONTIENE LAT Y LNG.
+                //USAR ESTO PARA EL MAPA, ES COMO SI CONTUVIERA LO QUE CONTIENE EL JSON DE POSICIONES
+                $posicionesArray[] = $row;
+
+               // echo $posicionesArray[0]['lat'];
+
+            }
+
+
+
+            ?>
 
 			<div class="map-container" id="map-container-id">
+                <script>
+                    var posiciones = <?php echo json_encode($posicionesArray); ?>;
+                </script>
 				<script type="text/javascript" src="js/mapa.js"></script> <!-- Esto es el mapa de la parcela -->
+
 				<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
-				<button onclick="openChart()">sonda</button>
+				<!--<button onclick="openChart()">sonda</button>-->
+                <p>Ha ocurrido un fallo cargando el mapa.</p>
 			</div>
 
-			<script>
+
+            <script>
 				var maxWidth = window.matchMedia("(max-width: 850px)");
 				openChart(); // Call listener function at run time
 				/*maxWidth.addListener(openChart)*/ // Attach listener function on state changes
