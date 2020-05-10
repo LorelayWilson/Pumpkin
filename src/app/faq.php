@@ -1,5 +1,7 @@
 <?php
 
+$PageTitle="Iniciar sesión - Grado en Tecnologías Interactivas";//Opcional. Por defecto: GTI Tecnologias Interactivas
+
 function customPageHeader(){?>
     <link rel="stylesheet" type="text/css" href="css/landingpage.css">
     <link rel="stylesheet" type="text/css" href="css/faq.css">
