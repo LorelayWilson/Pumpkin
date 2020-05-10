@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-05-2020 a las 20:42:43
+-- Tiempo de generación: 10-05-2020 a las 18:49:35
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.2.29
 
@@ -101,6 +101,27 @@ INSERT INTO `empresas` (`id`, `nombre`, `email`, `telefono`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `info_sondas`
+--
+
+CREATE TABLE `info_sondas` (
+  `id` int(11) NOT NULL,
+  `posicion` int(11) NOT NULL,
+  `fecha` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `info_sondas`
+--
+
+INSERT INTO `info_sondas` (`id`, `posicion`, `fecha`) VALUES
+(1, 3, '2020-05-07'),
+(2, 4, '2020-04-04'),
+(3, 2, '2020-05-05');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `mediciones`
 --
 
@@ -118,12 +139,9 @@ CREATE TABLE `mediciones` (
 --
 
 INSERT INTO `mediciones` (`fecha`, `posicion`, `humedad`, `salinidad`, `temperatura`, `luminosidad`) VALUES
-('2019-04-25', 9, 134, 113, 41, 231),
-('2019-08-06', 5, 325, 325, 15, 125),
-('2019-08-15', 7, 216, 326, 36, 116),
-('2019-11-16', 4, 214, 214, 14, 324),
-('2019-12-11', 1, 232, 32, 32, 342),
-('2020-03-10', 3, 123, 343, 23, 433);
+('2020-04-04', 4, 55, 63, 22, 34),
+('2020-05-05', 2, 53, 55, 22, 44),
+('2020-05-07', 3, 35, 11, 27, 64);
 
 -- --------------------------------------------------------
 
@@ -142,17 +160,19 @@ CREATE TABLE `posiciones` (
 --
 
 INSERT INTO `posiciones` (`id`, `lat`, `lng`) VALUES
-(1, -7.01696, 112.446),
-(2, 5.80663, 8.07653),
-(3, 64.1918, 20.8489),
-(4, 36.7595, 110.632),
-(5, 41.4267, 48.4346),
-(6, -34.4419, 19.4538),
-(7, 29.0755, -110.961),
-(8, 38.9957, -0.17884),
-(9, 38.9956, -0.16709),
-(10, 38.9935, -0.16756),
-(11, 38.9931, -0.1778);
+(2, 38.9963, -0.168032),
+(3, 38.9965, -0.169487),
+(4, 39.6707, -0.298888),
+(5, 39.671, -0.299368),
+(6, 39.6709, -0.298448),
+(7, 39.6704, -0.298684),
+(8, 39.6705, -0.299392),
+(9, 39.6707, -0.299258),
+(10, 39.6708, -0.299537),
+(11, 38.9965, -0.167436),
+(12, 38.9958, -0.167667),
+(13, 38.9958, -0.171229),
+(14, 38.9981, -0.172066);
 
 -- --------------------------------------------------------
 
@@ -173,25 +193,6 @@ INSERT INTO `roles` (`id`, `nombre`) VALUES
 (1, 'Admin'),
 (2, 'Equipo Técnico'),
 (3, 'Cliente');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `sonda`
---
-
-CREATE TABLE `datos` (
-  `id` int(11) NOT NULL,
-  `posicion` int(11) NOT NULL,
-  `fecha` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `sonda`
---
-
-INSERT INTO `datos` (`id`, `posicion`, `fecha`) VALUES
-(1, 9, '2019-04-25');
 
 -- --------------------------------------------------------
 
@@ -254,10 +255,16 @@ CREATE TABLE `vertices` (
 --
 
 INSERT INTO `vertices` (`id_parcelas`, `id_posiciones`) VALUES
-(1, 8),
-(1, 9),
-(1, 10),
-(1, 11);
+(5, 11),
+(5, 12),
+(5, 13),
+(5, 14),
+(10, 5),
+(10, 6),
+(10, 7),
+(10, 8),
+(10, 9),
+(10, 10);
 
 --
 -- Índices para tablas volcadas
@@ -284,6 +291,15 @@ ALTER TABLE `empresas`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `info_sondas`
+--
+ALTER TABLE `info_sondas`
+  ADD PRIMARY KEY (`id`,`posicion`,`fecha`),
+  ADD KEY `posicion` (`posicion`),
+  ADD KEY `fecha` (`fecha`),
+  ADD KEY `id` (`id`);
+
+--
 -- Indices de la tabla `mediciones`
 --
 ALTER TABLE `mediciones`
@@ -302,15 +318,6 @@ ALTER TABLE `posiciones`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `datos`
---
-ALTER TABLE `datos`
-  ADD PRIMARY KEY (`id`,`posicion`,`fecha`),
-  ADD KEY `posicion` (`posicion`),
-  ADD KEY `fecha` (`fecha`),
-  ADD KEY `id` (`id`);
 
 --
 -- Indices de la tabla `sondas`
@@ -354,7 +361,7 @@ ALTER TABLE `empresas`
 -- AUTO_INCREMENT de la tabla `posiciones`
 --
 ALTER TABLE `posiciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1001;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1004;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -379,18 +386,18 @@ ALTER TABLE `clientes`
   ADD CONSTRAINT `clientes_ibfk_1` FOREIGN KEY (`id_empresa`) REFERENCES `empresas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Filtros para la tabla `info_sondas`
+--
+ALTER TABLE `info_sondas`
+  ADD CONSTRAINT `info_sondas_ibfk_1` FOREIGN KEY (`posicion`) REFERENCES `mediciones` (`posicion`),
+  ADD CONSTRAINT `info_sondas_ibfk_2` FOREIGN KEY (`fecha`) REFERENCES `mediciones` (`fecha`),
+  ADD CONSTRAINT `info_sondas_ibfk_3` FOREIGN KEY (`id`) REFERENCES `sondas` (`id`);
+
+--
 -- Filtros para la tabla `mediciones`
 --
 ALTER TABLE `mediciones`
   ADD CONSTRAINT `mediciones_ibfk_1` FOREIGN KEY (`posicion`) REFERENCES `posiciones` (`id`);
-
---
--- Filtros para la tabla `sonda`
---
-ALTER TABLE `datos`
-  ADD CONSTRAINT `datos_ibfk_1` FOREIGN KEY (`posicion`) REFERENCES `mediciones` (`posicion`),
-  ADD CONSTRAINT `datos_ibfk_2` FOREIGN KEY (`fecha`) REFERENCES `mediciones` (`fecha`),
-  ADD CONSTRAINT `datos_ibfk_3` FOREIGN KEY (`id`) REFERENCES `sondas` (`id`);
 
 --
 -- Filtros para la tabla `usuarios`

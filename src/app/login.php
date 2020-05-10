@@ -58,7 +58,7 @@ include_once('header.php');
                 <input type="text" placeholder="Usuario" id="inputUser" name="user">
                 <input type="password" placeholder="Contraseña" id="inputKey" name="password">
 
-                <a class="recupera" href="#">Recupera tu contraseña</a>
+                <a class="recupera" href="recuperar_contraseña.php">Recupera tu contraseña</a>
                 <div class="login-button-container">
                     <button class="full" type="submit" name="login-submit">ENTRAR</button>
                 </div>

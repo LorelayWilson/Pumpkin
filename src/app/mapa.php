@@ -1,8 +1,18 @@
 <?php
 
+
+
+
+//NO VOY A BORRARLO PORQUE NO QUIERO LIARLA, PERO ESTA PAGINA NO LA NECESITAMOS, YA HAY UN MAPA.JS. BORRAR!!!!
+
+
+
+
+
+
 //$PageTitle="Iniciar sesión - Grado en Tecnologías Interactivas";//Opcional. Por defecto: GTI Tecnologias Interactivas
 
-function customPageHeader(){?>
+/*function customPageHeader(){*/?><!--
     <style>
     #map {
         width: 960px;
@@ -10,10 +20,10 @@ function customPageHeader(){?>
         border: solid 1px black;
     }
     </style>
-<?php }
+<?php /*}
     include_once('header.php');
 
-    ?>
+    */?>
 <body>
     <div id="map"></div>
     
@@ -108,4 +118,4 @@ async defer></script>
     
 <script src="js/sesion.js"></script>
 </body>
-</html>
+</html>-->

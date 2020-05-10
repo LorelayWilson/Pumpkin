@@ -67,6 +67,21 @@ include_once('header.php');
 
 		<div class="map-chart-container">
             <?php
+            //sql posiciones totales (PARA ALGORITMO SONDAS)
+            $sqlPosicionesTotales =  " SELECT id, lat, lng FROM posiciones";
+
+            //aqui guardo todas las posiciones para luego conseguir las sondas que esten dentro de la parcela
+            $posicionesTotales = array();
+
+            $resultPosTot = mysqli_query($connection, $sqlPosicionesTotales);
+
+            while( $row = mysqli_fetch_assoc($resultPosTot)){
+                $posicionesTotales[] = $row;
+            }
+
+            //-----------------------------------------------------------------------
+
+            //vertices - parcelas
             $sqlVertices = "SELECT id_posiciones FROM vertices WHERE id_parcelas='".$idParcela."';";
 
             $verticesArray = array(); //tabla vertices con los datos del usuario logueado
@@ -80,7 +95,7 @@ include_once('header.php');
 
             for ($i = 0; $i < count($verticesArray); $i++){
 
-                $sqlPosiciones = "SELECT lat, lng FROM posiciones WHERE id='".$verticesArray[$i]['id_posiciones']."';";
+                $sqlPosiciones = "SELECT id, lat, lng FROM posiciones WHERE id='".$verticesArray[$i]['id_posiciones']."';";
 
                 $resultPos = mysqli_query($connection, $sqlPosiciones);
 
@@ -94,6 +109,10 @@ include_once('header.php');
 
             }
 
+            //-----------------------------------------------------------------------
+
+
+
 
 
             ?>
@@ -101,12 +120,14 @@ include_once('header.php');
 			<div class="map-container" id="map-container-id">
                 <script>
                     var posiciones = <?php echo json_encode($posicionesArray); ?>;
+                    var posicionesTotales = <?php echo json_encode($posicionesTotales); ?>;
                 </script>
-				<script type="text/javascript" src="js/mapa.js"></script> <!-- Esto es el mapa de la parcela -->
-
-				<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+                <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&libraries=geometry" async defer></script>
+                <script type="text/javascript" src="js/mapa.js"></script> <!-- Esto es el mapa de la parcela -->
 				<!--<button onclick="openChart()">sonda</button>-->
-                <p>Ha ocurrido un fallo cargando el mapa.</p>
+                <script>setTimeout(function () {
+                            document.getElementById("map-container").innerHTML = "<p> Ha ocurrido un error al cargar el mapa. </p>"
+                        },3000)</script>
 			</div>
 
 
@@ -146,10 +167,10 @@ include_once('header.php');
 						}
 					}
 				</script>
-				
+
 				<div class="name-and-select">
 
-					<h3>Sonda 1</h3>
+					<h3 id="show-name"></h3>
 					<select onchange="showOption(this.value)"> 
 
 						<option value="null">--Seleccionar--</option>
@@ -165,6 +186,57 @@ include_once('header.php');
 						<option value="luminosidad">Luminosidad</option>
 				
 						<script>
+                            //MOSTRAR EL NOMBRE DE LA SONDA
+                            //ES LARGO PORQUE NO SUPE PASAR VARIABLES DE JS A PHP...
+                            //LO TUVE QUE HACER DE FORMA MANUAL CAMBIANDO DE TABLAS...
+                            function showName(idSonda){
+
+
+                                <?php
+                                $sqlInfoSondas = "SELECT id,posicion FROM info_sondas;";
+
+                                $infoSondasArray = array();
+
+                                $resultInfoSondas = mysqli_query($connection, $sqlInfoSondas);
+
+                                while ($row = mysqli_fetch_assoc($resultInfoSondas)){
+                                    $infoSondasArray[] = $row;
+                                }
+                                ?>
+
+                                let idInfoSondas;
+                                let infoSondasTot = <?php echo json_encode($infoSondasArray) ?>;
+
+                                for(i=0;i<infoSondasTot.length;i++){
+                                    if (Number(infoSondasTot[i]['posicion']) == idSonda){
+                                        idInfoSondas = Number(infoSondasTot[i]['id']);
+                                        break;
+                                    }
+                                }
+                                <?php
+                                $sqlSondas = "SELECT id,nombre FROM sondas;";
+
+                                $sondasArray = array();
+
+                                $resultSondas = mysqli_query($connection, $sqlSondas);
+
+                                while ($row = mysqli_fetch_assoc($resultSondas)){
+                                    $sondasArray[] = $row;
+                                }
+                                ?>
+                                let sondasTot = <?php echo json_encode($sondasArray) ?>;
+                                let sonda; // nombre de sonda actual
+
+                                for(i=0;i<sondasTot.length;i++){
+                                    if (Number(sondasTot[i]['id']) == idInfoSondas){
+                                        sonda = sondasTot[i]['nombre'];
+
+                                    }
+                                }
+                                document.getElementById("show-name").innerHTML = sonda; //muestra el nombre de la sonda
+                            }
+
+
 							function showOption(parameter){
 
 								if (parameter != 'null') {
@@ -176,6 +248,8 @@ include_once('header.php');
 									document.getElementById("null").style.display = "none";
 									//---y ahora display:none el parametro correspondiente
 									document.getElementById(parameter).style.display = "block";
+
+
 								}
 								else{
 									//como parametro es null, reiniciamos todos a display: none
@@ -189,7 +263,7 @@ include_once('header.php');
 
 								}
 							}
-								
+
 						</script>
 					</select>
 				</div>

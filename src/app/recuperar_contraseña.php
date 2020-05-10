@@ -2,7 +2,7 @@
 
 function customPageHeader(){?>
     <link rel="stylesheet" type="text/css" href="css/landingpage.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/recuperar.css">
 <?php }
 include_once('header.php');
 ?>
