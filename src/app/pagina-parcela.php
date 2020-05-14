@@ -189,6 +189,7 @@ include_once('header.php');
                             //MOSTRAR EL NOMBRE DE LA SONDA
                             //ES LARGO PORQUE NO SUPE PASAR VARIABLES DE JS A PHP...
                             //LO TUVE QUE HACER DE FORMA MANUAL CAMBIANDO DE TABLAS...
+
                             function showName(idSonda){
 
 
@@ -235,6 +236,7 @@ include_once('header.php');
                                 }
                                 document.getElementById("show-name").innerHTML = sonda; //muestra el nombre de la sonda
                             }
+
 
 
 							function showOption(parameter){
@@ -304,12 +306,46 @@ include_once('header.php');
 	</footer>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
-	<script type="text/javascript" src="js/graficas/grafica-salinidad.js"></script>
-	<script type="text/javascript" src="js/graficas/grafica-humedad.js"></script>
-	<script type="text/javascript" src="js/graficas/grafica-temperatura.js"></script>
-	<script type="text/javascript" src="js/graficas/grafica-luminosidad.js"></script>
 
 
-	<!--<script src="js/sesion.js"></script>-->
+    <script>
+
+        let posSonda;
+
+        function mediciones(posSonda1) {
+            posSonda = posSonda1;
+
+        }
+
+        <?php
+        $sqlMediciones = "SELECT fecha, posicion, humedad, salinidad, temperatura, luminosidad FROM mediciones;";
+
+        $medicionesArrayTot = array();
+
+        $resultMediciones = mysqli_query($connection, $sqlMediciones);
+
+        while ($row = mysqli_fetch_assoc($resultMediciones)){
+            $medicionesArrayTot[] = $row;
+        }
+        ?>
+
+        let medicionesTot = <?php echo json_encode($medicionesArrayTot) ?>;
+
+        let medicionesArray = [];
+
+        console.log(medicionesTot);
+
+
+    </script>
+
+    <script type="text/javascript" src="js/graficas/grafica-salinidad.js"></script>
+    <script type="text/javascript" src="js/graficas/grafica-humedad.js"></script>
+    <script type="text/javascript" src="js/graficas/grafica-temperatura.js"></script>
+    <script type="text/javascript" src="js/graficas/grafica-luminosidad.js"></script>
+
+
+
+
+
 </body>
 </html>

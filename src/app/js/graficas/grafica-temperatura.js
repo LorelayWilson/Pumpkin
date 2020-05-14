@@ -1,21 +1,43 @@
 //Temperatura
-let datosTemperatura = {
-    labels: ['lunes', 'martes', 'miércoles', 'jueves', 'viernes'],
-    datasets: [
-        {
-            label: 'temperatura (ºC)',
-            data: [22, 24, 21, 18, 16],
-            fill: false,
-            backgroundColor: '#820053',
-            pointStyle: 'rectRot',
-            pointRadius: 3,
-        }
-    ]
-};
 
-let opcionesTemperatura = {
-    maintainAspectRatio : false,
-    scales: {
+function setTemp() {
+
+    let temp = [];
+    let tempFecha = [];
+    contTemp=0;
+
+    for (i=0; i<medicionesArray.length;i++){
+        temp[contTemp]= medicionesArray[i]['temperatura'];
+        tempFecha[contTemp]= medicionesArray[i]['fecha'].slice(5);
+        contTemp++;
+    }
+
+    let getLast =  (arr = null, n = null) => {
+        if (arr == null) return void 0;
+        if (n === null) return arr[arr.length - 1];
+        return arr.slice(Math.max(arr.length - n, 0));
+    };
+
+    temp = getLast(temp, 7);
+    tempFecha = getLast(tempFecha, 7);
+
+    let datosTemperatura = {
+        labels: tempFecha,
+        datasets: [
+            {
+                label: 'temperatura (ºC)',
+                data: temp,
+                fill: false,
+                backgroundColor: '#820053',
+                pointStyle: 'rectRot',
+                pointRadius: 3,
+            }
+        ]
+    };
+
+    let opcionesTemperatura = {
+        maintainAspectRatio : false,
+        scales: {
             yAxes: [{
                 ticks: {
                     suggestedMin: 0,
@@ -23,15 +45,19 @@ let opcionesTemperatura = {
                 }
             }]
         }
-};
+    };
 
-let ctxTemperatura = document.getElementById("chart-temperatura");
+    let ctxTemperatura = document.getElementById("chart-temperatura");
 
-let chartTemperatura= new Chart(ctxTemperatura, {
-    type: 'line',
-    data: datosTemperatura,
-    options: opcionesTemperatura
-});
+    let chartTemperatura= new Chart(ctxTemperatura, {
+        type: 'line',
+        data: datosTemperatura,
+        options: opcionesTemperatura
+    });
+
+
+
+}
 
 
 

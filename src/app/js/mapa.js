@@ -154,13 +154,30 @@ function initMap() {
         let marker = new google.maps.Marker({
             position: latlng,
             map: mapa,
-            title: posicionesSondas[i].id
+            title: posicionesSondas[i].id,
         });
         google.maps.event.addListener(marker,'click', function() {
             openChart();
             console.log("you clicked the marker "+marker.title);
             showName(marker.title);
+            mediciones(marker.title);
+
+            contador=0;
+            for(j=0;j<medicionesTot.length;j++){
+                if (medicionesTot[j]['posicion'] == marker.title){
+                    medicionesArray[contador]=medicionesTot[j];
+                    contador++;
+                }
+            }
+            console.log("medArray=> "+medicionesArray[0]['posicion'] + ", y su longitud=> " +medicionesArray.length);
+
+            //set graficas con mediciones
+            setTemp();
+            setSal();
+            setLuz();
+            setHum();
         });
+
     }
 
     //console.log(marker)
