@@ -32,12 +32,12 @@ if(isset($_POST['login-submit']))
             if ($row = mysqli_fetch_assoc($result))
             {
                 //$passwordCheck = password_verify($password,$row['contraseña']); //stores boolean
-                if ($password != $row['contraseña'])
+                if ($password != $row['contrasenya'])
                 {
                     header("Location:../../app/login.php?error=wrongpwd");
                     exit();
                 }
-                elseif ($password == $row['contraseña'])
+                elseif ($password == $row['contrasenya'])
                 {
                     session_start();
                     $_SESSION['user']=$row['user'];
