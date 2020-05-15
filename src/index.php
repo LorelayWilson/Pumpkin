@@ -1,6 +1,6 @@
 <?php
 
-//$PageTitle="New Page Title";//Opcional. Por defecto: GTI Tecnologias Interactivas
+//$PageTitle="GTI Tecnologias Interactivas";//Opcional. Por defecto: GTI Tecnologias Interactivas
 
 function customPageHeader(){?>
     <link rel="stylesheet" type="text/css" href="app/css/landingpage.css">
@@ -8,7 +8,7 @@ function customPageHeader(){?>
 <?php }
 include_once('app/header.php');
 ?>
-
+<html>
 <body>
 
 	<!-- HEADER -->
@@ -30,6 +30,7 @@ include_once('app/header.php');
 				<li><a href="#WHY">Por qué elegirnos</a></li>
 				<li><a href="#DATA" id="hide-data">Parámetros</a></li>
 				<li><a href="#CONTACT">Contacto</a></li>
+				<li><a href="app/faq.php">FAQ</a></li>
 			<!-- 	<label for="chk" class="hide-menu-btn">
 					<i class="fas fa-times"></i> 
 				</label> -->

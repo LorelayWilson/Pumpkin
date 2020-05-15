@@ -13,7 +13,7 @@ function customPageHeader(){?>
 include_once('header.php');
 ?>
 
-
+<html>
 <body>
 
 
@@ -26,9 +26,11 @@ include_once('header.php');
 			</label>
 			<ul class="menu">
                 <li class="login-option"><a onclick="logoutForm()">Cerrar sesión</a></li>
+				<li><a href="pagina-parcela.php">Ver Parcelas</a></li>
+				<li><a href="perfil.php">Ver Perfil</a></li>
+				<li><a href="editarPerfil.php">Editar Perfil</a></li>
 				<li><a href="contact.php">Contacto</a></li>
-				<li><a href="#">Editar perfil</a></li>
-				<li><a href="#">Ver perfil</a></li>
+				<li><a href="faq.php">FAQ</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -85,10 +87,9 @@ include_once('header.php');
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo '
                                 <tr>
-                                    <td>' . $row["nombre"] . '</td>
-                                    <td>' . $row["localidad"] . '</td>
-                                    <td>' . $row["ccaa"] . '</td>
-                                    <td><a href="pagina-parcela.php?id=' . $row['id'] . '"> >> </a></td>
+                                    <td><a href="pagina-parcela.php?id=' . $row['id'] . '">' . $row["nombre"] . '</a></td>
+                                    <td><a href="pagina-parcela.php?id=' . $row['id'] . '">' . $row["localidad"] . '</a></td>
+                                    <td><a href="pagina-parcela.php?id=' . $row['id'] . '">' . $row["ccaa"] . '</a></td>
                                 </tr>
                                 ';
                     }

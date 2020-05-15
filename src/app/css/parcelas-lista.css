@@ -87,6 +87,30 @@ body{
 
 }
 
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+tr:hover { 
+   background:#820053; 
+}
+td a { 
+   display: block; 
+	color: #0c0c0c;
+    text-decoration: none;
+}
+
 footer{
   position: fixed;
   bottom: 0;

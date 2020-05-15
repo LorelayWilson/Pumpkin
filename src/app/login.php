@@ -8,12 +8,26 @@ function customPageHeader(){?>
 include_once('header.php');
 ?>
 
-
+<html>
 <body>
 
   <header>
       <a href="../index.php"><img src="../app/img/logo.svg" alt="Logo de GTI" class="logo" /></a>
-
+			<nav>
+			<input type="checkbox" id="check">
+			<label for="check" class="check-btn">
+				<i class="fas fa-bars"></i> <!-- MENU BURGER LINES -->
+			</label>
+			<ul class="menu">
+				<li class="login-option"><a href="login.php">Iniciar sesión</a></li>
+				<li><a href="../index.php">Inicio</a></li>
+				<li><a href="contact.php">Contacto</a></li>
+				<li><a href="faq.php">FAQ</a></li>
+			<!-- 	<label for="chk" class="hide-menu-btn">
+					<i class="fas fa-times"></i> 
+				</label> -->
+			</ul>
+		</nav>
 	</header>
 
 	<!-- LOGIN: -->
@@ -36,7 +50,7 @@ include_once('header.php');
                     echo "<p>Error en la consulta con la base de datos. <br><a href='contact.php'>Contacta con nosotros.</a></p>";
 
                 } else if ($_GET['error'] == "wrongpwd") {
-                    echo "<p>Contraseña incorrecta.</p>";
+                    echo "<p>Contraseña incorrecta. Prueba de nuevo.</p>";
 
                 } else if ($_GET['error'] == "pwderror") {
                     echo "<p>Error desconocido con la contraseña.<br><a href='contact.php'>Contacta con nosotros.</a></p>";

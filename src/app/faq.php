@@ -1,6 +1,6 @@
 <?php
 
-$PageTitle="Iniciar sesión - Grado en Tecnologías Interactivas";//Opcional. Por defecto: GTI Tecnologias Interactivas
+$PageTitle="FAQ - Grado en Tecnologías Interactivas";//Opcional. Por defecto: GTI Tecnologias Interactivas
 
 function customPageHeader(){?>
     <link rel="stylesheet" type="text/css" href="css/landingpage.css">
@@ -8,31 +8,27 @@ function customPageHeader(){?>
 <?php }
 include_once('header.php');
 ?>
-
+<html>
 <body>
 
     <!-- HEADER -->
     <header>
-        <img src="img/logo.svg" alt="Logo de GTI" class="logo"> <!-- LOGO -->
-        <!-- 		<input type="checkbox" id="chk">
-		<label for="chk" class="show-menu-btn">
-			<i class="fas fa-bars"></i>
-		</label> -->
-        <nav>
-            <input type="checkbox" id="check">
-            <label for="check" class="check-btn">
-                <i class="fas fa-bars"></i> <!-- MENU BURGER LINES -->
-            </label>
-            <ul class="menu">
-                <li class="login-option"><a href="#">Iniciar sesión</a></li>
-                <li><a href="#HELLO">Inicio</a></li>
-                <li><a href="#CONTACT">Contacto</a></li>
-                <li><a href="#FAQ">FAQ</a></li>
-                <!-- 	<label for="chk" class="hide-menu-btn">
-					<i class="fas fa-times"></i>
+         <a href="../index.php"><img src="../app/img/logo.svg" alt="Logo de GTI" class="logo" /></a>
+			<nav>
+			<input type="checkbox" id="check">
+			<label for="check" class="check-btn">
+				<i class="fas fa-bars"></i> <!-- MENU BURGER LINES -->
+			</label>
+			<ul class="menu">
+				<li class="login-option"><a href="login.php">Iniciar sesión</a></li>
+				<li><a href="../index.php">Inicio</a></li>
+				<li><a href="contact.php">Contacto</a></li>
+				<li><a href="faq.php">FAQ</a></li>
+			<!-- 	<label for="chk" class="hide-menu-btn">
+					<i class="fas fa-times"></i> 
 				</label> -->
-            </ul>
-        </nav>
+			</ul>
+		</nav>
     </header>
     <!-- // -->
 
@@ -159,3 +155,4 @@ Nosotros nos encargaremos de eliminar las sondas o los campos de la página web 
     </footer>
 
 </body>
+</html>

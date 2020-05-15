@@ -7,7 +7,7 @@ function customPageHeader(){?>
 <?php }
 include_once('header.php');
 ?>
-
+<html>
 <body>
 
 	<!-- HEADER -->
@@ -24,10 +24,11 @@ include_once('header.php');
 			</label>
 			<ul class="menu">
 				<li class="login-option"><a onclick="logoutForm()">Cerrar sesión</a></li>
-				<li><a href="../index.php#CONTACT">Contacto</a></li>
-			<!-- 	<label for="chk" class="hide-menu-btn">
-					<i class="fas fa-times"></i> 
-				</label> -->
+				<li><a href="pagina-parcela.php">Ver Parcelas</a></li>
+				<li><a href="perfil.php">Ver Perfil</a></li>
+				<li><a href="editarPerfil.php">Editar Perfil</a></li>
+				<li><a href="contact.php">Contacto</a></li>
+				<li><a href="faq.php">FAQ</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -58,10 +59,10 @@ include_once('header.php');
 
             $row = mysqli_fetch_assoc($result);
 
-            echo '<h1 class="title">'.$row['nombre'].', '.$row['localidad'].'</h1>';
+            echo '<h1 class="title">'.$row['nombre'].', '.$row['localidad'];
             ?>
 
-
+        </h1>
 
 		<h3>Seleccionar sonda:</h3>
 
@@ -273,7 +274,7 @@ include_once('header.php');
 				<!-- ------ GRAFICAS, EN PRINCIPIO TODAS OCULTAS MENOS HUMEDAD POR DEFECTO ------ -->
 				<div class="chart" id="null">
 					<!-- OPTION NULL -->
-					<p>Selecciona un parámetro a mostrar
+                    <p>Selecciona un parámetro a mostrar</p>
 				</div>
 				<div class="chart" id="humedad">
 					<canvas id="chart-humedad"></canvas>
@@ -290,7 +291,7 @@ include_once('header.php');
 
 			</div>
 		</div>	
-	</div>
+    </div> 
 
 	<footer>
 		<img src="img/logo-white.png" alt="Logo de GTI versión blanca" > <!-- LOGO (WHITE) -->
