@@ -23,7 +23,6 @@
 .container-titulo-seccion{
     width: 401px;
     height: 37px;
-    margin-bottom: 20px;
     font-size: 20px;
     margin-bottom: 25px;
 }
@@ -61,7 +60,7 @@
 }
 
 /* MOBILE */
-@media(max-width: 1000px){
+@media(max-width: 1400px){
     .faq{
         height: auto;
     }
@@ -70,6 +69,7 @@
         display: flex;
         flex-wrap: wrap;    
         justify-content: center;
+        flex-direction: column;
     }
     
     .foto-preguntas{
@@ -89,9 +89,13 @@
     .container-titulo-seccion{
         width: 401px;
         height: 37px;
-        margin-bottom: 20px;
         font-size: 20px;
         margin-bottom: 25px;
+    }
+
+    .preguntas-frecuentes{
+        display: flex;
+        justify-content: space-between;
     }
     
     .titulo-seccion{
@@ -105,9 +109,9 @@
     }
     
     .container-titulo-pregunta{
-        width: 408px;
+        width: 400px;
         height: 28px;
-    
+        margin-bottom: 5px;
     }
     
     .titulo-pregunta{
@@ -126,69 +130,3 @@
         font-family: sans-serif;
     }
 }
-/*
-@media(min-width: 1380px) {
-    .faq{
-        height: auto;
-    }
-
-    .container{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .foto-preguntas{
-        margin-right: auto;
-        margin-left: auto;
-        margin-bottom: 20px;
-        Width: 193px;
-        Height: 193px;
-    }
-
-    .preguntas{
-        width: 75%;
-        height: auto;
-        margin-left: 50px;
-    }
-
-    .container-titulo-seccion{
-        width: 401px;
-        height: 37px;
-        margin-bottom: 20px;
-        font-size: 20px;
-        margin-bottom: 25px;
-    }
-
-    .titulo-seccion{
-        font-family: sans-serif;
-    }
-
-    .preguntas-frecuentes{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-
-    .container-titulo-pregunta{
-        width: 408px;
-        height: 28px;
-
-    }
-
-    .titulo-pregunta{
-        font-family: sans-serif;
-        font-size: 15px;
-    }
-
-    .container-respuesta{
-        width: 393px;
-        height: 45px;
-        margin-bottom: 50px;
-        font-size: 10px;
-    }
-
-    .respuestas{
-        font-family: sans-serif;
-    }
-}*/
