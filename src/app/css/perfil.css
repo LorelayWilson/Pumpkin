@@ -1,0 +1,141 @@
+section{
+	height:88%
+	padding-top: 200px;
+    margin-top: 80px;
+	display: flex;
+	flex-direction: column;
+}
+
+.perfil-container{
+    height: 500px;
+    display: flex;
+    min-width: 1050px;
+    
+    height: inherit;
+}
+
+.perfil-container h2{
+    font-size: 40px;
+    color: #820053;
+    /*padding-bottom: 10px;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    /*color: blueviolet;*/
+    margin-bottom: 10px;
+    margin-left: 150px;
+}
+
+.perfil-container h3{
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.perfil-container h4{
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+
+.izq{
+    margin-left: 200px;
+    float: left;
+    
+}
+
+.der{
+    margin-right: 200px;
+    float: right;
+}
+/*
+.perfil-container div h3{
+    margin-left: 300px;
+}
+*/
+
+
+.perfil-calltoaction{
+    display: flex;
+	justify-content: center;
+    margin-top: 30px;
+    
+}
+
+@media (min-height: 1080px){
+    .perfil-container{
+        height: 500px;
+        width: 90%;
+    }
+
+    .perfil-container h2{
+        padding-bottom: 10px;
+        border-bottom-style: solid;
+        border-bottom-width: thin;
+        color: blueviolet;
+        margin-bottom: 50px;
+        margin-left: 100px;
+        margin-right: 200px;
+    }
+
+    .perfil-container h4{
+        margin: 10px;
+        font-weight: normal;
+        display: flex;
+        text-align: center; 
+    }
+
+    .perfil-calltoaction{
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+   
+    }
+
+}
+
+footer{
+ position: fixed;
+ bottom: 0;
+ width: 100%;
+}
+
+.editar_perfil-button{
+    margin-top: 50px;
+    /*margin-right: 210px;*/
+    background: #333333;
+    color: #ffffff;
+    border-radius: 50px;
+    font-size: 18px;
+    padding: 0 45px;
+    height: 38px;
+    font-weight: normal;
+}
+
+
+@media (max-width: 850px){
+   
+    .container-data1{
+        display: flex;
+        flex-direction: column;
+        
+        justify-content: center;
+    }
+    .izq{
+        margin: auto;
+        float: none;
+    }
+    .der{
+        margin: auto;
+        float: none;
+    }
+    .perfil-container h2{
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        font-size: 22px;
+    }
+    .perfil-container h3{
+        margin-top: 30px; 
+    }
+   
+}
