@@ -94,18 +94,24 @@ table {
 }
 
 td, th {
-  border: 1px solid #dddddd;
+    border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
+tr {
+    background-color: #ffffff;
+}
+th {
+     background-color: #dddddd;
+    /*border: 1px solid #0c0c0c;*/
 
-tr:nth-child(even) {
-  background-color: #dddddd;
 }
-tr:hover { 
-   background:#820053; 
+
+tbody tr:hover {
+background:#820053;
 }
-td a { 
+
+td a {
    display: block; 
 	color: #0c0c0c;
     text-decoration: none;

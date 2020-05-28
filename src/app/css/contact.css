@@ -55,9 +55,11 @@ form{
 
 form div input{
     width: 100%;
+
 }
 form div{
     margin-bottom: 10px;
+    padding : 5px;
 }
 
 input, textarea{
