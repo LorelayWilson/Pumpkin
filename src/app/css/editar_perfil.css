@@ -1,0 +1,239 @@
+
+
+
+/* A partir de aquí he modificado el CSS (Iván Villanueva) */
+.perfil-container{
+    margin-bottom: 300px;
+    display: flex;
+    align-items: center;
+}
+/*
+.datos_menu li
+{
+   list-style-type: none;
+   display: inline;
+   padding-right: 5px;
+}
+*/
+.tab input.tabs{
+    position: absolute;
+    left: -9999px;
+    top: -99999px;
+    
+}
+
+.tab{
+    display: flex;
+    justify-content: center;
+    width: 700px;
+    list-style: none;
+    position: relative;
+    padding: 0;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    
+}
+
+.tab li{
+    float:left;
+    width: auto;
+}
+
+.tab label{
+    color: #ffffff;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    display: block;
+    margin-left: 10px;
+    padding: 10px 20px;
+    border-radius: 2px;
+    
+    background: #333333;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.tab label:hover{
+    color: #820053;
+    top:0;
+}
+
+.tabs:checked + label{
+    background: #737373;
+}
+.tabs:checked ~ .tab-content{
+    display: block;
+}
+
+.tab-content{
+    /*background: green;*/
+    font-size: 12px;
+    display: none;
+    text-align: center;
+    left:0;
+    width: 100%;
+    position: absolute;
+    z-index: -2;
+    animation-duration: 0.5s;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.tab-content div{
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tab-content p{
+    margin-top: 20px;
+}
+
+.tab-content input{
+    margin-top: 5px;
+}
+
+.editar_perfil-button{
+    /*display: flex;
+    flex-direction: column;*/
+    margin-top: 10px;
+    /*margin-right: 210px;*/
+    background: #333333;
+    color: #ffffff;
+    border-radius: 50px;
+    font-size: 11px;
+    padding: 10px 15px;
+    
+}
+
+.special-button{
+    /*display: flex;
+    flex-direction: column;*/
+    margin-top: 10px;
+    /*margin-right: 150px;*/
+    background: #333333;
+    color: #ffffff;
+    border-radius: 50px;
+    font-size: 11px;
+    padding: 10px 15px;
+    
+}
+
+/*<div style="float: right; width: 45%"> */
+.col1{
+    float: left;
+    width: 50%;
+}
+
+.col2{
+    float: right;
+    width: 50%;
+   
+    
+}
+
+.col1 input{
+    width:200px;
+}
+
+.col2 input{
+    width:200px;
+}
+
+footer{
+ position: fixed;
+ bottom: 0;
+ width: 100%;
+}
+
+.tab-content div input{
+    border-radius: 50px;
+    border-style: solid;
+    border-color: #797979;
+    border-width: thin;
+}
+
+.tab li label{
+    border-radius: 5px;
+    margin-right: 20px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+
+@media (max-width: 850px){
+   
+    .perfil-container{
+        display: flex;
+        flex-direction: column;
+        height: 600px;
+        justify-content: center;
+    }
+    .col1{
+        margin: auto;
+        float: none;
+    }
+    .col2{
+        margin: auto;
+        float: none;
+    }
+    .special-button{
+        margin: 30px 0;
+    }
+    .tab label{
+        height: 30px;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        width: 5px;
+    }
+    
+}
+
+@media (max-width: 700px){
+   
+    .tab label{
+        height: 30px;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        width: auto;
+        justify-content: center;
+    }
+    .tab{
+        width: 500px;
+    }
+    .tab li label{
+         border-radius: 5px 5px 0 0;
+        margin-left: 10px;
+    margin-right: 10px;
+    max-width: 100px;
+        padding: 20px;
+    }
+    .tab{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
