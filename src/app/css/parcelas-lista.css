@@ -103,12 +103,15 @@ tr {
 }
 th {
      background-color: #dddddd;
-    /*border: 1px solid #0c0c0c;*/
+    border: 1px solid #0c0c0c;
 
 }
 
 tbody tr:hover {
 background:#820053;
+}
+tbody tr a:hover {
+    color: #0c0c0c;
 }
 
 td a {

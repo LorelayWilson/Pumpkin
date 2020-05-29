@@ -65,15 +65,16 @@ body{
 
 @media (min-width: 1100px) {
   @media (min-width: 850px) {
-  .map-container{
-  width: 70%;
-  height: 400px;
-  }
-  
-}
+    .map-container {
+      width: 70%;
+      height: 400px;
+    }
 
-footer{
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
 }
