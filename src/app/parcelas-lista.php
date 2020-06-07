@@ -56,131 +56,162 @@ include_once('header.php');
 
 
 	<div class="main-container">
+        <h1 class="title">Mis parcelas</h1>
 
-		<h1 class="title">Mis parcelas</h1>
+        <div class="container-search">
+            <input class="search" type="text" placeholder="Buscar nombre de parcela..." name="search">
+            <button type="button" class="full">Buscar</button>
+        </div>
 
-		<h3>Seleccionar parcela:</h3>
+        <div class="line-separator"></div>
 
-		<div id="tablaParcelas">
-			<!--aqui va el script-->
+        <div class="container-tools">
+            <div class="number-results">
+                <p>Total <b>5</b> parcelas</p>
+            </div>
+            <div class="order-results">
+                <!--FORM ORDER AZ-->
+                <form method="get">
+                    <input type="hidden" name="az" value="on">
+                    <input type="hidden" name="za" value="off">
+                    <button type="submit">
+                        <img src="img/ordenar-az.png">
+                    </button>
+                </form>
 
-            <?php
+                <!--FORM ORDER ZA-->
+                <form action="../api/includes/acceso.php" method="get">
+                    <input type="hidden" name="az" value="off">
+                    <input type="hidden" name="za" value="on">
+                    <button type="submit">
+                        <img src="img/ordenar-za.png">
+                    </button>
+                </form>
+
+            </div>
+        </div>
+
+        <!--RESULTS-->
+        <div class="container-results">
+
+            <!--each one of the result boxes-->
+            <div class="result-box">
+
+                <div class="id-box">
+                    <p>6</p>
+                </div>
+
+                <div class="text-box">
+                    <div class="title-box">
+                        <p>Plataneras</p>
+                    </div>
+                    <div class="location-box">
+                        <p>Tenerife</p>
+                        <p>Canarias</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="result-box">
+
+                <div class="id-box">
+                    <p>20</p>
+                </div>
+
+                <div class="text-box">
+                    <div class="title-box">
+                        <p>Campo girasoles</p>
+                    </div>
+                    <div class="location-box">
+                        <p>El Mercat de Valencia</p>
+                        <p>Valencia</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="result-box">
+
+                <div class="id-box">
+                    <p>8</p>
+                </div>
+
+                <div class="text-box">
+                    <div class="title-box">
+                        <p>Plataneras Bollullo S.L.</p>
+                    </div>
+                    <div class="location-box">
+                        <p>Tenerife</p>
+                        <p>Canarias</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="result-box">
+
+                <div class="id-box">
+                    <p>6</p>
+                </div>
+
+                <div class="text-box">
+                    <div class="title-box">
+                        <p>Plataneras Bollullo S.L.</p>
+                    </div>
+                    <div class="location-box">
+                        <p>Tenerife</p>
+                        <p>Canarias</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="result-box">
+
+                <div class="id-box">
+                    <p>6</p>
+                </div>
+
+                <div class="text-box">
+                    <div class="title-box">
+                        <p>Plataneras Bollullo S.L.</p>
+                    </div>
+                    <div class="location-box">
+                        <p>Tenerife</p>
+                        <p>Canarias</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="result-box">
+
+                <div class="id-box">
+                    <p>6</p>
+                </div>
+
+                <div class="text-box">
+                    <div class="title-box">
+                        <p>Plataneras Bollullo S.L.</p>
+                    </div>
+                    <div class="location-box">
+                        <p>Tenerife</p>
+                        <p>Canarias</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--------------------------------------->
+
+            <!--AQUI EL PHP-->
+
+        <!--------------------------------------->
 
 
-            if (isset($_SESSION['user'])) {
-
-                $sql = "SELECT nombre,localidad,ccaa,id FROM campos WHERE user='".$_SESSION['user']."';";
-
-                //$statement = mysqli_stmt_init($connection);
-                $result = mysqli_query($connection, $sql);
-
-                if (!empty($result) && mysqli_num_rows($result) > 0) {
-                    echo '<table>
-                            <thead>
-                                <tr>
-                                    <th>Nombre de parcela</th>
-                                    <th>Localidad</th>
-                                    <th>Com. Autónoma</th>
-                                </tr>
-                            </thead>
-                            <tbody> ';
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo '
-                                <tr>
-                                    <td><a href="pagina-parcela.php?id=' . $row['id'] . '">' . $row["nombre"] . '</a></td>
-                                    <td><a href="pagina-parcela.php?id=' . $row['id'] . '">' . $row["localidad"] . '</a></td>
-                                    <td><a href="pagina-parcela.php?id=' . $row['id'] . '">' . $row["ccaa"] . '</a></td>
-                                </tr>
-                                ';
-                    }
-                    echo ' </tbody>
-                        </table>';
-                }
-            }
-            else
-            {
-                echo "<p>No se ha verificado el usuario. <a href='login.php'>Vuelve a iniciar sesion</a></p>";
-            }
-            mysqli_close($connection);
-
-            ?>
-		</div>
-
-<!--		<script type="text/JavaScript">
-
-			fetch('../api/v1.0/vistas/campos.json').then(function (respuesta) {
-				return respuesta.json(); })
-			.then(function (datosJson) {
-				let tabla = document.getElementById('tablaParcelas');
-				tabla.innerHTML = `
-					<table>
-					<thead>
-						<th>Nombre de parcela</th>
-
-					</thead>
-					<tbody>
-						${datosJson.map(function(dato){
-							return `
-								<tr>
-									<td>${dato.nombre}</td>
-									<td><a href="pagina-parcela.php"> >> </a></td>
-								</tr>
-							`
-						}).join('')}
-					</tbody>
-				`;})
-		</script>-->
-	</div>
-		<!--<div class="accordion"> HTML ACCORDION
-			<button class="ccaa">Andalucia</button>
-			<div class="panel-parcela">
-				<ul>
-					<li class="parcela"><a href="pagina-parcela.html">Olivar Manuel e Hijos S.L, Villaviciosa, Córdoba</a></li>
-					<li class="parcela"><a href="pagina-parcela.html">Legumbres Menendez, Dos Hermanas, Sevilla</a></li> 
-				</ul>
-			</div>
-			<button class="ccaa">Comunidad Valenciana</button>
-			<div class="panel-parcela">
-				<ul>
-					<li class="parcela"><a href="pagina-parcela.html">Campo Laureles, Gandía, Valencia</a></li>
-					<li class="parcela"><a href="pagina-parcela.html">Verduras Jesus, Xeraco, Valencia</a></li> 
-				</ul>
-			</div>
-			<button class="ccaa">Pais Vasco</button>
-			<div class="panel-parcela">
-				<ul>
-					<li class="parcela"><a href="pagina-parcela.html">Arantxu de Guinea SL, Pasajes, San Sebastián</a></li> 
-				</ul>
-			</div>
-			<button class="ccaa">Región de Murcia</button>
-			<div class="panel-parcela">
-				<ul>
-					<li class="parcela"><a href="pagina-parcela.html">Villalobos y Hermanos, Cartagena, Murcia</a></li>
-					<li class="parcela"><a href="pagina-parcela.html">Naranjas Morales, Torrenevada, Murcia</a></li> 
-					<li class="parcela"><a href="pagina-parcela.html">Lechugas Rodriguez, Cartagena, Murcia</a></li> 
-					<li class="parcela"><a href="pagina-parcela.html">Verde que te quiero verde SA, Manzananueva, Murcia</a></li> 
-				</ul>
-			</div>
-		</div>
-	</div>-->
-
-
-<!--	<script> SCRIPT ACCORDION
-		var acc = document.getElementsByClassName("ccaa");
-		var i;
-
-		for (i = 0; i < acc.length; i++) {
-		  acc[i].addEventListener("click", function() {
-		    this.classList.toggle("active");
-		    var panel = this.nextElementSibling;
-		    if (panel.style.display === "block") {
-		      panel.style.display = "none";
-		    } else {
-		      panel.style.display = "block";
-		    }
-		  });
-		}
-	</script>-->
 
 	<footer>
 		<img src="img/logo-white.png" alt="Logo de GTI versión blanca" > <!-- LOGO (WHITE) -->
