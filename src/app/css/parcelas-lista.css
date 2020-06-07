@@ -87,44 +87,12 @@ body{
 
 }
 
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
 
-td, th {
-    border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-tr {
-    background-color: #ffffff;
-}
-th {
-     background-color: #dddddd;
-    border: 1px solid #0c0c0c;
-
-}
-
-tbody tr:hover {
-background:#820053;
-}
-tbody tr a:hover {
-    color: #0c0c0c;
-}
-
-td a {
-   display: block; 
-	color: #0c0c0c;
-    text-decoration: none;
-}
-
-footer{
-  position: fixed;
+/*footer{
+  position: static;
   bottom: 0;
   left: 0;
-}
+}*/
 
 
 .full{
@@ -164,10 +132,13 @@ footer{
   margin-bottom:15px;
 }
 
+.order-results{
+  display: flex;
+}
 .order-results button{
   width: 30px;
   height: 24px;
-  margin: 0;
+  margin: 0 5px;
   padding:0;
   border:none;
   background: #fff;
@@ -182,7 +153,7 @@ footer{
   width:100%;
   display: flex;
   flex-direction:column;
-  margin-bottom:100px;
+  margin-bottom:40px;
 }
 
 .result-box{
@@ -202,7 +173,7 @@ footer{
   height:75px;
   width:75px;
   border-radius: 50%;
-  color: #fff;
+  color: #ffffff;
   font-size:30px;
   text-align: center;
   align-items: center;
@@ -228,8 +199,14 @@ footer{
 }
 .location-box{
   font-size:16px;
-  color:#555555;
+/*  color:#555555;*/
   font-weight: 300;
-
 }
 
+.result-box:hover{
+  background-color: #820053;
+  color: #ffffff;
+}
+.result-box .location-box:hover{
+  color: #ffffff;
+}

@@ -37,6 +37,11 @@ include_once('header.php');
 
 	<!-- // -->
 
+   <?php  $sql = "SELECT nombre,localidad,ccaa,id FROM campos WHERE user='".$_SESSION['user']."';";
+
+    //$statement = mysqli_stmt_init($connection);
+    $result = mysqli_query($connection, $sql);
+    ?>
 
     <!--
     esto es para el logout, no deberia ser visible.
@@ -67,7 +72,7 @@ include_once('header.php');
 
         <div class="container-tools">
             <div class="number-results">
-                <p>Total <b>5</b> parcelas</p>
+                <p>Total <b><?php echo mysqli_num_rows($result); ?></b> parcelas</p>
             </div>
             <div class="order-results">
                 <!--FORM ORDER AZ-->
@@ -80,7 +85,7 @@ include_once('header.php');
                 </form>
 
                 <!--FORM ORDER ZA-->
-                <form action="../api/includes/acceso.php" method="get">
+                <form method="get">
                     <input type="hidden" name="az" value="off">
                     <input type="hidden" name="za" value="on">
                     <button type="submit">
@@ -95,123 +100,56 @@ include_once('header.php');
         <div class="container-results">
 
             <!--each one of the result boxes-->
-            <div class="result-box">
 
-                <div class="id-box">
-                    <p>6</p>
-                </div>
 
-                <div class="text-box">
-                    <div class="title-box">
-                        <p>Plataneras</p>
-                    </div>
-                    <div class="location-box">
-                        <p>Tenerife</p>
-                        <p>Canarias</p>
-                    </div>
-                </div>
 
-            </div>
+        <!--------------------------------------->
 
-            <div class="result-box">
+            <?php
 
-                <div class="id-box">
-                    <p>20</p>
-                </div>
 
-                <div class="text-box">
-                    <div class="title-box">
-                        <p>Campo girasoles</p>
-                    </div>
-                    <div class="location-box">
-                        <p>El Mercat de Valencia</p>
-                        <p>Valencia</p>
-                    </div>
-                </div>
+            if (isset($_SESSION['user'])) {
 
-            </div>
+                if (!empty($result) && mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo '
+                            <a href="pagina-parcela.php?id=' . $row['id'] . '" style="color: #292929;">
+                            <div class="result-box">
 
-            <div class="result-box">
+                                <div class="id-box">
+                                    <p>'. $row['id'] .'</p>
+                                </div>
+                
+                                <div class="text-box">
+                                    <div class="title-box">
+                                        <p>' . $row["nombre"] . '</p>
+                                    </div>
+                                    <div class="location-box">
+                                        <p>' . $row["localidad"] . '</p>
+                                        <p>' . $row["ccaa"] . '</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        ';
+                    }
+                }
+                else{
+                    echo "<p>No se han obtenido resultados de parcelas</p>";
+                }
+            }
+            else
+            {
+                echo "<p>No se ha verificado el usuario. <a href='login.php'>Vuelve a iniciar sesion</a></p>";
+            }
+            mysqli_close($connection);
 
-                <div class="id-box">
-                    <p>8</p>
-                </div>
+            ?>
 
-                <div class="text-box">
-                    <div class="title-box">
-                        <p>Plataneras Bollullo S.L.</p>
-                    </div>
-                    <div class="location-box">
-                        <p>Tenerife</p>
-                        <p>Canarias</p>
-                    </div>
-                </div>
+        <!--------------------------------------->
 
-            </div>
-
-            <div class="result-box">
-
-                <div class="id-box">
-                    <p>6</p>
-                </div>
-
-                <div class="text-box">
-                    <div class="title-box">
-                        <p>Plataneras Bollullo S.L.</p>
-                    </div>
-                    <div class="location-box">
-                        <p>Tenerife</p>
-                        <p>Canarias</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="result-box">
-
-                <div class="id-box">
-                    <p>6</p>
-                </div>
-
-                <div class="text-box">
-                    <div class="title-box">
-                        <p>Plataneras Bollullo S.L.</p>
-                    </div>
-                    <div class="location-box">
-                        <p>Tenerife</p>
-                        <p>Canarias</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="result-box">
-
-                <div class="id-box">
-                    <p>6</p>
-                </div>
-
-                <div class="text-box">
-                    <div class="title-box">
-                        <p>Plataneras Bollullo S.L.</p>
-                    </div>
-                    <div class="location-box">
-                        <p>Tenerife</p>
-                        <p>Canarias</p>
-                    </div>
-                </div>
-
-            </div>
 
         </div>
-
-        <!--------------------------------------->
-
-            <!--AQUI EL PHP-->
-
-        <!--------------------------------------->
-
-
 
 	<footer>
 		<img src="img/logo-white.png" alt="Logo de GTI versión blanca" > <!-- LOGO (WHITE) -->
