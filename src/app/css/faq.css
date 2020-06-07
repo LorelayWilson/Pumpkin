@@ -1,132 +1,168 @@
-/* LAPTOP */
+/* MOBILE */
+
 .faq{
-    padding-top: 100px;
-    height: 560px;
+    width: 100%;
+    height: auto;
 }
 
 .container{
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;    
+    justify-content: center;
 }
 
 .foto-preguntas{
-    Width: 500px;
-    Height: 500px;
+    width: 193px;
+    height: 193px;
 }
 
 .preguntas{
-    width: 75%;
-    height: auto;
-    margin-left: 50px;
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: center;
 }
 
 .container-titulo-seccion{
-    width: 401px;
-    height: 37px;
-    font-size: 20px;
-    margin-bottom: 25px;
-}
-
-.titulo-seccion{
+    margin-bottom: 60px;
     font-family: sans-serif;
+    font-size: 28px;
 }
 
 .preguntas-frecuentes{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-
-.container-titulo-pregunta{
-    width: 400px;
-    height: 28px;
-    margin-bottom: 5px;
+    flex-wrap: wrap;  
+    align-items: center;
 }
 
 .titulo-pregunta{
     font-family: sans-serif;
-    font-size: 15px;
+    font-size: 20px;
 }
 
-.container-respuesta{
-    width: 393px;
-    height: 45px;
-    margin-bottom: 50px;
-    font-size: 10px;
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn{
+    background-color: #fff;
+    border: none;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.dropdown-content{
+    display: none;
+    position: relative;
+}
+
+.dropdown:active .dropdown-content{
+    display: block;
+    margin-bottom: 20px;
 }
 
 .respuestas{
     font-family: sans-serif;
+    font-size: 16px;
 }
 
-/* MOBILE */
-@media(max-width: 1400px){
-    .faq{
-        height: auto;
+@media(min-width: 500px){
+    .container-respuesta{
+        margin-bottom: 40px;
     }
-    
-    .container{
-        display: flex;
-        flex-wrap: wrap;    
-        justify-content: center;
-        flex-direction: column;
-    }
-    
-    .foto-preguntas{
-        margin-right: auto;
-        margin-left: auto;
-        margin-bottom: 20px;
-        Width: 193px;
-        Height: 193px;
-    }
-    
+}
+
+@media(min-width: 730px){
     .preguntas{
-        width: 75%;
-        height: auto;
-        margin-left: 50px;
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 60px;
     }
-    
+
     .container-titulo-seccion{
-        width: 401px;
-        height: 37px;
-        font-size: 20px;
-        margin-bottom: 25px;
+        margin-bottom: 40px;
+        font-family: sans-serif;
+        font-size: 28px;
     }
 
     .preguntas-frecuentes{
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
     }
-    
-    .titulo-seccion{
-        font-family: sans-serif;
-    }
-    
-    .preguntas-frecuentes{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-    
+
     .container-titulo-pregunta{
-        width: 400px;
-        height: 28px;
-        margin-bottom: 5px;
+        width: 408px;
     }
-    
+
     .titulo-pregunta{
         font-family: sans-serif;
-        font-size: 15px;
+        font-size: 20px;
     }
     
-    .container-respuesta{
-        width: 393px;
-        height: 45px;
-        margin-bottom: 50px;
-        font-size: 10px;
+    .dropdown{
+        width: 50%;
     }
-    
+
     .respuestas{
         font-family: sans-serif;
+        font-size: 16px;
+    }
+}
+
+@media(min-width: 1400px){
+    .faq{
+        margin-bottom: 50px;
+    }
+
+    .container{
+        display: flex;
+        flex-wrap: nowrap;    
+        justify-content: center;
+    }
+
+    .foto-preguntas{
+        width: 500px;
+        height: 500px;
+    }
+
+    .preguntas{
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 60px;
+    }
+
+    .container-titulo-seccion{
+        margin-bottom: 40px;
+        font-family: sans-serif;
+        font-size: 32px;
+    }
+
+    .preguntas-frecuentes{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .titulo-pregunta{
+        font-family: sans-serif;
+        font-size: 20px;
+    }
+    
+    .dropdown{
+        width: 40%;
+        margin-right: 10px;
+    }
+
+    .dropdown:active .dropdown-content{
+        display: block;
+        margin-bottom: 0px;
+    }
+
+    .respuestas{
+        font-family: sans-serif;
+        font-size: 16px;
     }
 }
