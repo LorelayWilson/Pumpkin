@@ -16,7 +16,6 @@ include_once('header.php');
 <html>
 <body>
 
-
 	<header>
 		<a href="../index.php"><img src="img/logo.svg" alt="Logo de GTI" class="logo" /></a><!-- LOGO -->
 		<nav>
@@ -38,6 +37,7 @@ include_once('header.php');
 	<!-- // -->
 
    <?php
+
    $sql = "SELECT nombre,localidad,ccaa,id FROM campos WHERE user='".$_SESSION['user']."';";
    $sqlAZ = "SELECT nombre,localidad,ccaa,id FROM campos WHERE user='".$_SESSION['user']."' ORDER BY nombre ASC;";
    $sqlZA = "SELECT nombre,localidad,ccaa,id FROM campos WHERE user='".$_SESSION['user']."' ORDER BY nombre DESC;";
@@ -46,6 +46,20 @@ include_once('header.php');
     $result = mysqli_query($connection, $sql);
     $resultAZ = mysqli_query($connection, $sqlAZ);
     $resultZA = mysqli_query($connection, $sqlZA);
+
+   $search = mysqli_real_escape_string($connection, $_GET['search']);
+
+   $sqlSearch = "SELECT nombre,localidad,ccaa,id FROM campos WHERE user='" . $_SESSION['user'] . "' 
+                    AND (
+                    nombre LIKE '%" . $search . "%' OR 
+                    localidad LIKE '%" . $search . "%' OR 
+                    ccaa LIKE '%" . $search . "%'
+                    )";
+
+   $resultSearch = mysqli_query($connection, $sqlSearch);
+
+   $numResults = mysqli_num_rows($result);
+   $numResultsSearch = mysqli_num_rows($resultSearch);
     ?>
 
     <!--
@@ -72,7 +86,7 @@ include_once('header.php');
             <form method="get" action="parcelas-lista.php">
                 <input type="hidden" name="az" value="off">
                 <input type="hidden" name="za" value="off">
-                <input class="search" type="text" placeholder="Buscar nombre de parcela..." name="search">
+                <input class="search" type="text" placeholder="Buscar nombre de parcela, localidad..." name="search">
                 <button type="submit" name="submit-search" class="full">Buscar</button>
             </form>
         </div>
@@ -81,7 +95,13 @@ include_once('header.php');
 
         <div class="container-tools">
             <div class="number-results">
-                <p>Total <b><?php echo mysqli_num_rows($result); ?></b> parcelas</p>
+                <p>Total <b><?php
+                        if ($_GET['search']!='off'){
+                            echo $numResultsSearch;
+                        }else{
+                            echo  $numResults;
+                        }
+                        ?></b> parcelas</p>
             </div>
             <div class="order-results">
 
@@ -146,7 +166,7 @@ include_once('header.php');
                                         <p>' . $row["nombre"] . '</p>
                                     </div>
                                     <div class="location-box">
-                                        <p>' . $row["localidad"] . '</p>
+                                        <p>' . $row["localidad"] . ',</p>
                                         <p>' . $row["ccaa"] . '</p>
                                     </div>
                                 </div>
@@ -154,10 +174,6 @@ include_once('header.php');
                             </a>
                         ';
                     }
-                }
-
-                else{
-                    echo "<p>No se han obtenido resultados de parcelas</p>";
                 }
             }
             else if (isset($_SESSION['user']) && $_GET['za']=='on' && $_GET['az']=='off' && $_GET['search']=='off'){
@@ -177,7 +193,7 @@ include_once('header.php');
                                         <p>' . $row["nombre"] . '</p>
                                     </div>
                                     <div class="location-box">
-                                        <p>' . $row["localidad"] . '</p>
+                                        <p>' . $row["localidad"] . ',</p>
                                         <p>' . $row["ccaa"] . '</p>
                                     </div>
                                 </div>
@@ -189,15 +205,18 @@ include_once('header.php');
             }
             //search is on
             else if (isset($_SESSION['user']) && $_GET['az']=='off' && $_GET['za']=='off' && $_GET['search']!='off'){
+                echo "<p><a href='parcelas-lista.php?login=success&az=off&za=off&search=off' class='reset-search'>Resetear búsqueda.</a></p>";
 
-                if (!empty($result) && mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo '
+                if (isset($_GET['submit-search'])) {
+
+                    if (!empty($resultSearch) && mysqli_num_rows($resultSearch) > 0) {
+                        while ($row = mysqli_fetch_assoc($resultSearch)) {
+                            echo '
                             <a href="pagina-parcela.php?id=' . $row['id'] . '" style="color: #292929;">
                             <div class="result-box">
 
                                 <div class="id-box">
-                                    <p>'. $row['id'] .'</p>
+                                    <p>' . $row['id'] . '</p>
                                 </div>
                 
                                 <div class="text-box">
@@ -205,15 +224,28 @@ include_once('header.php');
                                         <p>' . $row["nombre"] . '</p>
                                     </div>
                                     <div class="location-box">
-                                        <p>' . $row["localidad"] . '</p>
+                                        <p>' . $row["localidad"] . ',</p>
                                         <p>' . $row["ccaa"] . '</p>
                                     </div>
                                 </div>
                             </div>
                             </a>
                         ';
+                        }
+                        /*echo "<div style='margin-bottom: 50%;'></div>";*/
+                    }
+                    else{
+                        echo "<p class='no-result'>No se han obtenido resultados.</p>";
                     }
                 }
+                else{
+                    echo "<p>submit-search not set</p>";
+
+                }
+
+
+
+
             }
             else if (isset($_SESSION['user']) && $_GET['az']=='off' && $_GET['za']=='off' && $_GET['search']=='off'){
                 if (!empty($result) && mysqli_num_rows($result) > 0) {
@@ -231,7 +263,7 @@ include_once('header.php');
                                         <p>' . $row["nombre"] . '</p>
                                     </div>
                                     <div class="location-box">
-                                        <p>' . $row["localidad"] . '</p>
+                                        <p>' . $row["localidad"] . ',</p>
                                         <p>' . $row["ccaa"] . '</p>
                                     </div>
                                 </div>
@@ -253,7 +285,7 @@ include_once('header.php');
 
 
         </div>
-
+    </div>
 	<footer>
 		<img src="img/logo-white.png" alt="Logo de GTI versión blanca" > <!-- LOGO (WHITE) -->
 		<nav>
