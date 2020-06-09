@@ -26,7 +26,7 @@ include_once('header.php');
 			</label>
 			<ul class="menu">
                 <li class="login-option"><a onclick="logoutForm()">Cerrar sesión</a></li>
-				<li><a href="pagina-parcela.php">Ver Parcelas</a></li>
+				<li><a href="parcelas-lista.php">Ver Parcelas</a></li>
 				<li><a href="perfil.php">Ver Perfil</a></li>
 				<li><a href="editar_perfil.php">Editar Perfil</a></li>
 				<li><a href="contact.php">Contacto</a></li>
@@ -37,10 +37,15 @@ include_once('header.php');
 
 	<!-- // -->
 
-   <?php  $sql = "SELECT nombre,localidad,ccaa,id FROM campos WHERE user='".$_SESSION['user']."';";
+   <?php
+   $sql = "SELECT nombre,localidad,ccaa,id FROM campos WHERE user='".$_SESSION['user']."';";
+   $sqlAZ = "SELECT nombre,localidad,ccaa,id FROM campos WHERE user='".$_SESSION['user']."' ORDER BY nombre ASC;";
+   $sqlZA = "SELECT nombre,localidad,ccaa,id FROM campos WHERE user='".$_SESSION['user']."' ORDER BY nombre DESC;";
 
-    //$statement = mysqli_stmt_init($connection);
+   //$statement = mysqli_stmt_init($connection);
     $result = mysqli_query($connection, $sql);
+    $resultAZ = mysqli_query($connection, $sqlAZ);
+    $resultZA = mysqli_query($connection, $sqlZA);
     ?>
 
     <!--
@@ -64,8 +69,12 @@ include_once('header.php');
         <h1 class="title">Mis parcelas</h1>
 
         <div class="container-search">
-            <input class="search" type="text" placeholder="Buscar nombre de parcela..." name="search">
-            <button type="button" class="full">Buscar</button>
+            <form method="get" action="parcelas-lista.php">
+                <input type="hidden" name="az" value="off">
+                <input type="hidden" name="za" value="off">
+                <input class="search" type="text" placeholder="Buscar nombre de parcela..." name="search">
+                <button type="submit" name="submit-search" class="full">Buscar</button>
+            </form>
         </div>
 
         <div class="line-separator"></div>
@@ -75,8 +84,20 @@ include_once('header.php');
                 <p>Total <b><?php echo mysqli_num_rows($result); ?></b> parcelas</p>
             </div>
             <div class="order-results">
+
+                <!--FORM ORDER ID (original)-->
+                <form method="get" action="parcelas-lista.php">
+                    <input type="hidden" name="search" value="off">
+                    <input type="hidden" name="az" value="off">
+                    <input type="hidden" name="za" value="off">
+                    <button type="submit">
+                        <img src="img/ordenar-id.png">
+                    </button>
+                </form>
+
                 <!--FORM ORDER AZ-->
-                <form method="get">
+                <form method="get" action="parcelas-lista.php">
+                    <input type="hidden" name="search" value="off">
                     <input type="hidden" name="az" value="on">
                     <input type="hidden" name="za" value="off">
                     <button type="submit">
@@ -85,7 +106,8 @@ include_once('header.php');
                 </form>
 
                 <!--FORM ORDER ZA-->
-                <form method="get">
+                <form method="get" action="parcelas-lista.php">
+                    <input type="hidden" name="search" value="off">
                     <input type="hidden" name="az" value="off">
                     <input type="hidden" name="za" value="on">
                     <button type="submit">
@@ -107,8 +129,66 @@ include_once('header.php');
 
             <?php
 
+            if (isset($_SESSION['user']) && $_GET['az']=='on'&& $_GET['za']=='off' && $_GET['search']=='off' ){
 
-            if (isset($_SESSION['user'])) {
+                if (!empty($resultAZ) && mysqli_num_rows($resultAZ) > 0) {
+                    while ($row = mysqli_fetch_assoc($resultAZ)) {
+                        echo '
+                            <a href="pagina-parcela.php?id=' . $row['id'] . '" style="color: #292929;">
+                            <div class="result-box">
+
+                                <div class="id-box">
+                                    <p>'. $row['id'] .'</p>
+                                </div>
+                
+                                <div class="text-box">
+                                    <div class="title-box">
+                                        <p>' . $row["nombre"] . '</p>
+                                    </div>
+                                    <div class="location-box">
+                                        <p>' . $row["localidad"] . '</p>
+                                        <p>' . $row["ccaa"] . '</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        ';
+                    }
+                }
+
+                else{
+                    echo "<p>No se han obtenido resultados de parcelas</p>";
+                }
+            }
+            else if (isset($_SESSION['user']) && $_GET['za']=='on' && $_GET['az']=='off' && $_GET['search']=='off'){
+
+                if (!empty($resultZA) && mysqli_num_rows($resultZA) > 0) {
+                    while ($row = mysqli_fetch_assoc($resultZA)) {
+                        echo '
+                            <a href="pagina-parcela.php?id=' . $row['id'] . '" style="color: #292929;">
+                            <div class="result-box">
+
+                                <div class="id-box">
+                                    <p>'. $row['id'] .'</p>
+                                </div>
+                
+                                <div class="text-box">
+                                    <div class="title-box">
+                                        <p>' . $row["nombre"] . '</p>
+                                    </div>
+                                    <div class="location-box">
+                                        <p>' . $row["localidad"] . '</p>
+                                        <p>' . $row["ccaa"] . '</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        ';
+                    }
+                }
+            }
+            //search is on
+            else if (isset($_SESSION['user']) && $_GET['az']=='off' && $_GET['za']=='off' && $_GET['search']!='off'){
 
                 if (!empty($result) && mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
@@ -134,8 +214,31 @@ include_once('header.php');
                         ';
                     }
                 }
-                else{
-                    echo "<p>No se han obtenido resultados de parcelas</p>";
+            }
+            else if (isset($_SESSION['user']) && $_GET['az']=='off' && $_GET['za']=='off' && $_GET['search']=='off'){
+                if (!empty($result) && mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo '
+                            <a href="pagina-parcela.php?id=' . $row['id'] . '" style="color: #292929;">
+                            <div class="result-box">
+
+                                <div class="id-box">
+                                    <p>'. $row['id'] .'</p>
+                                </div>
+                
+                                <div class="text-box">
+                                    <div class="title-box">
+                                        <p>' . $row["nombre"] . '</p>
+                                    </div>
+                                    <div class="location-box">
+                                        <p>' . $row["localidad"] . '</p>
+                                        <p>' . $row["ccaa"] . '</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        ';
+                    }
                 }
             }
             else

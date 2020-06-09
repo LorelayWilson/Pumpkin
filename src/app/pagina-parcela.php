@@ -24,7 +24,7 @@ include_once('header.php');
 			</label>
 			<ul class="menu">
 				<li class="login-option"><a onclick="logoutForm()">Cerrar sesión</a></li>
-				<li><a href="pagina-parcela.php">Ver Parcelas</a></li>
+				<li><a href="parcelas-lista.php">Ver Parcelas</a></li>
 				<li><a href="perfil.php">Ver Perfil</a></li>
 				<li><a href="editar_perfil.php">Editar Perfil</a></li>
 				<li><a href="contact.php">Contacto</a></li>

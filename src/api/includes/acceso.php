@@ -43,7 +43,7 @@ if(isset($_POST['login-submit']))
                     $_SESSION['user']=$row['user'];
                     $_SESSION['nie']=$row['nie'];
 
-                    header("Location:../../app/parcelas-lista.php?login=success");
+                    header("Location:../../app/parcelas-lista.php?login=success&az=off&za=off&search=off");
                     exit();
                 }
                 else//in case somehow the password check comparisson is not working
