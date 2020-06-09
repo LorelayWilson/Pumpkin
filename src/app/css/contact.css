@@ -4,6 +4,7 @@
   padding: 0;
    
 } 
+
 html, body{
 
 	display: flex;
@@ -13,12 +14,17 @@ html, body{
 }
 
 body{
-    background-image: url("../img/grassland.jpg"); 
+    background-color: white;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; 
     width: 100%;
     
+}
+
+.title{
+	margin-bottom: 40px;
+	margin-top: 20px;
 }
 
 .main-container{  
@@ -27,20 +33,67 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: column;
+	border-radius: 15px;
+background-color: rgba(121,121,121,0.2); 
+	text-align: center;
 }
-@media (min-width: 700px){
+
+@media (min-width: 600px){
+	
+	body{
+		background-image: url("../img/grassland.jpg"); 
+	}
     .main-container{  
         width: 40%;
+		padding: 5px;
     }
-    form label, form input {
+	 form input, form textarea {
         font-size: 1.5em;
     }
+} 
+
+@media (max-width: 600px){
+	
+    input, textarea{
+		background-color: rgba(121,121,121,0.2); 
+	
+	}
+	.main-container{  
+   
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+	border-radius: 15px;
+	background-color: transparent;
+	text-align: center;
 }
-@media (min-width: 1300px){
-    .main-container{  
-        width: 500px;
-    }
+	
+input{
+    outline: none;
+    width: 90%;
+	border-radius: 15px;
+	margin-bottom: 30px;
+	margin-left:3%;
+	padding:5px;
+	border: 0px;
+	color: black;
+	height: 40px;
+
+
 }
+textarea{
+    outline: none;
+    width: 90%;
+	border-radius: 15px;
+	margin-bottom: 30px;
+	margin-left:3%;
+	padding:5px;
+	border: 0px;
+	height: 90px;
+	
+}
+} 
 
 h1{
     text-align: center;
@@ -48,9 +101,10 @@ h1{
 form{
     margin: 0 auto;
     width: 100%;
-    padding: 5px;
     border-radius: 3px;
     font-size: 0.8em;
+	border-radius: 20px;
+
 }
 
 form div input{
@@ -59,13 +113,29 @@ form div input{
 }
 form div{
     margin-bottom: 10px;
-    padding : 5px;
 }
 
-input, textarea{
+input{
     outline: none;
-    width: 100%;
+    width: 90%;
+	border-radius: 15px;
+	margin-bottom: 30px;
+	margin-left:3%;
+	padding:5px;
+	border: 0px;
+	height: 40px;
 
+}
+textarea{
+    outline: none;
+    width: 90%;
+	border-radius: 15px;
+	margin-bottom: 30px;
+	margin-left:3%;
+	padding:5px;
+	border: 0px;
+	height: 100px;
+	resize: none;
 }
 .full{
     margin: 0 auto;

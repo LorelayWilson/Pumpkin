@@ -215,13 +215,13 @@ h1,h2,h3,h4,h5,h6,p,pre{
 .title{
 	font-size: 28px;
 	color: #820053;
-	font-weight: 400;
+	font-weight: 700;
 	margin: 0 auto;
 	text-align: center;
 }
 @media (min-width: 700px ) {
 	.title{
-		font-weight: 500;
+		font-weight: 700;
 		font-size: 36px;
 	}
 }
