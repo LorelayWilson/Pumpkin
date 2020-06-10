@@ -134,7 +134,7 @@ include_once('header.php');
                         <div class="dropdown-content">
 
                             <p class="respuesta">
-                                Actualmente se puede realizar el pago en efectivo o con targeta de crédito, mediante
+                                Actualmente se puede realizar el pago en efectivo o con tarjeta de crédito, mediante
                                 aplicaciones como PayPal.
                             </p>
 

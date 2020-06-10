@@ -57,7 +57,8 @@
     position: relative;
 }
 
-.dropdown:active .dropdown-content{
+
+.dropdown:hover .dropdown-content{
     display: block;
     margin-bottom: 20px;
 }
