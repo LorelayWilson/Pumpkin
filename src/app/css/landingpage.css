@@ -270,7 +270,7 @@ section{
 	}
 	.who-container article{
 		font-size: 24px;
-		font-weight: 300;
+		font-weight: 400;
 	}
 
 }
@@ -521,8 +521,13 @@ section{
 	padding: 0 15px 0;
 	min-height: 230px;
 	text-align: center;
-	font-weight: 500;
+
 }
+
+.contact-text-container h3{
+	font-weight: 300;
+}
+
 @media(min-width: 500px){
 	.contact-container{
 		flex-direction: row;
@@ -555,7 +560,7 @@ section{
 }
 
 .contact-text-container h3{
-	font-weight: 300;
+	font-weight: 400;
 }
 .contact-text-container .empty{
 	margin: 15px auto;
