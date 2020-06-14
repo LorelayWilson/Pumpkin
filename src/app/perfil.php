@@ -7,41 +7,27 @@ function customPageHeader(){?>
 include_once('header.php');
 ?>
 
-<?php
-    $conexion=mysqli_connect('localhost', 'root','','bbdd_pumpkin');
-?>
 
+<html>
 <body>
 
 	<!-- HEADER -->
 	<header>
 		<a href="../index.php"><img src="img/logo.svg" alt="Logo de GTI" class="logo"> </a><!-- LOGO -->
-<!-- 		<input type="checkbox" id="chk">
-		<label for="chk" class="show-menu-btn">
-			<i class="fas fa-bars"></i>
-		</label> -->
+
 		<nav>
 			<input type="checkbox" id="check">
 			<label for="check" class="check-btn">
 				<i class="fas fa-bars"></i> <!-- MENU BURGER LINES -->
 			</label>
 			<ul class="menu">
-                <!--
-                <li><a href="#WHO">Ver parcelas</a></li>
-				<li><a href="#WHY">Ver perfil</a></li>
-				<li><a href="#DATA">FAQ</a></li>
-				<li><a href="#CONTACT">Editar perfil</a></li>
-				<li class="login-option"><a href="login.php">Salir</a></li>
-				-->
-				<!-- <li><a href="#HELLO">Inicio</a></li> -->
+  
 				<li><a href="parcelas-lista.php">Ver parcelas</a></li>
 				<li><a href="perfil.php">Ver perfil</a></li>
 				<li><a href="faq.php">FAQ</a></li>
 				<li><a href="editar_perfil.php">Editar perfil</a></li>
                 <li class="login-option"><a onclick="logoutForm()">Cerrar sesión</a></li>
-			<!-- 	<label for="chk" class="hide-menu-btn">
-					<i class="fas fa-times"></i> 
-				</label> -->
+	
 			</ul>
 		</nav>
 	</header>
@@ -66,9 +52,6 @@ include_once('header.php');
 	
 	<div class="container-data1">
 
-        <?php
-
-        ?>
        
         <div class="izq">
             <h3>Datos Personales</h3>
@@ -95,11 +78,11 @@ include_once('header.php');
 		<img src="img/logo-white.png" alt="Logo de GTI versión blanca" > <!-- LOGO (WHITE) -->
 		<nav>
 			<ul>
-				<li><a href="#">Link 1</a></li>
+				<li><a href="https://twitter.com/">Twitter</a></li>
 				<li>|</li>
-				<li><a href="#">Link 2</a></li>
+				<li><a href="https://www.instagram.com/">Instagram</a></li>
 				<li>|</li>
-				<li><a href="#">Link 3</a></li>
+				<li><a href="http://youtube.com/">Youtube</a></li>
 			</ul>
 		</nav>
 	</footer>

@@ -1,3 +1,4 @@
+<html>
 <?php
 
 $PageTitle="Recuperar Contraseña"; //Opcional. Por defecto: GTI Tecnologias Interactivas

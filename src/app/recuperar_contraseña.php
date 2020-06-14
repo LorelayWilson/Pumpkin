@@ -12,10 +12,7 @@ include_once('header.php');
 <!-- HEADER -->
 <header>
     <img src="img/logo.svg" alt="Logo de GTI" class="logo"> <!-- LOGO -->
-    <!-- 		<input type="checkbox" id="chk">
-            <label for="chk" class="show-menu-btn">
-                <i class="fas fa-bars"></i>
-            </label> -->
+
     <nav>
         <input type="checkbox" id="check">
         <label for="check" class="check-btn">
@@ -26,9 +23,7 @@ include_once('header.php');
             <li><a href="#HELLO">Inicio</a></li>
             <li><a href="#CONTACT">Contacto</a></li>
             <li><a href="#FAQ">FAQ</a></li>
-            <!-- 	<label for="chk" class="hide-menu-btn">
-                    <i class="fas fa-times"></i>
-                </label> -->
+
         </ul>
     </nav>
 </header>
@@ -47,7 +42,6 @@ include_once('header.php');
         <form action="#" id="buscador">
             <div class="contenedorBuscar">
                 <input class="buscador" type="text" placeholder="Correo electrónico">
-                <!--<input type="submit" value="Enviar">-->
             </div>
         </form>
         <nav class="botones">
@@ -60,16 +54,16 @@ include_once('header.php');
 
 <!-- FOOTER -->
 <footer>
-    <img src="img/logo-white.png" alt="Logo de GTI versión blanca" > <!-- LOGO (WHITE) -->
-    <nav>
-        <ul>
-            <li><a href="#">Link 1</a></li>
-            <li>|</li>
-            <li><a href="#">Link 2</a></li>
-            <li>|</li>
-            <li><a href="#">Link 3</a></li>
-        </ul>
-    </nav>
-</footer>
+		<img src="img/logo-white.png" alt="Logo de GTI versión blanca" > <!-- LOGO (WHITE) -->
+		<nav>
+			<ul>
+				<li><a href="https://twitter.com/">Twitter</a></li>
+				<li>|</li>
+				<li><a href="https://www.instagram.com/">Instagram</a></li>
+				<li>|</li>
+				<li><a href="http://youtube.com/">Youtube</a></li>
+			</ul>
+		</nav>
+	</footer>
 
 </body>

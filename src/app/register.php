@@ -3,7 +3,7 @@
 $PageTitle="Registrar usuario - Grado en Tecnologías Interactivas";//Opcional. Por defecto: GTI Tecnologias Interactivas
 
 function customPageHeader(){?>
-    <!--<link rel="stylesheet" type="text/css" href="css/login.css">-->
+    
 <?php }
 include_once('header.php');
 ?>

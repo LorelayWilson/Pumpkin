@@ -27,6 +27,12 @@ body{
     flex-direction: column;
 }
 
+footer{
+ position: fixed;
+ bottom: 0;
+ width: 100%;
+}
+
 .login{
 
 	font-size: 28px;

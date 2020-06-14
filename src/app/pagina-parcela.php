@@ -293,15 +293,15 @@ include_once('header.php');
 		</div>	
     </div> 
 
-	<footer>
-		<img src="img/logo-white.png" alt="Logo de GTI versión blanca" > <!-- LOGO (WHITE) -->
+<footer>
+		<img src="app/img/logo-white.png" alt="Logo de GTI versión blanca" > <!-- LOGO (WHITE) -->
 		<nav>
 			<ul>
-				<li><a href="#">Link 1</a></li>
+				<li><a href="https://twitter.com/">Twitter</a></li>
 				<li>|</li>
-				<li><a href="#">Link 2</a></li>
+				<li><a href="https://www.instagram.com/">Instagram</a></li>
 				<li>|</li>
-				<li><a href="#">Link 3</a></li>
+				<li><a href="http://youtube.com/">Youtube</a></li>
 			</ul>
 		</nav>
 	</footer>

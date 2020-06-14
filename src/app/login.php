@@ -23,9 +23,7 @@ include_once('header.php');
 				<li><a href="../index.php">Inicio</a></li>
 				<li><a href="contact.php">Contacto</a></li>
 				<li><a href="faq.php">FAQ</a></li>
-			<!-- 	<label for="chk" class="hide-menu-btn">
-					<i class="fas fa-times"></i> 
-				</label> -->
+		
 			</ul>
 		</nav>
 	</header>
@@ -80,6 +78,17 @@ include_once('header.php');
         
     </div>
         
-      
+   <footer>
+		<img src="img/logo-white.png" alt="Logo de GTI versión blanca" > <!-- LOGO (WHITE) -->
+		<nav>
+			<ul>
+				<li><a href="https://twitter.com/">Twitter</a></li>
+				<li>|</li>
+				<li><a href="https://www.instagram.com/">Instagram</a></li>
+				<li>|</li>
+				<li><a href="http://youtube.com/">Youtube</a></li>
+			</ul>
+		</nav>
+</footer>
 </body>
 </html>
