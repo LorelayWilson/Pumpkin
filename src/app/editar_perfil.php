@@ -51,32 +51,35 @@ include_once('header.php');
 				    <div class="tab-content">
 
                         <FORM action="../api/includes/aplicar-cambios-perfil.php" method="post" id="info-personal">
+                        
+                            <div class="container2">
+                                <div class="col1">
 
-                        <div class="col1">
+                                    <p>Nombre: (*)</p>
+                                    <input type="text" name="name">
+                                    <p>Apellidos: (*)</p>
+                                    <input type="text" name="surname">
+                                    <p>Email: (*)</p>
+                                    <input type="text" name="email">
+                                    <p>NIE: (*)</p>
+                                    <input type="text" name="nie">
+                                    <p>Móvil: (*)</p>
+                                    <input type="text" name="phone">
 
-                            <p>Nombre: (*)</p>
-                            <input type="text" name="name">
-                            <p>Apellidos: (*)</p>
-                            <input type="text" name="surname">
-                            <p>Email: (*)</p>
-                            <input type="text" name="email">
-                            <p>NIE: (*)</p>
-                            <input type="text" name="nie">
+                                </div>
 
-                        </div>
-
-                        <div class="col2"> 
-                             <p>Móvil: (*)</p>
-                            <input type="text" name="phone">
-                            <p>Nombre de la empresa</p>
-                            <input type="text" name="company-name">
-                            <p>Email de la empresa</p>
-                            <input type="text" name="company-email">
-                            <p>Teléfono</p>
-                            <input type="text" name="telephone">
-                        </div>
+                                <div class="col2"> 
+                             
+                                <p>Nombre de la empresa</p>
+                                <input type="text" name="company-name">
+                                <p>Email de la empresa</p>
+                                <input type="text" name="company-email">
+                                <p>Teléfono</p>
+                                <input type="text" name="telephone">
+                                </div>
+                            </div>
                     
-				        <button class="special-button" type="submit" name="update1">Aplicar cambios</button>  <!-- backend: este botón tiene que mandar los datos de los input a la base de datos y sobreescribir los antiguos-->
+				             <button class="editar_perfil-button" type="submit" name="update1">Aplicar cambios</button>  <!-- backend: este botón tiene que mandar los datos de los input a la base de datos y sobreescribir los antiguos-->
                         </FORM>
                     </div>
 				</li>
@@ -86,16 +89,19 @@ include_once('header.php');
 				    <label for="tab2">Dirección</label>
 				    <div class="tab-content">
                         <FORM action="../api/includes/aplicar-cambios-perfil.php" method="post" id="info-company">
-                            <div>
-                                <p>Provincia:</p>
-                                <input type="text" name="provincia">
-                                <p>Población:</p>
-                                <input type="text" name="poblacion">
-                                <p>Código Postal:</p>
-                                <input type="text" name="cp">
-
-                                <button class="editar_perfil-button" type="submit" name="update2">Aplicar cambios</button>  <!-- backend: este botón tiene que mandar los datos de los input a la base de datos y sobreescribir los antiguos-->
+                             <div class="container2">
+                                <div>
+                                    <p>País:</p>
+                                    <input type="text" name="país">
+                                    <p>Provincia:</p>
+                                    <input type="text" name="provincia">
+                                    <p>Población:</p>
+                                    <input type="text" name="poblacion">
+                                    <p>Código Postal:</p>
+                                    <input type="text" name="cp">
+                                </div>
                             </div>
+                            <button class="editar_perfil-button" type="submit" name="update2">Aplicar cambios</button>  <!-- backend: este botón tiene que mandar los datos de los input a la base de datos y sobreescribir los antiguos-->
                         </FORM>
 
                     </div>
@@ -105,16 +111,17 @@ include_once('header.php');
 				    <label for="tab3">Seguridad</label>
 				    <div class="tab-content">
                         <FORM action="../api/includes/aplicar-cambios-perfil.php" method="post" id="info-company">
-                        <div>
-                            <p>Contraseña actual: (*)</p>
-                            <input type="password" name="oldpass">
-                            <p>Contraseña nueva</p>
-                            <input type="password" name="pass1">
-                            <p>Repita nueva contraseña</p>
-                            <input type="password" name="pass2">
-
+                             <div class="container2">
+                                <div>
+                                    <p>Contraseña actual: (*)</p>
+                                    <input type="password" name="oldpass">
+                                    <p>Contraseña nueva</p>
+                                    <input type="password" name="pass1">
+                                    <p>Repita nueva contraseña</p>
+                                    <input type="password" name="pass2">
+                                </div>
+                            </div>
                             <button class="editar_perfil-button" type="submit" name="update3">Aplicar cambios</button>  <!-- backend: este botón tiene que mandar los datos de los input a la base de datos y sobreescribir los antiguos-->
-				        </div>
                         </FORM>
 				    </div>
 				</li>

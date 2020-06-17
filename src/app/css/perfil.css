@@ -41,12 +41,14 @@ section{
 .izq{
     margin-left: 200px;
     float: left;
+     width: 207px;
     
 }
 
 .der{
     margin-right: 200px;
     float: right;
+     width: 207px;
 }
 /*
 .perfil-container div h3{
@@ -119,14 +121,15 @@ footer{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        max-width: 700px;
+         width: auto;
+        align-items: center;
     }
     .izq{
-        margin: auto;
+        margin: 0 auto;
         float: none;
     }
     .der{
-        margin: auto;
+        margin: 0 auto;
         float: none;
     }
     .perfil-container h2{
@@ -136,7 +139,12 @@ footer{
         font-size: 22px;
     }
     .perfil-container h3{
-        margin-top: 30px; 
+        margin-top: 20px; 
+        margin-bottom: 10px;
     }
+    
+    .editar_perfil-button{
+    margin-top: 30px;
+}
    
 }

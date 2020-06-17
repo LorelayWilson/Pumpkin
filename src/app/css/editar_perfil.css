@@ -88,14 +88,14 @@ body, html, .perfil-container{
     animation-duration: 0.5s;
     justify-content: center;
     align-items: center;
-    
+    height: 600px;
 
 }
 
 .tab-content div{
-    display: flex;
+    /*display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column;*/
 }
 
 .tab-content p{
@@ -110,39 +110,37 @@ body, html, .perfil-container{
 .editar_perfil-button{
     /*display: flex;
     flex-direction: column;*/
-    margin-top: 10px;
+    /*margin-top: 10px;*/
     /*margin-right: 210px;*/
     background: #333333;
     color: #ffffff;
     border-radius: 50px;
     font-size: 11px;
     padding: 10px 15px;
+    margin: 50px auto;
     
 }
 
-.special-button{
-    /*display: flex;
-    flex-direction: column;*/
-    margin-top: 10px;
-    /*margin-right: 150px;*/
-    background: #333333;
-    color: #ffffff;
-    border-radius: 50px;
-    font-size: 11px;
-    padding: 10px 15px;
-    
+.container2{
+    /*background: yellow;*/
+    height: 325px;
+    width:600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
 
 /*<div style="float: right; width: 45%"> */
 .col1{
     float: left;
-    width: 50%;
+    width: 250px;
 }
 
 .col2{
     float: right;
-    width: 50%;
-   
+    width: 250px;
+    margin-top: 100px;
     
 }
 
@@ -169,20 +167,29 @@ footer{
 
 .tab li label{
     border-radius: 5px;
-    margin-right: 20px;
-    max-width: 200px; /*antes width:200px*/
+    /*margin-right: 20px;*/
+    width: 150px; /*antes width:200px*/
     display: flex;
     justify-content: center;
 }
-
-
-@media (max-width: 850px){
+/*-----------------------------------------------------------------------*/
+/* Versión movil */
+/*-----------------------------------------------------------------------*/
+@media (max-width: 650px){
    
-    .perfil-container{
+    /*.perfil-container{
         display: flex;
         flex-direction: column;
         height: 600px;
         justify-content: center;
+    }*/
+    .container2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        width:auto;
+        height: auto;
     }
     .col1{
         margin: auto;
@@ -192,20 +199,49 @@ footer{
         margin: auto;
         float: none;
     }
-    .special-button{
-        margin: 30px 0;
+    .editar_perfil-button{
+        margin: 30px auto;
     }
-    .tab label{
+    /*.tab label{
         height: 30px;
         padding: 0;
         margin: 0;
         display: flex;
         align-items: center;
         width: 5px;
+    }*/
+    .tab label{
+        height: 30px;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        width: auto;
+        justify-content: center;
+         text-align: center;
+    }
+    .tab{
+        width: 100%;
+    }
+    .tab li label{
+         border-radius: 5px 5px 0 0;
+        /*margin-left: 10px;
+    margin-right: 10px;
+    max-width: 100px;
+        padding: 20px;*/
+         width: 100px;
+        height: 50px;
+        display: flex;
+        
+        
+    }
+    .tab{
+        display: flex;
+        justify-content: space-between;
     }
     
 }
-
+/*
 @media (max-width: 700px){
    
     .tab label{
@@ -236,7 +272,7 @@ footer{
     }
     
 }
-
+*/
 
 
 
