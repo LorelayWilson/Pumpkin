@@ -28,7 +28,7 @@ include_once('header.php');
 				<li><a href="parcelas-lista.php">Ver Parcelas</a></li>
 				<li><a href="perfil.php">Ver Perfil</a></li>
 				<li><a href="editar_perfil.php">Editar Perfil</a></li>
-				<li><a href="contact.php">Contacto</a></li>
+				<li><a href="contact-log.php">Contacto</a></li>
 				<li><a href="faq.php">FAQ</a></li>
 			</ul>
 		</nav>

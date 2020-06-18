@@ -19,11 +19,12 @@ include_once('header.php');
 			</label>
 			<ul class="menu">
 			
-				<li><a href="parcelas-lista.php">Ver parcelas</a></li>
-				<li><a href="perfil.php">Ver perfil</a></li>
+				<li class="login-option"><a onclick="logoutForm()">Cerrar sesión</a></li>
+				<li><a href="parcelas-lista.php">Ver Parcelas</a></li>
+				<li><a href="perfil.php">Ver Perfil</a></li>
+				<li><a href="editar_perfil.php">Editar Perfil</a></li>
+				<li><a href="contact-log.php">Contacto</a></li>
 				<li><a href="faq.php">FAQ</a></li>
-				<li><a href="editar_perfil.php">Editar perfil</a></li>
-                <li class="login-option"><a onclick="logoutForm()">Cerrar sesión</a></li>
 
 			</ul>
 		</nav>
