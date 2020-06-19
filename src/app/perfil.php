@@ -7,6 +7,18 @@ function customPageHeader(){?>
 include_once('header.php');
 ?>
 
+<?php
+
+$sqlPersona = "SELECT nie, nombre, apellido, email, telefono FROM clientes WHERE nie='140';";
+$sqlEmpresa = "SELECT id, nombre, email, telefono FROM empresas WHERE id='1';";
+
+
+//$statement = mysqli_stmt_init($connection);
+$resultPersona = mysqli_query($connection, $sqlPersona);
+$resultEmpresa = mysqli_query($connection, $sqlEmpresa);
+
+
+?>
 
 <html>
 <body>
@@ -55,16 +67,44 @@ include_once('header.php');
 
        
         <div class="izq">
-            <h3>Datos Personales</h3>
-            <h4>Nombre: <p>José Carlos Padron</p> </h4>
-            <h4>Email: <p>jcp1980@gmail.com</p></h4>
-            <h4>Móvil:<p>662729120</p></h4>
+            <?php
+            if (!empty($resultPersona) && mysqli_num_rows($resultPersona) > 0) {
+                while ($row = mysqli_fetch_assoc($resultPersona)) {
+                    echo ' <h3>Datos Personales</h3>
+                            <h4>Nombre: <p>'.$row['nombre'].' '.$row['apellido'].'</p> </h4>
+                            <h4>Email: <p>'.$row['email'].'</p></h4>
+                            <h4>Móvil:<p>'.$row['telefono'].'</p></h4>';
+                }
+            }
+            else{
+                echo '<h3>Datos Personales</h3>
+                            <h4>Nombre: <p>Jose García Remón</p> </h4>
+                            <h4>Email: <p>josgar@gmail.com</p></h4>
+                            <h4>Móvil:<p>611221296</p></h4>\';';
+            }
+            ?>
         </div>
-
         <div class="der">
-            <h3>Datos de la Empresa</h3>
+        <?php
+        if (!empty($resultEmpresa) && mysqli_num_rows($resultEmpresa) > 0) {
+            while ($row = mysqli_fetch_assoc($resultEmpresa)) {
+                echo ' <h3>Datos de la Empresa</h3>
+                        <h4>Empresa: <p>'.$row['nombre'].'</p></h4>
+                        <h4>Teléfono: <p>'.$row['telefono'].'</p></h4>
+                        ';
+
+            }
+        }
+        else{
+            echo '<h3>Datos de la Empresa</h3>
             <h4>Empresa: <p>Nombre empresa</p></h4>
-            <h4>Teléfono: <p>91123131313</p></h4>
+            <h4>Teléfono: <p>91123131313</p></h4>';
+        }
+
+        ?>
+
+
+
         </div>
    
     </div>
