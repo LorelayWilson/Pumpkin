@@ -41,7 +41,7 @@ background-color: rgba(121,121,121,0.2);
 @media (min-width: 600px){
 	
 	body{
-		background-image: url("../img/grassland.jpg"); 
+		background-image: url("../img/drops_on_plant.jpg"); 
 	}
     .main-container{  
         width: 40%;
@@ -154,5 +154,7 @@ footer{
 }
 
 
-
+.inf-text{
+    padding-bottom: 20px;
+}
 

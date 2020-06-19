@@ -1,7 +1,6 @@
 <?php
 
 function customPageHeader(){?>
-    <link rel="stylesheet" type="text/css" href="css/landingpage.css">
     <link rel="stylesheet" type="text/css" href="css/recuperar.css">
 <?php }
 include_once('header.php');
@@ -19,10 +18,10 @@ include_once('header.php');
             <i class="fas fa-bars"></i> <!-- MENU BURGER LINES -->
         </label>
         <ul class="menu">
-            <li class="login-option"><a href="#">Iniciar sesión</a></li>
-            <li><a href="#HELLO">Inicio</a></li>
-            <li><a href="#CONTACT">Contacto</a></li>
-            <li><a href="#FAQ">FAQ</a></li>
+            <li class="login-option"><a href="login.php">Iniciar sesión</a></li>
+            <li><a href="../index.php">Inicio</a></li>
+            <li><a href="contact.php">Contacto</a></li>
+            <li><a href="faq.php">FAQ</a></li>
 
         </ul>
     </nav>
@@ -37,7 +36,7 @@ include_once('header.php');
             <p class="texto-relleno">En breves le enviaremos un email para re-establecer su contraseña</p>
         </div>
         <div class="correo">
-            <p class="texto-correo">Introduzca su contraseña:</p>
+            <p class="texto-correo">Introduzca su email:</p>
         </div>
         <form action="#" id="buscador">
             <div class="contenedorBuscar">
