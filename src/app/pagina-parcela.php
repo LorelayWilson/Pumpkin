@@ -24,7 +24,7 @@ include_once('header.php');
 			</label>
 			<ul class="menu">
 				<li class="login-option"><a onclick="logoutForm()">Cerrar sesión</a></li>
-				<li><a href="parcelas-lista.php">Ver Parcelas</a></li>
+				<li><a href="parcelas-lista.php?login=success&az=off&za=off&search=off">Ver Parcelas</a></li>
 				<li><a href="perfil.php">Ver Perfil</a></li>
 				<li><a href="editar_perfil.php">Editar Perfil</a></li>
 				<li><a href="contact.php">Contacto</a></li>
@@ -63,8 +63,6 @@ include_once('header.php');
             ?>
 
         </h1>
-
-		<h3>Seleccionar sonda:</h3>
 
 		<div class="map-chart-container">
             <?php
@@ -133,15 +131,34 @@ include_once('header.php');
 
 
             <script>
-				var maxWidth = window.matchMedia("(max-width: 850px)");
-				openChart(); // Call listener function at run time
-				/*maxWidth.addListener(openChart)*/ // Attach listener function on state changes
-				
+				var maxWidth = window.matchMedia("(max-width: 849px)");
+				var minWidth = window.matchMedia("(min-width: 850px)");
+				/*openChart(); */// Call listener function at run time
+				maxWidth.addListener(openChart) // Attach listener function on state changes
+				function selectedOn(){
+				    if (minWidth.matches){
+                        document.getElementById("chart-container-id-not-selected").style.display = "none";
+                        document.getElementById("chart-container-id").style.display = "flex";
+                    }
+                }
+
+                function selectedOff(){
+                    if (minWidth.matches){
+                        if(closeChart()){
+                            document.getElementById("chart-container-id").style.display = "none";
+                            document.getElementById("chart-container-id-not-selected").style.display = "flex";
+                        }
+                    }
+
+                }
+
 				function openChart(){
 					if (maxWidth.matches) {
 						document.getElementById("chart-container-id").style.display = "flex";
-						document.getElementById("map-container-id").style.display = "none"; 
-					}
+                        document.getElementById("map-container-id").style.display = "none";
+                        /*document.getElementById("chart-container-not-selected").style.display = "none";*/
+
+                    }
 					else{
 /*						document.getElementById("map-container-id").style.display = "flex";
 						document.getElementById("chart-container-id").style.display = "flex";*/
@@ -150,18 +167,21 @@ include_once('header.php');
 			</script>
 
 			<div class="chart-container" id="chart-container-id">
-			
+
 				<input type="checkbox" id="check">
 				<i class="fas fa-times" id="quit" onclick="closeChart()"></i>
 				<script>
-					var maxWidth = window.matchMedia("(max-width: 850px)");
 					closeChart();
-
 					function closeChart(){
 						if (maxWidth.matches) {
 							document.getElementById("map-container-id").style.display = "block";
 							document.getElementById("chart-container-id").style.display = "none";
 						}
+						else if(minWidth.matches){
+						    /*selectedOff();*/
+                            document.getElementById("chart-container-id-not-selected").style.display = "flex";
+                            document.getElementById("chart-container-id").style.display = "none";
+                        }
 						else{
 /*							document.getElementById("map-container-id").style.display = "flex";
 							document.getElementById("chart-container-id").style.display = "flex";*/
@@ -172,7 +192,7 @@ include_once('header.php');
 				<div class="name-and-select">
 
 					<h3 id="show-name"></h3>
-					<select onchange="showOption(this.value)"> 
+					<select onchange="showOption(this.value)">
 
 						<option value="null">--Seleccionar--</option>
 
@@ -235,7 +255,7 @@ include_once('header.php');
 
                                     }
                                 }
-                                document.getElementById("show-name").innerHTML = sonda; //muestra el nombre de la sonda
+                                document.getElementById("show-name").innerHTML = "<span class='etiqueta-sonda'>Sonda:</span> "+sonda; //muestra el nombre de la sonda
                             }
 
 
@@ -262,7 +282,7 @@ include_once('header.php');
 									document.getElementById("luminosidad").style.display = "none";
 
 									//añadir espacio en blanco
-									document.getElementById("null").style.display = "block";
+									document.getElementById("null").style.display = "flex";
 
 								}
 							}
@@ -274,7 +294,8 @@ include_once('header.php');
 				<!-- ------ GRAFICAS, EN PRINCIPIO TODAS OCULTAS MENOS HUMEDAD POR DEFECTO ------ -->
 				<div class="chart" id="null">
 					<!-- OPTION NULL -->
-                    <p>Selecciona un parámetro a mostrar</p>
+                    <p>Selecciona un parámetro.</p>
+                    <img src="img/seleccionar.png">
 				</div>
 				<div class="chart" id="humedad">
 					<canvas id="chart-humedad"></canvas>
@@ -290,11 +311,18 @@ include_once('header.php');
 				</div>
 
 			</div>
+            <div class="chart-container-not-selected" id="chart-container-id-not-selected">
+                <div class="chart" id="null">
+                    <p>Elige una sonda.</p>
+                    <img src="img/location.png">
+                </div>
+
+            </div>
 		</div>	
     </div> 
 
 <footer>
-		<img src="app/img/logo-white.png" alt="Logo de GTI versión blanca" > <!-- LOGO (WHITE) -->
+		<img src="img/logo-white.png" alt="Logo de GTI versión blanca" > <!-- LOGO (WHITE) -->
 		<nav>
 			<ul>
 				<li><a href="https://twitter.com/">Twitter</a></li>

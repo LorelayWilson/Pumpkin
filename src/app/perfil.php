@@ -22,7 +22,7 @@ include_once('header.php');
 			</label>
 			<ul class="menu">
   
-				<li><a href="parcelas-lista.php">Ver parcelas</a></li>
+				<li><a href="parcelas-lista.php?login=success&az=off&za=off&search=off">Ver parcelas</a></li>
 				<li><a href="perfil.php">Ver perfil</a></li>
 				<li><a href="faq.php">FAQ</a></li>
 				<li><a href="editar_perfil.php">Editar perfil</a></li>

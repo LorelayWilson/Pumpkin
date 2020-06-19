@@ -158,6 +158,7 @@ function initMap() {
         });
         google.maps.event.addListener(marker,'click', function() {
             openChart();
+            selectedOn();
             console.log("you clicked the marker "+marker.title);
             showName(marker.title);
             mediciones(marker.title);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-05-2020 a las 19:56:55
+-- Tiempo de generación: 19-06-2020 a las 02:46:39
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.2.29
 
@@ -40,13 +40,13 @@ CREATE TABLE `campos` (
 --
 
 INSERT INTO `campos` (`id`, `nombre`, `user`, `localidad`, `ccaa`) VALUES
-(1, 'Campo de patatas', 'aghost13', 'Gandia', 'Comunidad Valenciana'),
+(1, 'Patatas Jose Ramón', 'aghost13', 'Gandia', 'Comunidad Valenciana'),
 (2, 'Campo de alcachofas', 'aghost13', 'Murcia', 'Region de Murcia'),
-(3, 'Campo de calabazas', 'beton2p', 'Xeraco', 'Comunidad Valenciana'),
-(4, 'Campo de laureles', 'admin', 'San Sebastian', 'Pais Vasco'),
-(5, 'Campo de papayas', 'admin', 'Platja Gandia', 'Comunidad Valenciana'),
+(3, 'Finca de calabazas', 'beton2p', 'Xeraco', 'Comunidad Valenciana'),
+(4, 'Laureles y mas S.L.', 'admin', 'San Sebastian', 'Pais Vasco'),
+(5, 'Finca de papayas', 'admin', 'Platja Gandia', 'Comunidad Valenciana'),
 (9, 'Plataneras Bollullo S.L', 'admin', 'Tenerife', 'Canarias'),
-(10, 'Campo de amapolas', 'admin', 'Sagunto', 'Comunidad Valenciana');
+(10, 'Amapolas Sagunto', 'admin', 'Sagunto', 'Comunidad Valenciana');
 
 -- --------------------------------------------------------
 
@@ -281,7 +281,7 @@ INSERT INTO `sondas` (`id`, `nombre`) VALUES
 CREATE TABLE `usuarios` (
   `user` varchar(100) NOT NULL,
   `rol` int(11) NOT NULL,
-  `contraseña` varchar(250) NOT NULL,
+  `contrasenya` varchar(250) NOT NULL,
   `nie` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -289,7 +289,7 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`user`, `rol`, `contraseña`, `nie`) VALUES
+INSERT INTO `usuarios` (`user`, `rol`, `contrasenya`, `nie`) VALUES
 ('admin', 1, 'admin', 140),
 ('aghost13', 3, 'iT3XaR', 124),
 ('beton2p', 3, 'hIr4aZ17M2bk', 135),
